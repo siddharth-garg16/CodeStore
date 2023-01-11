@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor Tag and its attributes</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        h2{
+            color:darkmagenta;
+            font-size: 50px;
+        }
+        #head{
+            padding-left: 40%;
+        }
+        #nondecorated-tag{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="head"><h2> &lt;a&gt; tag</h2></div>
+    <hr>
+
+    <div>
+        <a href="https://in.linkedin.com/" title="Opens LinkedIn in the existing tab" id="nondecorated-tag">Go to LinkedIn</a>
+        <br><br>
+        <a href="https://www.google.com" target="_blank" title="Opens Google in new tab"><button>Go to Google</button></a>
+    </div>
+    <hr>
+    <div>
+        <a href="https://unsplash.com/photos/yrbGBucZdWE" target="_blank" title="Click on image to go to the download source."><img src="https://images.unsplash.com/photo-1673207559693-705d2a40d4cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Failed to load the image." height="300px" width="150px"></a>
+    </div>
+    <hr>
+    <div>
+        <a href="mailto:bogusmail@doesnotexist.com" id="nondecorated-tag">Write an email to no one.</a>
+        <br><br>
+        <a href="tel:+91987654321" id="nondecorated-tag">Call +91-987654321</a>
+    </div>
+</body>
+</html>
