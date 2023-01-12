@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pythagoras Theorem</title>
+    <meta name="description" content="Pythagoras theorem states that “In a right-angled triangle, the square of the hypotenuse side is equal to the sum of squares of the other two sides“. The sides of this triangle have been named Perpendicular, Base and Hypotenuse. Here, the hypotenuse is the longest side, as it is opposite to the angle 90°.">
+    <style>
+        body{
+            padding: 0px 15px;
+        }
+        #image-wrapper{
+            text-align: center;
+        }
+        #formulae-wrapper{
+            border: 2px solid black;
+            text-align: center;
+        }
+        #formulae{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header><h2><u>Pythagoras Theoram</u></h2></header>
+
+    <section>
+        <section><p><strong>Pythagoras theorem</strong> states that <mark>“In a right-angled triangle,  the square of the hypotenuse side is equal to the sum of squares of the other two sides“</mark> . The sides of this triangle have been named <b>Perpendicular</b>, <b>Base</b> and <b>Hypotenuse</b>. Here, <i>the hypotenuse is the longest side, as it is opposite to the angle 90°</i>. The sides of a right triangle (say a, b and c) which have positive integer values, when squared, are put into an equation, also called a <em>Pythagorean triplet</em>.</p></section>
+
+        <section id="image-wrapper"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASUAAACsCAMAAAAKcUrhAAAAeFBMVEX///+vr6+YmJg7Ozvs7OwAAABRUVGenp6bm5v4+PjDw8OhoaH8/PxmZmbg4ODV1dXOzs58fHypqann5+eSkpKGhoa5ubnU1NSKiopzc3Nubm5dXV28vLxCQkLx8fFYWFglJSUtLS1BQUEcHBwPDw9MTEwfHx80NDRImZcbAAAEwElEQVR4nO3d6XqiShCAYRopgWZrmgZFDVkd7/8Oj9uZmBGho9CL1PsjY1zA55tooETjOAghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQsgSnuu+B+fyonOm+D6bzRURCrNQpKgl3HA8rdeArsjn8i5VuI6+ExcdTWOmWzQfPwvNprNSOfbpF+Pc7rNQmhbIJL77HStcaWDvxj3Ow0hV4vzoLK/0QOwAtZ2OlC004a2uElS40XvIVt1+Elc68tNwVNy/ESgcec+dZx8VYaf9Yo1HCuq6AlZyQ8LxnyoaVokhs+q4z9UrCjar+a0270rIkEo2mXUnUlVSjKVcK1hvpV0amWom/VIsbG9otplmpeiOpfKNpVqLgN79pNMVKGZTx7xpNr5IHyT23mlSlEF7uut2EKjUxvN1508lU8ryP9jmk1I2nUalIV9czf3mTqFQsym3zyAImUKmgbpI+toinr+RVft0xq5VcyHNXani07JzVyrGyUhBEUteLRRAMckSkjZUEJ9yVuF4pyEBHjVpYySX7L72jaifP5edHfSys9Bn2X8fJEzrg0ccWVnrr3/RZbukAz9nfnrGS+04f3D76l4WVoHs6xKHyfjs/6mNhJeew1/p547IKeDh0o7+VOAAM/FM6Img9FGuPwXKUFZ4q+YfNj1d7MrVLoR5pyRePOLsrhQWsR1v4uZILVj3krngebMdc/KFS7B82Z9fWVkqL7W7UFRwrEXE4aWulNFvdN/OX912peLGyUkrLtcwuy0OOlZjLKBM2Pi+llVvfPGZ0OKdnb1bndcG98Vc3rIIHpZL/Whu3vc8813cfntVKrsrWSmHp8kH3+7vYWqleVsoa2VopqYedH/WxsdJqvlioXaN9lfLdQtFz9jfbKpXAFGwf/cuuSi7Qh17vv5dNlQgQTWu2p9IGAm3rtqRSyKDUuHorKnnZaLNayTtgfqU0fbvnuNohGV8py+Zz3ffB9EoZq1913wfH8ErZZrka/iXIOxhcKSNuachg0NhKqR8IDfsi7QytVCyDyKAxvJGVmlwQ5fv9XUyslJTUqEYmVpqv1M+P+phWaf6SGvR89D+zKiVfqTG/1y6ZVKmGTMuMrZ85lZbAjNjObmNKJR/6j3PXx4hKMQGu+z50MqBSQ0HmXSU6aa+Usj86Z7VyNFfKFh96Z7VytFZibL3SuHp5GisxmuueZ8vSVokRkWta9e9pqsSiQBi6nd1GS6VM+L4hs1o5GiqleUCM3Ke9TXklbyU2Bs5GuimuFL7mzLpGqivNEhNnbP1U/m2d3c6z7PlI7GZHL2O+YeqHLTRW/V47SGjjeV5TgKJDFdZQGDtjuy05vU4Rq6mUg3Evi0g5VwpVVBKg9BD2AamqFDccJD/S10BqKsVF9WX2rLabkkoZnZk+q+2moBKj83E+A0Gd0StRujJ/nt1n5C0BWpX2zNhuS0R1QEapRIkvRlisejQ4EYPvoTDhv4OI3GfgR0c8fOSDU1stCNn/jD6VKjb55XmEkBmUTcWsdv8Hmk8JVpKBlWRACKD5/ZcWgI/9F/YMu4pjOj3iKtsnMyM7V3qOferRYCUZ+IiTcazk+QN+0PkzAsI5x0g9/L1h/jwFQgghhBDS5T9rOirXCXGqGwAAAABJRU5ErkJggg==" alt="Right Angeled Triangle" height="300px" width="500px"></section>
+
+        <section>
+            <p>
+                Where <b>“a” is the perpendicular, “b” is the base, “c” is the hypotenuse</b>.
+            </p>
+            <p>
+                Pythagorus theorem states that:
+            </p>
+            <div id="formulae-wrapper">
+                <p id="formulae">
+                    c <sup>2</sup> = b <sup>2</sup> + c <sup>2</sup>
+                </p>
+            </div>
+        </section>
+    </section>
+</body>
+</html>
