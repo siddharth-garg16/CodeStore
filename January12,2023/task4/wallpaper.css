@@ -1,0 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@1,300&display=swap');
+body{
+    background-color: azure;
+    margin: 0;
+    padding: 10px;
+}
+header, footer{
+    text-align: center;
+}
+h2{
+    color: rgb(103, 49, 71);
+    font-family: 'Rubik', sans-serif;
+    font-size: 50px;
+}
+h3{
+    color: rgb(103, 49, 71);
+    font-family: 'Rubik', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+img{
+    width: 32%;
+    height: 30%;
+}
+#info-body{
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.wallpaper-wrapper{
+    background-color: rgba(190, 170, 220, 0.15);
+    display: flex;
+    flex-wrap: wrap;
+    flex: 200px;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 400px) {
+    img{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 800px) {
+    img{
+        width: 100%;
+    }
+}
