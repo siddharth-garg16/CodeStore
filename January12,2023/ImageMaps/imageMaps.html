@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Mapping in HTML</title>
+    <meta name="description" content="Image maps in HTML are used to map different links to the different coordinated area of an image.">
+    <style>
+        body{
+            background-color: rgba(20, 30, 200, 0.2);
+        }
+        header{
+            text-align: center;
+        }
+        h2{
+            font-size: 40px;
+            color: navy;
+        }
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header><h2>Image Maps in HTML</h2></header>
+
+    <section>
+        <p><b>Click on the red area to know more about the devices.</b></p>
+
+        <img src="./media/desk.png" alt="Electronic Devices" usemap="#devices">
+        <map name="devices">
+            <area alt="diary" title="diary" href="./DeskItems/diary.html" coords="712,22,926,266" shape="rect" target="_blank">
+            <area alt="coffee" title="coffee" href="./DeskItems/coffee.html" coords="518,22,692,178" shape="rect" target="_blank">
+            <area alt="mouse" title="mouse" href="./DeskItems/mouse.html" coords="411,54,503,174" shape="rect" target="_blank">
+            <area alt="phone" title="phone" href="./DeskItems/phone.html" coords="272,55,356,207" shape="rect" target="_blank">
+            <area alt="spectacle" title="spectacle" href="./DeskItems/spectacle.html" coords="129,241,336,290" shape="rect" target="_blank">
+            <area alt="laptop-top" title="laptop-top" href="./DeskItems/laptop.html" coords="16,21 17,277 239,191 275,19 " shape="polygon" target="_blank">
+            <area alt="laptop-side" title="laptop-side" href="./DeskItems/laptop.html" coords="363,78 363,149 392,131 " shape="polygon" target="_blank">
+            <area alt="laptop-side-top" title="laptop-side-top" href="./DeskItems/laptop.html" coords="277,15 294,44 343,45 323,15 " shape="polygon" target="_blank">
+        </map>
+    </section>
+</body>
+</html>
