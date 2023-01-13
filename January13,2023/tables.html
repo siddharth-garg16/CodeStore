@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables in HTML</title>
+    <meta name="description" content="HTML tables are used to represent the data in tabular form.">
+    <style>
+        header{
+            text-align: center;
+        }
+        h2{
+            color: rgb(100, 100, 100);
+            font-size: 40px;
+        }
+        section{
+            display: flex;
+            gap: 100px;
+            justify-content: center;
+        }
+        table, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+        #table-info{
+            background-color: rgb(50, 50, 50);
+            color: rgb(240, 240, 240);
+        }
+        #total{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header><h2><u><strong>Tables in HTML</strong></u></h2></header>
+
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3" id="table-info">Listed price for the computer components</th>
+                </tr>
+                <tr>
+                    <th>Number</th>
+                    <th>Item</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Computer</td>
+                    <td>$1250</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Monitor</td>
+                    <td>$600</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Mouse</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Keyboard</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Headphones</td>
+                    <td>$400</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Speakers</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Camera</td>
+                    <td>$450</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>HDMI Cable</td>
+                    <td rowspan="2">$50</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Type C Cable</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Total</b></td>
+                    <td id="total"><b><u>$3550</u></b></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+                <tr>
+                    <th id="table-info" colspan="3">Installation items price list</th>
+                </tr>
+                <tr>
+                    <th>Number</th>
+                    <th>Item</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>IKEA Desk</td>
+                    <td>$650</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Wall Anchors</td>
+                    <td>$80</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Gaming Chair</td>
+                    <td>$699</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Total</b></td>
+                    <td id="total"><b><u>$1429</u></b></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
