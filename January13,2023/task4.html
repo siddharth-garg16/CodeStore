@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addressed Invoice - Task 4</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
+        header{
+            text-align: center;
+            font-size: 25px;
+        }
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-family: 'Mukta', sans-serif;
+            font-weight: 600;
+        }
+        th{
+            background-color: rgb(220, 220, 220);
+        }
+        th, td{
+            padding-left: 10px;
+            padding-right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header><h2>Create an HTML table same as the given image</h2></header>
+
+    <section>
+        <p><b><u>Given Image:</u></b></p>
+        <img src="./TaskImages/task4.png" alt="task-2-image" height="250px" width="600px">
+
+        <br>
+
+        <p><b><u>Created Table:</u></b></p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Invoice #123456789</th>
+                    <th>14 January 2025</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Pay to:
+                        <br>
+                        <address>
+                            Acme Billing Co. <br>
+                            123 Main St. <br>
+                            Cityville, NA 12345
+                        </address>
+                    </td>
+                    <td colspan="2">
+                        Customer:
+                        <br>
+                        <address>
+                            John Smith <br>
+                            321 Willow Way <br>
+                            Southeast Northwestershire, MA 54321
+                        </address>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Item/Desc.</th>
+                    <th>Qty.</th>
+                    <th>@</th>
+                    <th>Cost</th>
+                </tr>  
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Paperclips</td>
+                    <td>1000</td>
+                    <td>0.01</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td>Stables(Box)</td>
+                    <td>100</td>
+                    <td>1.0</td>
+                    <td>100.00</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Subtotal</th>
+                    <td>110.00</td>
+                </tr>
+                <tr>
+                    <th colspan="2">Tax</th>
+                    <td>8%</td>
+                    <td>8.80</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Grand Total</th>
+                    <td>$118.80</td>
+                </tr>
+            </tbody>
+        </table>
+    
+</body>
+</html>
