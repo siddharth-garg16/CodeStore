@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>Rock your Kicks - Task 4</title>
+</head>
+<body>
+    <header><h1><u>Filter your favourite pair of sneakers.</u></h1></header>
+    <hr><br>
+
+    <section>
+        <h2>Filter the available pairs on the basis of price.</h2>
+
+        <form action="">
+            <label>Price From (Min):</label>
+            <input type="range" id="fromPrice" value="50" min="2000" max="30000" oninput="document.getElementById('fPrice').innerHTML = this.value" />
+            <label id="fPrice"></label> <br><br>
+
+            <label>Price To (Max):</label>
+            <input type="range" id="toPrice" value="450" min="2000" max="30000" oninput="document.getElementById('tPrice').innerHTML = this.value" />
+            <label id="tPrice"></label> <br><br>
+
+            <button type="submit" onclick="filterItems(); return false;">Search</button> 
+        </form>   
+    </section>
+    <br><hr><br>
+
+    <section id="filtered-products-display"></section>
+</body>
+</html>
