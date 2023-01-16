@@ -10,22 +10,25 @@
 <body>
     <header><h1><u>HTML Forms</u></h1></header>
 
-    <section id="form-wrapper">
+    <section>
         <label for="form"><b><u>Data Form</u></b></label>
         <form action="GET">
             <br>
-            <p>Enter your first name:</p>
-            <input type="text" name="FirstName" placeholder="First Name" id="fname" required> <br><br>
-            <p>Enter your last name:</p>
-            <input type="text" name="LastName" placeholder="Last Name" id="lname" required> <br><br>
-            <p>Enter your age:</p>
-            <input type="number" name="Age" placeholder="Age" min="18" max="65" id="age" required> <br><br>
-            <p>Select your gender:</p>
-            <input type="radio" name="gender" value="Male" required> Male
-            <input type="radio" name="gender" value="Female"> Female
-            <input type="radio" name="gender" value="Other"> Other
-            <br><br>
-            <button type="submit" onclick="getAndShowValue(); return false;">Submit</button>
+            <fieldset>
+                <legend><b>Fill the given details</b></legend> <br>
+                <p>Enter your first name:</p>
+                <input type="text" name="FirstName" placeholder="First Name" id="fname" required> <br><br>
+                <p>Enter your last name:</p>
+                <input type="text" name="LastName" placeholder="Last Name" id="lname" required> <br><br>
+                <p>Enter your age:</p>
+                <input type="number" name="Age" placeholder="Age" min="18" max="65" id="age" required> <br><br>
+                <p>Select your gender:</p>
+                <input type="radio" name="gender" value="Male" required> Male
+                <input type="radio" name="gender" value="Female"> Female
+                <input type="radio" name="gender" value="Other"> Other
+                <br><br>
+                <button type="submit" onclick="getAndShowValue(); return false;">Submit</button>
+            </fieldset>
         </form>
     </section>
 
