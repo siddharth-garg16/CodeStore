@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>Student Registration Form - Task 3</title>
+</head>
+<body>
+    <header><h1>Student Registration Form</h1></header>
+
+    <section>
+        <form action="">
+            <fieldset>
+                <legend><b>Fill the below given details</b></legend>
+                <br>
+                <label for="fullName">Full Name:</label>
+                <input type="text" name="FullName" id="fullName" placeholder="Full Name" max="30" required> <br><br>
+
+                <label for="age">Age:</label>
+                <input type="number" name="Age" id="age" min="8" max="30" placeholder="Age" required> <br><br>
+
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="Male" required> Male
+                <input type="radio" name="gender" value="Female"> Female
+                <input type="radio" name="gender" value="Other"> Other
+                <br><br>
+
+                <label for="address">Address:</label>
+                <textarea name="Address" id="address" cols="100" rows="5" placeholder="Address" required></textarea> <br><br>
+
+                <label for="contact">Contact No.</label>
+                <input type="number" name="Contact" id="contact" required> <br><br>
+
+                <label for="subject">Subjects (Use <kbd>Ctrl</kbd> to make multiple selections)</label>
+                <select name="Subjects" id="subject" multiple required>
+                    <option value="DSA">DSA</option>
+                    <option value="OS">OS</option>
+                    <option value="CN">CN</option>
+                    <option value="DBMS">DBMS</option>
+                    <option value="Compilers">Compilers</option>
+                </select> <br><br>
+
+                <button type="submit" onclick="getAndShowData(); return false;">Submit</button>
+            </fieldset>
+        </form>
+    </section>
+    <br><br>
+
+    <section id="submitted-data-display"></section>
+</body>
+</html>
