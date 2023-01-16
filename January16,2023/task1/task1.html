@@ -12,21 +12,26 @@
 
     <section>
         <label for="form"><b><u>Data Form</u></b></label>
-        <form action="GET">
+        <form action="">
             <br>
             <fieldset>
                 <legend><b>Fill the given details</b></legend> <br>
-                <p>Enter your first name:</p>
+
+                <label for="fname">Enter your first name:</label>
                 <input type="text" name="FirstName" placeholder="First Name" id="fname" required> <br><br>
-                <p>Enter your last name:</p>
+
+                <label for="lname">Enter your last name:</label>
                 <input type="text" name="LastName" placeholder="Last Name" id="lname" required> <br><br>
-                <p>Enter your age:</p>
+
+                <label for="age">Enter your age:</label>
                 <input type="number" name="Age" placeholder="Age" min="18" max="65" id="age" required> <br><br>
-                <p>Select your gender:</p>
+
+                <label for="gender">Select your gender:</label>
                 <input type="radio" name="gender" value="Male" required> Male
                 <input type="radio" name="gender" value="Female"> Female
                 <input type="radio" name="gender" value="Other"> Other
                 <br><br>
+
                 <button type="submit" onclick="getAndShowValue(); return false;">Submit</button>
             </fieldset>
         </form>

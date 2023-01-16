@@ -8,5 +8,54 @@
 </head>
 <body>
     <header><h1>Label, Field set, Opt group & Legend in a HTML form</h1></header>
+
+    <section>
+        <form action="">
+            <fieldset>
+                <legend><b>Vehicle Registration Form</b></legend>
+                <br>
+                <label for="ownerFirstName">Owner's first name: </label>
+                <input type="text" name="OwnerFirstName" id="ownerFirstName" placeholder="First Name"> <br><br>
+
+                <label for="ownerFirstName">Owner's last name: </label>
+                <input type="text" name="OwnerLastName" id="ownerLastName" placeholder="Last Name"> <br><br>
+
+                <label for="manufacturerName">Manufacturer's Name: </label>
+                <input type="text" name="ManufacturerName" id="manufacturerName" placeholder="Manufacturer Name"> <br><br>
+
+                <label for="vehicleModel">Vehicle Model: </label>
+                <input type="text" name="VehicleModel" id="vehicleModel" placeholder="Vehicle Model"> <br><br>
+                
+                <label for="stateOfPurchase">State of purchase: </label>
+                <select name="StateOfPurchase" id="stateOfPurchase">
+                    <option value="none" selected disabled hidden>Select a state</option>
+                    <optgroup label="North">
+                        <option value="Punjab">Punjab</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    </optgroup>
+                    <optgroup label="West">
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Gujarat">Gujarat</option>
+                    </optgroup>
+                    <optgroup label="East">
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </optgroup>
+                    <optgroup label="South">
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                    </optgroup>
+                </select>
+                <br><br>
+
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </section>
 </body>
 </html>
