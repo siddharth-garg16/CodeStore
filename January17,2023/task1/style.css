@@ -1,0 +1,45 @@
+/* global selector*/
+*{
+    margin: 0;
+}
+
+/* element selectors */
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(229, 228, 220, 0.2);
+}
+header{
+    height: 100px;
+    background-color: rgba(229, 228, 240, 0.5);
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-family: 'Pacifico', cursive;
+    color: rgb(170, 51, 106);
+}
+h2{
+    color: cadetblue;
+    font-size: 32px;
+}
+p{
+    color: rgb(50, 50, 50);
+    font-size: 20px;
+}
+
+/* id selector */
+#article-wrapper{
+    padding: 20px;
+    text-align: center;
+}
+
+/* class selector */
+.article-content{
+    font-family: 'Quicksand', sans-serif;
+}
+
+
