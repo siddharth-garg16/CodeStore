@@ -1,0 +1,59 @@
+
+body{
+    margin: 0;
+}
+header{
+    text-align: center;
+    background-color: rgba(50, 90, 230, 0.15);
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 50px;
+    color: navy;
+}
+h2{
+    font-family: 'Catamaran', sans-serif;
+}
+p{
+    font-family: 'Catamaran', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+#content-wrapper, footer{
+    padding: 20px;
+}
+table, th, td {
+    font-family: 'Catamaran', sans-serif;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    font-size: 25px;
+}
+table{
+    margin: 50px auto; 
+    width: 700px;
+}
+th{
+    font-weight: bolder;
+    background-color: rgba(200, 200, 200, 0.25);
+}
+td{
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 25px;
+}
+a:hover{
+    color: crimson;
+}
+a:visited{
+    color: green;
+}
+
+  
