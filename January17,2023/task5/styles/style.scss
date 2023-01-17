@@ -1,0 +1,20 @@
+$textColor : rgb(100, 100, 190);
+$headingColor : rgb(159, 43, 104);
+$backgroundColor : rgb(240, 240, 240); 
+body{
+    background-color: $backgroundColor;
+}
+header{
+    text-align: center;
+    h1{
+        color: $headingColor;
+        font-size: 50px;
+    }
+}
+section{
+    padding: 20px;
+    p{
+        color: $textColor;
+        font-size: 30px;;
+    }
+}

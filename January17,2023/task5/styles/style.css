@@ -1,0 +1,19 @@
+body {
+  background-color: rgb(240, 240, 240);
+}
+
+header {
+  text-align: center;
+}
+header h1 {
+  color: rgb(159, 43, 104);
+  font-size: 50px;
+}
+
+section {
+  padding: 20px;
+}
+section p {
+  color: rgb(100, 100, 190);
+  font-size: 30px;
+}/*# sourceMappingURL=style.css.map */
