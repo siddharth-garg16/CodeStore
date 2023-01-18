@@ -1,0 +1,55 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-color: rgb(136, 8, 8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 20px 20px 0px;
+}
+header h1{
+    font-family: 'Rowdies', cursive;
+    color: whitesmoke;
+    font-size: 5vw;
+}
+nav{
+    margin: 0;
+    background-color: rgb(136, 8, 8);
+    display: flex;
+}
+ul{
+    list-style-type: none;
+}
+ul li{
+    display: inline;
+    padding: 5px 30px 5px 10px;
+    font-family: 'Teko', sans-serif;
+}
+button{
+    border: none;
+    color: whitesmoke;
+    background-color: rgb(136, 8, 8);
+    font-size: 150%;
+    font-weight: 400;
+}
+button:hover{
+    text-decoration: underline;
+}
+#home-btn{
+    font-size: 300%;
+    font-weight: 700;
+}
+#page-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 100px 50px 100px;
+}
+#page-body p{
+    font-size: 30px;
+    font-weight: 700;
+}
+
