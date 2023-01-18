@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: rgba(100, 149, 237, 0.5);
 }
 header{
     text-align: center;
@@ -20,13 +21,14 @@ header h1{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: 70px;
     gap: 30px;
 }
 .team-card{
-    border: 3px solid rgb(200, 200, 200);
-    /* border-radius: 20px; */
-    padding: 30px 50px 30px 50px;
+    border: 3px solid rgb(150, 150, 150);
+    padding: 30px 10px 20px 100px;
+    width: 15vw;
+    background-color: white;
 }
 .team-card:hover{
     background-color: rgb(192,192,192);
