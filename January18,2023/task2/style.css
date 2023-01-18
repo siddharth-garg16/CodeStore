@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    text-align: center;
+    height: 150px;
+    background-color:rgb(20,20,20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    color: azure;
+}
+#main-content-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 30px;
+}
+.team-card{
+    border: 3px solid rgb(200, 200, 200);
+    /* border-radius: 20px; */
+    padding: 30px 50px 30px 50px;
+}
+.team-card:hover{
+    background-color: rgb(192,192,192);
+    border-radius: 30px;
+}
+.team-card h2, p{
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+}
+.team-card h2{
+    font-size: 30px;
+}
+.team-card p{
+    font-size: 30px;
+    font-weight: 500;
+}
