@@ -12,6 +12,17 @@ header{
 header h1{
     color: rgb(255, 255, 255);
 }
+article, footer{
+    padding: 20px;
+}
+article p{
+    font-size: 20px;
+    color: #181928;
+}
+article p::first-letter{
+    font-size: 30px;
+    font-weight: bold;
+}
 #content-wrapper{
     display: flex;
     align-items: center;
@@ -55,25 +66,14 @@ button:hover{
     font-size: 22px;
     font-weight: 500;
 }
-article, footer{
-    padding: 20px;
-}
-article p{
-    font-size: 20px;
-    color: #181928;
-}
-article p::first-letter{
-    font-size: 30px;
-    font-weight: bold;
-}
 footer h2{
-    color: #181928;
-}
-::marker{
     color: #181928;
 }
 ul{
     font-size: 20px;
+}
+::marker{
+    color: #181928;
 }
 a{
     text-decoration: none;
