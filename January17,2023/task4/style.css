@@ -49,11 +49,14 @@ a{
     font-family: 'Catamaran', sans-serif;
     font-size: 25px;
 }
-a:hover{
-    color: crimson;
+a:link{
+    color: darkblue;
 }
 a:visited{
     color: green;
+}
+a:hover{
+    color: crimson;
 }
 
   
