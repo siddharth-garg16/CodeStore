@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    text-align: center;
+    background-color: #181928;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header h1{
+    color: rgb(255, 255, 255);
+}
+#content-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 100vw;
+}
+#form-wrapper{
+    text-align: center;
+    height: 300px;
+    width: 500px;
+    background: rgba(20, 40, 100, 0.1);
+    border: 2px solid #181928;
+    border-radius: 20px;
+    padding: 20px;
+}
+#form-wrapper h2{
+    font-size: 30px;
+    color: #181928;
+}
+input{
+    height: 30px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    padding: 5px 5px 5px 15px;
+    font-size: 15px;
+    font-weight: 500;
+}
+input:focus{
+    background-color: rgb(255, 255, 240);
+}
+button{
+    background-color: gold;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 15px;
+}
+button:hover{
+    background-color: rgb(255, 170, 51);
+    font-size: 22px;
+    font-weight: 500;
+}
+article, footer{
+    padding: 20px;
+}
+article p{
+    font-size: 20px;
+    color: #181928;
+}
+article p::first-letter{
+    font-size: 30px;
+    font-weight: bold;
+}
+footer h2{
+    color: #181928;
+}
+::marker{
+    color: #181928;
+}
+ul{
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+}
+footer li::first-letter{
+    font-size: 25px;
+    font-weight: 500;
+}
+a:link{
+    color: #181928;
+}
+a:visited{
+    color: darkred;
+}
+a:hover{
+    color: gold;
+}
