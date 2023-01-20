@@ -6,6 +6,19 @@ $bodyColor : rgb(230,230,230);
 
 $cardColor: rgb(48, 25, 52);
 
+@keyframes card{
+    from{
+        background-color: $cardColor;
+        color: white;
+        border-radius: 0;
+    }
+    to{
+        background-color: rgb(2530, 230, 230);
+        color: black;
+        border-radius: 20px;
+    }
+}
+
 *{
     margin: 0;
 }
@@ -43,16 +56,18 @@ section{
 
     .game-card{
         background-color: $cardColor;
+        color: white;
         margin: 1em 3em 1em 3em;
         padding: 2em;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         border-radius: 20px;
+        animation-name: card;
+        animation-duration: 3s;
 
         p{
             font-family: $contentFont;
-            color: white;
             font-size: 2em;
         }
         img{

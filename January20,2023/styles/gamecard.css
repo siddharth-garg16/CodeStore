@@ -1,3 +1,27 @@
+@-webkit-keyframes card {
+  from {
+    background-color: rgb(48, 25, 52);
+    color: white;
+    border-radius: 0;
+  }
+  to {
+    background-color: rgb(255, 230, 230);
+    color: black;
+    border-radius: 20px;
+  }
+}
+@keyframes card {
+  from {
+    background-color: rgb(48, 25, 52);
+    color: white;
+    border-radius: 0;
+  }
+  to {
+    background-color: rgb(255, 230, 230);
+    color: black;
+    border-radius: 20px;
+  }
+}
 * {
   margin: 0;
 }
@@ -34,16 +58,20 @@ section {
 }
 section .game-card {
   background-color: rgb(48, 25, 52);
+  color: white;
   margin: 1em 3em 1em 3em;
   padding: 2em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   border-radius: 20px;
+  -webkit-animation-name: card;
+          animation-name: card;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 section .game-card p {
   font-family: "Sofia Sans Extra Condensed", sans-serif;
-  color: white;
   font-size: 2em;
 }
 section .game-card img {

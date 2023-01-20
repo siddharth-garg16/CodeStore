@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(230, 230, 230);
+}
+
+header {
+  background-color: rgb(40, 40, 40);
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+  height: 7vh;
+  width: 100vw;
+}
+header h1 {
+  font-family: "Unbounded", cursive;
+  font-size: 3em;
+  color: rgb(250, 250, 250);
+}
+header img {
+  height: 3em;
+}
+header #img-div {
+  display: inline-block;
+  position: absolute;
+  left: 5em;
+  top: auto;
+}
+
+footer {
+  background-color: #002244;
+  color: rgb(250, 250, 250);
+  text-align: center;
+}
+footer p {
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  font-size: 1.5em;
+}
+footer hr {
+  width: 90%;
+  margin: auto;
+}
+footer #copyright {
+  font-weight: bold;
+}
+footer .social-logos {
+  padding: 1em 1em 1em 1em;
+  height: 3em;
+  width: 3em;
+}
+
+@media screen and (max-width: 1250px) {
+  header #img-div {
+    display: none;
+  }
+}
+@media screen and (max-width: 1050px) {
+  header h1 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 700px) {
+  header {
+    height: 5vh;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 550px) {
+  header {
+    height: 4vh;
+  }
+  header h1 {
+    font-size: 1em;
+  }
+  footer #socials .social-logos {
+    height: 2em;
+    width: 2em;
+  }
+}
+@media screen and (max-width: 350px) {
+  header {
+    height: 4vh;
+  }
+  header h1 {
+    font-size: 0.75em;
+  }
+  footer #socials .social-logos {
+    height: 1em;
+    width: 1em;
+  }
+}/*# sourceMappingURL=game.css.map */

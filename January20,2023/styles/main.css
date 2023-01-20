@@ -1,3 +1,25 @@
+@-webkit-keyframes border {
+  from {
+    border-radius: 0;
+    background: rgb(40, 40, 40);
+  }
+  to {
+    border-radius: 50px;
+    background: rgb(0, 26, 117);
+    background: linear-gradient(90deg, rgb(0, 26, 117) 25%, rgb(33, 147, 35) 100%, rgb(14, 121, 9) 100%);
+  }
+}
+@keyframes border {
+  from {
+    border-radius: 0;
+    background: rgb(40, 40, 40);
+  }
+  to {
+    border-radius: 50px;
+    background: rgb(0, 26, 117);
+    background: linear-gradient(90deg, rgb(0, 26, 117) 25%, rgb(33, 147, 35) 100%, rgb(14, 121, 9) 100%);
+  }
+}
 * {
   margin: 0;
 }
@@ -43,6 +65,10 @@ section #heading-content {
   margin: 1em 3em 1em 3em;
   background: rgb(0, 26, 117);
   background: linear-gradient(90deg, rgb(0, 26, 117) 25%, rgb(33, 147, 35) 100%, rgb(14, 121, 9) 100%);
+  -webkit-animation-name: border;
+          animation-name: border;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
 }
 section #heading-content #result-description {
   padding-top: 1em;
@@ -210,6 +236,10 @@ footer .social-logos {
   section #player-stats .player-card h2, section #player-stats .player-card h3 {
     color: white;
   }
+  footer #socials .social-logos {
+    height: 2em;
+    width: 2em;
+  }
 }
 @media screen and (max-width: 350px) {
   header {
@@ -217,6 +247,10 @@ footer .social-logos {
   }
   header h1 {
     font-size: 0.75em;
+  }
+  footer #socials .social-logos {
+    height: 1em;
+    width: 1em;
   }
 }
 @media screen and (min-width: 875px) and (max-width: 1125px) {

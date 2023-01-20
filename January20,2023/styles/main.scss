@@ -4,6 +4,18 @@ $contentFont : 'Sofia Sans Extra Condensed', sans-serif;
 
 $bodyColor : rgb(230,230,230);
 
+@keyframes border{
+    from{
+        border-radius: 0;
+        background: rgb(40, 40, 40);
+    }
+    to{
+        border-radius: 50px;
+        background: rgb(0,26,117);
+        background: linear-gradient(90deg, rgba(0,26,117,1) 25%, rgba(33,147,35,1) 100%, rgba(14,121,9,1) 100%);
+    }
+}
+
 *{
     margin: 0;
 }
@@ -50,7 +62,9 @@ section{
         margin: 1em 3em 1em 3em;
         background: rgb(0,26,117);
         background: linear-gradient(90deg, rgba(0,26,117,1) 25%, rgba(33,147,35,1) 100%, rgba(14,121,9,1) 100%);
-    
+        animation-name: border;
+        animation-duration: 5s;
+
         #result-description{
             padding-top: 1em;
             text-align: center;
