@@ -26,7 +26,7 @@ header{
         color: rgb(250, 250, 250);
     }
     img{
-        height: 4em;
+        height: 3em;
     }
     #img-div{
         display: inline-block;
@@ -239,12 +239,28 @@ footer{
             }
         }
     }
+    footer{
+        #socials{
+            .social-logos{
+                height: 2em;
+                width: 2em;
+            }
+        }
+    }
 }
 @media screen and (max-width: 350px) {
     header{
         height: 4vh;
         h1{
             font-size: 0.75em;
+        }
+    }
+    footer{
+        #socials{
+            .social-logos{
+                height: 1em;
+                width: 1em;
+            }
         }
     }
 }

@@ -28,7 +28,7 @@ header{
         color: rgb(250, 250, 250);
     }
     img{
-        height: 4em;
+        height: 3em;
     }
     #img-div{
         display: inline-block;
@@ -46,6 +46,7 @@ section{
         margin: 1em 3em 1em 3em;
         padding: 2em;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
         border-radius: 20px;
 
@@ -107,6 +108,22 @@ footer{
             font-size: 2em;
         }
     }
+    section{
+        .game-card{
+            padding: 1.5em;
+
+            p{
+                font-size: 1.5em;
+            }
+            img{
+                height: 2.5em;
+                width: 2.5em;
+            }
+            .card-content-wrapper{
+                display: flex;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -114,6 +131,12 @@ footer{
         height: 5vh;
         h1{
             font-size: 1.5em;
+        }
+    }
+    footer{
+        .social-logos{
+            height: 2em;
+            width: 2em;
         }
     }
 }
@@ -130,6 +153,84 @@ footer{
         height: 4vh;
         h1{
             font-size: 0.75em;
+        }
+    }
+}
+@media screen and (max-width: 750px) {
+    section{
+        .game-card{
+            padding: 1.2em;
+            
+            p{
+                font-size: 1.2em;
+            }
+            img{
+                height: 2em;
+                width: 2em;
+            }
+            .card-content-wrapper{
+                display: flex;
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    section{
+        .game-card{
+            padding: 1em;
+            
+            p{
+                font-size: 1em;
+            }
+            img{
+                height: 1.5em;
+                width: 1.5em;
+            }
+            .card-content-wrapper{
+                display: flex;
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    section{
+        .game-card{
+            padding: 1em;
+            
+            p{
+                font-size: 0.8em;
+            }
+            img{
+                height: 1.2em;
+                width: 1.2em;
+            }
+            .card-content-wrapper{
+                display: flex;
+            }
+        }
+    }
+    footer{
+        .social-logos{
+            height: 1.5em;
+            width: 1.5em;
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+    section{
+        .game-card{
+            padding: 0.8em;
+            
+            p{
+                font-size: 0.6em;
+            }
+            img{
+                height: 1em;
+                width: 1em;
+            }
+            .card-content-wrapper{
+                display: flex;
+            }
         }
     }
 }
