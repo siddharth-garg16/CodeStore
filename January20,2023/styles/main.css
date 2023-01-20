@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(230, 230, 230);
+}
+
+header {
+  background-color: rgb(40, 40, 40);
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+  height: 7vh;
+  width: 100vw;
+}
+header h1 {
+  font-family: "Unbounded", cursive;
+  font-size: 3em;
+  color: rgb(250, 250, 250);
+}
+header img {
+  height: 4em;
+}
+header #img-div {
+  display: inline-block;
+  position: absolute;
+  left: 5em;
+  top: auto;
+}
+
+section {
+  background-color: rgb(230, 230, 230);
+}
+section #heading-content {
+  padding: 1em 0.2em 1em 0.2em;
+  border: 5px solid gray;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1em 3em 1em 3em;
+  background: rgb(0, 26, 117);
+  background: linear-gradient(90deg, rgb(0, 26, 117) 25%, rgb(33, 147, 35) 100%, rgb(14, 121, 9) 100%);
+}
+section #heading-content #result-description {
+  padding-top: 1em;
+  text-align: center;
+}
+section #heading-content #result-description h2 {
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  color: whitesmoke;
+  font-size: 3em;
+}
+section #heading-content #result-description #game-card-btn {
+  padding: 1em;
+  border: 2px solid white;
+  border-radius: 15px;
+  background-color: transparent;
+}
+section #heading-content #result-description #game-card-btn p {
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  color: white;
+  font-size: 1.5em;
+}
+section #heading-content #result-description #game-card-btn:hover {
+  opacity: 0.5;
+  border: 4px solid white;
+}
+section #heading-content .team-info {
+  padding: 2em;
+  text-align: center;
+}
+section #heading-content .team-info img {
+  height: 10em;
+  width: 10em;
+}
+section #heading-content .team-info h3 {
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  color: whitesmoke;
+  font-size: 1.5em;
+}
+section #series-stats-heading {
+  background-color: rgb(230, 230, 230);
+  text-align: center;
+}
+section #series-stats-heading h1 {
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  font-size: 2.5em;
+}
+section #player-stats {
+  background-color: rgb(230, 230, 230);
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  padding: 1em 0.2em 1em 0.2em;
+  margin: 1em 3em 1em 3em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+section #player-stats .player-card {
+  background-color: rgb(40, 40, 40);
+  text-align: center;
+  border-radius: 30px;
+  overflow: hidden;
+}
+section #player-stats .player-card table, section #player-stats .player-card td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  padding: 1.5em;
+}
+section #player-stats .player-card td {
+  font-size: 1.5em;
+  color: white;
+}
+section #player-stats .player-card h2 {
+  font-size: 3em;
+}
+section #player-stats .player-card h2, section #player-stats .player-card h3 {
+  color: white;
+}
+section #player-stats .player-card:hover {
+  opacity: 0.8;
+}
+section #team-stats {
+  padding: 1em 0.2em 1em 0.2em;
+  margin: 1em 3em 1em 3em;
+  background-color: rgb(230, 230, 230);
+  text-align: center;
+}
+section #team-stats h2 {
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  font-size: 2em;
+}
+section #team-stats progress::-webkit-progress-value {
+  background: darkblue;
+}
+section #team-stats progress::-webkit-progress-bar {
+  background: green;
+}
+section #team-stats progress {
+  width: 100%;
+  height: 2em;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #002244;
+  color: rgb(250, 250, 250);
+  text-align: center;
+}
+footer p {
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  font-size: 1.5em;
+}
+footer hr {
+  width: 90%;
+  margin: auto;
+}
+footer #copyright {
+  font-weight: bold;
+}
+footer .social-logos {
+  padding: 1em 1em 1em 1em;
+  height: 3em;
+  width: 3em;
+}
+
+@media screen and (max-width: 1250px) {
+  header #img-div {
+    display: none;
+  }
+}
+@media screen and (max-width: 1050px) {
+  header h1 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 700px) {
+  header {
+    height: 5vh;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 550px) {
+  header {
+    height: 4vh;
+  }
+  header h1 {
+    font-size: 1em;
+  }
+  section #player-stats .player-card {
+    border-radius: 10px;
+  }
+  section #player-stats .player-card table, section #player-stats .player-card td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 1em;
+  }
+  section #player-stats .player-card td {
+    font-size: 1em;
+    color: white;
+  }
+  section #player-stats .player-card h2 {
+    font-size: 2em;
+  }
+  section #player-stats .player-card h2, section #player-stats .player-card h3 {
+    color: white;
+  }
+}
+@media screen and (max-width: 350px) {
+  header {
+    height: 4vh;
+  }
+  header h1 {
+    font-size: 0.75em;
+  }
+}
+@media screen and (min-width: 875px) and (max-width: 1125px) {
+  section #heading-content #result-description h2 {
+    font-size: 1.5em;
+  }
+  section #heading-content .team-info img {
+    height: 8em;
+    width: 8em;
+  }
+  section #heading-content .team-info h3 {
+    font-size: 1.5em;
+  }
+}/*# sourceMappingURL=main.css.map */

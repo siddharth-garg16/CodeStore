@@ -1,0 +1,271 @@
+$headingFont : 'Unbounded', cursive;
+
+$contentFont : 'Sofia Sans Extra Condensed', sans-serif;
+
+$bodyColor : rgb(230,230,230);
+
+*{
+    margin: 0;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: $bodyColor;
+}
+
+header{
+    background-color: rgb(40, 40, 40);
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    height: 7vh;
+    width: 100vw;
+
+    h1{
+        font-family: $headingFont;
+        font-size: 3em;
+        color: rgb(250, 250, 250);
+    }
+    img{
+        height: 4em;
+    }
+    #img-div{
+        display: inline-block;
+        position: absolute;
+        left: 5em;
+        top: auto;
+    }
+}
+
+section{
+    background-color: $bodyColor;
+
+    #heading-content{
+        padding: 1em 0.2em 1em 0.2em;
+        border: 5px solid gray;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 1em 3em 1em 3em;
+        background: rgb(0,26,117);
+        background: linear-gradient(90deg, rgba(0,26,117,1) 25%, rgba(33,147,35,1) 100%, rgba(14,121,9,1) 100%);
+    
+        #result-description{
+            padding-top: 1em;
+            text-align: center;
+
+            h2{
+                font-family: $contentFont;
+                color: whitesmoke;
+                font-size: 3em;
+            }
+            #game-card-btn{
+                padding: 1em;
+                border: 2px solid white;
+                border-radius: 15px;
+                background-color: transparent;
+                p{
+                    font-family: $contentFont;
+                    color: white;
+                    font-size: 1.5em;
+                }
+            }
+            #game-card-btn:hover{
+                opacity: 0.5;
+                border: 4px solid white;
+            }
+        }
+
+        .team-info{
+            padding: 2em;
+            text-align: center;
+
+            img{
+                height: 10em;
+                width: 10em;
+            }
+            h3{
+                font-family: $contentFont;
+                color: whitesmoke;
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    #series-stats-heading{
+        background-color: $bodyColor;
+        text-align: center;
+
+        h1{
+            font-family: $contentFont;
+            font-size: 2.5em;
+        }
+    }
+
+    #player-stats{
+        background-color: $bodyColor;
+        font-family: $contentFont;
+        padding: 1em 0.2em 1em 0.2em;
+        margin: 1em 3em 1em 3em;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+        .player-card{
+            background-color: rgb(40,40,40);
+            text-align: center;
+            border-radius: 30px;
+            overflow: hidden;
+
+            table, td{
+                border: 1px solid white;
+                border-collapse: collapse;
+                padding: 1.5em;
+            }
+            td{
+                font-size: 1.5em;
+                color: white;
+            }
+            h2{
+                font-size: 3em;
+            }
+            h2, h3{
+            color: white;
+            }
+        }
+        .player-card:hover{
+            opacity: 0.8;
+        }
+    }
+
+    #team-stats{
+        padding: 1em 0.2em 1em 0.2em;
+        margin: 1em 3em 1em 3em;
+        background-color: $bodyColor;
+        text-align: center;
+
+        h2{
+            font-family: $contentFont;
+            font-size: 2em;
+        }
+        progress::-webkit-progress-value{          
+            background: darkblue;
+        }
+        progress::-webkit-progress-bar {
+            background: green;
+          }
+        progress {
+            width: 100%;
+            height: 2em;
+            border-radius: 10px;
+        }
+    }
+}
+
+footer{
+    background-color: #002244;
+    color: rgb(250, 250, 250);
+    text-align: center;
+
+    p{
+        font-family: $contentFont;
+        font-size: 1.5em;
+    }
+    hr{
+        width: 90%;
+        margin: auto;
+    }
+    #copyright{
+        font-weight: bold;
+    }
+    .social-logos{
+        padding: 1em 1em 1em 1em;
+        height: 3em;
+        width: 3em;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    header{
+        #img-div{
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 1050px) {
+    header{
+        h1{
+            font-size: 2em;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header{
+        height: 5vh;
+        h1{
+            font-size: 1.5em;
+        }
+    }
+}
+@media screen and (max-width: 550px) {
+    header{
+        height: 4vh;
+        h1{
+            font-size: 1em;
+        }
+    }
+    section{
+        #player-stats{
+            .player-card{
+                border-radius: 10px;   
+                table, td{
+                    border: 1px solid white;
+                    border-collapse: collapse;
+                    padding: 1em;
+                }
+                td{
+                    font-size: 1em;
+                    color: white;
+                }
+                h2{
+                    font-size: 2em;
+                }
+                h2, h3{
+                color: white;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 350px) {
+    header{
+        height: 4vh;
+        h1{
+            font-size: 0.75em;
+        }
+    }
+}
+@media screen and (min-width: 875px) and (max-width:1125px) {
+    section{
+        #heading-content{
+            #result-description{
+                h2{
+                    font-size: 1.5em;
+                }
+            }
+            .team-info{
+                img{
+                    height: 8em;
+                    width: 8em;
+                }
+                h3{
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+}
+
