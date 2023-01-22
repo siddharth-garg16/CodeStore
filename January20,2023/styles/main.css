@@ -1,23 +1,17 @@
 @-webkit-keyframes border {
   from {
     border-radius: 0;
-    background: rgb(40, 40, 40);
   }
   to {
     border-radius: 50px;
-    background: rgb(0, 26, 117);
-    background: linear-gradient(90deg, rgb(0, 26, 117) 25%, rgb(33, 147, 35) 100%, rgb(14, 121, 9) 100%);
   }
 }
 @keyframes border {
   from {
     border-radius: 0;
-    background: rgb(40, 40, 40);
   }
   to {
     border-radius: 50px;
-    background: rgb(0, 26, 117);
-    background: linear-gradient(90deg, rgb(0, 26, 117) 25%, rgb(33, 147, 35) 100%, rgb(14, 121, 9) 100%);
   }
 }
 * {
@@ -106,6 +100,10 @@ section #heading-content .team-info h3 {
   font-family: "Sofia Sans Extra Condensed", sans-serif;
   color: whitesmoke;
   font-size: 1.5em;
+}
+section #heading-content:hover {
+  background-image: url("../media/bg.jpg");
+  opacity: 0.75;
 }
 section #series-stats-heading {
   background-color: rgb(230, 230, 230);

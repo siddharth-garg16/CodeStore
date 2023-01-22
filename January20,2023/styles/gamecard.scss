@@ -8,13 +8,9 @@ $cardColor: rgb(48, 25, 52);
 
 @keyframes card{
     from{
-        background-color: $cardColor;
-        color: white;
         border-radius: 0;
     }
     to{
-        background-color: rgb(2530, 230, 230);
-        color: black;
         border-radius: 20px;
     }
 }
@@ -84,6 +80,11 @@ section{
         .card-content-wrapper{
             display: flex;
         }
+    }
+    .game-card:hover{
+        // background-color: #002244;
+        background-color: bisque;
+        color: black;
     }
 }
 

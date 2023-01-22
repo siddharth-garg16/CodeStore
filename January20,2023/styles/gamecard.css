@@ -1,24 +1,16 @@
 @-webkit-keyframes card {
   from {
-    background-color: rgb(48, 25, 52);
-    color: white;
     border-radius: 0;
   }
   to {
-    background-color: rgb(255, 230, 230);
-    color: black;
     border-radius: 20px;
   }
 }
 @keyframes card {
   from {
-    background-color: rgb(48, 25, 52);
-    color: white;
     border-radius: 0;
   }
   to {
-    background-color: rgb(255, 230, 230);
-    color: black;
     border-radius: 20px;
   }
 }
@@ -86,6 +78,10 @@ section .game-card a p:hover {
 }
 section .game-card .card-content-wrapper {
   display: flex;
+}
+section .game-card:hover {
+  background-color: bisque;
+  color: black;
 }
 
 footer {

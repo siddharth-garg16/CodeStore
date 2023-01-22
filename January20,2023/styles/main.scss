@@ -7,12 +7,9 @@ $bodyColor : rgb(230,230,230);
 @keyframes border{
     from{
         border-radius: 0;
-        background: rgb(40, 40, 40);
     }
     to{
         border-radius: 50px;
-        background: rgb(0,26,117);
-        background: linear-gradient(90deg, rgba(0,26,117,1) 25%, rgba(33,147,35,1) 100%, rgba(14,121,9,1) 100%);
     }
 }
 
@@ -105,6 +102,10 @@ section{
                 font-size: 1.5em;
             }
         }
+    }
+    #heading-content:hover{
+        background-image: url("../media/bg.jpg");
+        opacity: 0.75;
     }
 
     #series-stats-heading{
