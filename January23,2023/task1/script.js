@@ -1,0 +1,1 @@
+document.body.innerHTML += `<h2>This heading was added by the <u>external script file</u>.</h2>`
