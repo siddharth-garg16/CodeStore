@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(230, 230, 230);
+}
+
+header {
+  background-color: rgb(40, 40, 40);
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+  height: 7vh;
+  width: 100vw;
+}
+header h1 {
+  font-family: "Unbounded", cursive;
+  font-size: 3em;
+  color: rgb(250, 250, 250);
+}
+header img {
+  height: 3em;
+}
+header #img-div {
+  display: inline-block;
+  position: absolute;
+  left: 5em;
+  top: auto;
+}
+
+section {
+  padding: 1em;
+}
+section hr {
+  width: 98%;
+  margin: auto;
+  height: 0.1em;
+  background-color: rgb(70, 70, 70);
+}
+section #content-desc {
+  text-align: center;
+}
+section #content-desc h1 {
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  font-size: 3em;
+}
+section .team-name {
+  padding: 1em 0em 0em 1em;
+}
+section .team-name h2 {
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  font-size: 2.5em;
+}
+section .team-score-wrapper {
+  margin: 1em;
+}
+section .team-score-wrapper table, section .team-score-wrapper th, section .team-score-wrapper td {
+  border: 2px solid rgb(200, 200, 200);
+  border-collapse: collapse;
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+}
+section .team-score-wrapper table thead th, section .team-score-wrapper th thead th, section .team-score-wrapper td thead th {
+  background-color: #002244;
+  color: white;
+  font-size: 1.5em;
+  padding: 0.5em 1em 0.5em 1em;
+}
+section .team-score-wrapper table tbody th, section .team-score-wrapper th tbody th, section .team-score-wrapper td tbody th {
+  background-color: rgb(170, 170, 170);
+  color: black;
+  font-size: 1.5em;
+  padding: 0.5em 1em 0.5em 1em;
+}
+section .team-score-wrapper table tbody td, section .team-score-wrapper th tbody td, section .team-score-wrapper td tbody td {
+  color: rgb(90, 90, 90);
+  font-size: 1.5em;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+footer {
+  background-color: #002244;
+  color: rgb(250, 250, 250);
+  text-align: center;
+}
+footer p {
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  font-size: 1.5em;
+}
+footer hr {
+  width: 90%;
+  margin: auto;
+}
+footer #copyright {
+  font-weight: bold;
+}
+footer .social-logos {
+  padding: 1em 1em 1em 1em;
+  height: 3em;
+  width: 3em;
+}
+
+@media screen and (max-width: 1250px) {
+  header #img-div {
+    display: none;
+  }
+}
+@media screen and (max-width: 1050px) {
+  header h1 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 700px) {
+  header {
+    height: 5vh;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 550px) {
+  header {
+    height: 4vh;
+  }
+  header h1 {
+    font-size: 1em;
+  }
+  footer #socials .social-logos {
+    height: 2em;
+    width: 2em;
+  }
+}
+@media screen and (max-width: 350px) {
+  header {
+    height: 4vh;
+  }
+  header h1 {
+    font-size: 0.75em;
+  }
+  footer #socials .social-logos {
+    height: 1em;
+    width: 1em;
+  }
+}
+@media screen and (max-width: 1500px) {
+  section .team-score-wrapper {
+    overflow-x: auto;
+  }
+}/*# sourceMappingURL=game.css.map */

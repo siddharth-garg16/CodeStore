@@ -4,6 +4,15 @@ $contentFont : 'Sofia Sans Extra Condensed', sans-serif;
 
 $bodyColor : rgb(230,230,230);
 
+@keyframes border{
+    from{
+        border-radius: 0;
+    }
+    to{
+        border-radius: 50px;
+    }
+}
+
 *{
     margin: 0;
 }
@@ -26,7 +35,7 @@ header{
         color: rgb(250, 250, 250);
     }
     img{
-        height: 4em;
+        height: 3em;
     }
     #img-div{
         display: inline-block;
@@ -50,7 +59,9 @@ section{
         margin: 1em 3em 1em 3em;
         background: rgb(0,26,117);
         background: linear-gradient(90deg, rgba(0,26,117,1) 25%, rgba(33,147,35,1) 100%, rgba(14,121,9,1) 100%);
-    
+        animation-name: border;
+        animation-duration: 5s;
+
         #result-description{
             padding-top: 1em;
             text-align: center;
@@ -91,6 +102,10 @@ section{
                 font-size: 1.5em;
             }
         }
+    }
+    #heading-content:hover{
+        background-image: url("../media/bg.jpg");
+        opacity: 0.75;
     }
 
     #series-stats-heading{
@@ -239,12 +254,28 @@ footer{
             }
         }
     }
+    footer{
+        #socials{
+            .social-logos{
+                height: 2em;
+                width: 2em;
+            }
+        }
+    }
 }
 @media screen and (max-width: 350px) {
     header{
         height: 4vh;
         h1{
             font-size: 0.75em;
+        }
+    }
+    footer{
+        #socials{
+            .social-logos{
+                height: 1em;
+                width: 1em;
+            }
         }
     }
 }

@@ -1,3 +1,19 @@
+@-webkit-keyframes border {
+  from {
+    border-radius: 0;
+  }
+  to {
+    border-radius: 50px;
+  }
+}
+@keyframes border {
+  from {
+    border-radius: 0;
+  }
+  to {
+    border-radius: 50px;
+  }
+}
 * {
   margin: 0;
 }
@@ -20,7 +36,7 @@ header h1 {
   color: rgb(250, 250, 250);
 }
 header img {
-  height: 4em;
+  height: 3em;
 }
 header #img-div {
   display: inline-block;
@@ -43,6 +59,10 @@ section #heading-content {
   margin: 1em 3em 1em 3em;
   background: rgb(0, 26, 117);
   background: linear-gradient(90deg, rgb(0, 26, 117) 25%, rgb(33, 147, 35) 100%, rgb(14, 121, 9) 100%);
+  -webkit-animation-name: border;
+          animation-name: border;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
 }
 section #heading-content #result-description {
   padding-top: 1em;
@@ -80,6 +100,10 @@ section #heading-content .team-info h3 {
   font-family: "Sofia Sans Extra Condensed", sans-serif;
   color: whitesmoke;
   font-size: 1.5em;
+}
+section #heading-content:hover {
+  background-image: url("../media/bg.jpg");
+  opacity: 0.75;
 }
 section #series-stats-heading {
   background-color: rgb(230, 230, 230);
@@ -210,6 +234,10 @@ footer .social-logos {
   section #player-stats .player-card h2, section #player-stats .player-card h3 {
     color: white;
   }
+  footer #socials .social-logos {
+    height: 2em;
+    width: 2em;
+  }
 }
 @media screen and (max-width: 350px) {
   header {
@@ -217,6 +245,10 @@ footer .social-logos {
   }
   header h1 {
     font-size: 0.75em;
+  }
+  footer #socials .social-logos {
+    height: 1em;
+    width: 1em;
   }
 }
 @media screen and (min-width: 875px) and (max-width: 1125px) {
