@@ -26,8 +26,10 @@ var showPrimes = (input, res) => {
 function getNumber(){
     let userInput = document.getElementById("number-field").value;
     let result = showPrimes(userInput, []);
-    
-    document.getElementById("result-div").innerHTML = `<h1>${result}</h1>`;
+
+    for(value of result){
+        document.getElementById("result-div").innerHTML += `<h1>${value}</h1>`;
+    }
 }
 
 
