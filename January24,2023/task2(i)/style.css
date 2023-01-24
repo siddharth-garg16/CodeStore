@@ -1,0 +1,19 @@
+header{
+    text-align: center;
+}
+header h1{
+    font-size: 3em;
+}
+section{
+    text-align: center;
+}
+#input-form button{
+    height: 2em;
+}
+input[type="number"]{
+    width: 30em;
+    height: 2em;
+}
+hr{
+    width: 95%;
+}
