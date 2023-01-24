@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+}
+header{
+    text-align: center;
+}
+header h1{
+    color: darkgreen;
+    font-size: 5em;
+}
+#content{
+    padding: 2em;
+}
+#content ul li{
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+#content ul li mark{
+    padding: 0.1em 0.5em 0.1em 0.5em;
+    background-color: silver;
+}

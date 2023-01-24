@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Errors</title>
+</head>
+<body>
+    <header><h1>JavaScript Errors</h1></header>
+
+    <section>
+        <div id="content">
+            <ul>
+                <li>The <mark><strong>try</strong></mark> statement defines a code block to run (to try).</li>
+                <li>The <mark><strong>catch</strong></mark> statement defines a code block to handle any error.</li>
+                <li>The <mark><strong>finally</strong></mark> statement defines a code block to run regardless of the result.</li>
+                <li>The <mark><strong>throw</strong></mark> statement defines a custom error.</li>
+            </ul>
+            <br>
+            <div id="code">
+                <h2><u>Syntax</u></h2>
+                <pre>
+                    try {
+                        Block of code to try
+                      }
+                      catch(err) {
+                        Block of code to handle errors
+                      }
+                      finally {
+                        Block of code to be executed regardless of the try / catch result
+                      }
+                </pre>
+                <p>If you use throw together with try and catch, you can control program flow and generate custom error messages.</p>
+            </div>
+            <div id="info">
+                <h3>JavaScript will actually create an Error object with two properties: name and message.</h3>
+            </div>
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
