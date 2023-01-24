@@ -90,8 +90,6 @@ for(val of myarr){
 
 //objects
 
-//object
-
 let person = {
     name:"Siddharth Garg",
     age: 21
