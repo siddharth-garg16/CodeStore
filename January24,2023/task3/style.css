@@ -1,0 +1,14 @@
+header{
+    text-align: center;
+}
+header h1{
+    color: midnightblue;
+    font-size: 3em;
+}
+#arrays, #objects{
+    padding: 2em;
+}
+#arrays p, #objects p{
+    color: rgb(110, 110, 110);
+    font-size: 1.5em;
+}
