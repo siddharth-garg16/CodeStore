@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+}
+header{
+    text-align: center;
+    background-color: rgb(100, 100, 100);
+    padding: 2em;
+}
+header h1{
+    font-size: 3em;
+    color: yellow;
+}
+section{
+    padding: 2em;
+    text-align: center;
+}
+button{
+    padding: 1.5em;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 20px;
+    font-size: 1.25em;
+}
+button:hover{
+    font-weight: 400;
+    border: 3px solid rgb(100, 100, 100);
+    background-color: rgb(255, 255, 143);
+}
