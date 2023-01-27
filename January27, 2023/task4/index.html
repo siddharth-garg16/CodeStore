@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap" rel="stylesheet">
+    <title>Travel Routes - Task 4</title>
+</head>
+<body>
+    <header><h1>Major Travel Routes</h1></header>
+
+    <section>
+        <div id="form-wrapper">
+            <form action="">
+                <label for="from">From:</label>
+                <select name="destinations" id="from">
+                    <option value="none" selected disabled hidden>Select a city</option>
+                </select>
+
+                <label for="to">To:</label>
+                <select name="destinations" id="to">
+                    <option value="none" selected disabled hidden>Select a city</option>
+                </select>
+                
+                <button type="submit" id="preference-selector">Add to the prefered route</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div id="display-choices"></div>
+        <button id="preference-deletor">Clear your preferences.</button>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
