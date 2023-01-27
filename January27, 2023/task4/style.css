@@ -52,3 +52,6 @@ footer button{
 footer button:hover{
     background-color: darkred;
 }
+#display-choices{
+    text-align: center;
+}

@@ -1,5 +1,6 @@
 const cities = ["Delhi", "Mumbai", "Bangalore", "Pune", "Hyderabad", "Chandigarh"];
-let prefered_choices_from = {
+
+let from_choices = {
     Delhi: [],
     Mumbai: [],
     Bangalore: [],
@@ -7,7 +8,7 @@ let prefered_choices_from = {
     Hyderabad: [],
     Chandigarh: []
 }
-let prefered_choices_to = {
+let to_choices = {
     Delhi: [],
     Mumbai: [],
     Bangalore: [],
@@ -15,15 +16,43 @@ let prefered_choices_to = {
     Hyderabad: [],
     Chandigarh: []
 }
-let from = document.getElementById("from");
-let to = document.getElementById("to");
+
+let selector = document.getElementById("preference-selector");
+let deletor = document.getElementById("preference-deletor");
+
+let fromLocation = document.getElementById("from");
+let toLocation = document.getElementById("to");
 
 for(city of cities){
-    from.innerHTML += `<option value=${city}> ${city} </option>`;
-    to.innerHTML += `<option value=${city}> ${city} </option>`;
+    fromLocation.innerHTML += `<option value=${city}> ${city} </option>`;
+    toLocation.innerHTML += `<option value=${city}> ${city} </option>`;
 }
 
 //code for onchange and eventlistener for the buttons pending----
+
+selector.addEventListener("click", () => {
+    let from = fromLocation.value;
+    let to = toLocation.value;
+
+    for(val in from_choices){
+        
+    }
+}) //fill the mapping object values (array)
+
+deletor.addEventListener("click", () => {
+
+}) //empty the arrays (value)
+
+
+fromLocation.addEventListener("change", () => {
+
+}) //handles selective options on "from" selection
+
+toLocation.addEventListener("change", () => {
+
+}) //handles selective options on "from" selection
+
+
 
 
 
