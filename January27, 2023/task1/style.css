@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+}
+header{
+    text-align: center;
+}
+header h1{
+    font-size: 3em;
+    color: orangered;
+    font-family: 'Righteous', cursive;
+}
+#show-details-btn{
+    padding: 1.5em;
+}
