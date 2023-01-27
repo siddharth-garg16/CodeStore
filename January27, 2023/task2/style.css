@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+}
+header, section, footer{
+    text-align: center;
+}
+section{
+    padding: 3em;
+}
+header h1{
+    font-size: 3em;
+    font-family: 'Fredoka One', cursive;
+}
+section p{
+    font-size: 1.25em;
+}
