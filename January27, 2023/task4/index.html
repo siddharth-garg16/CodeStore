@@ -26,14 +26,15 @@
                     <option value="none" selected disabled hidden>Select a city</option>
                 </select>
                 
-                <button type="submit" id="preference-selector">Add to the prefered route</button>
+                <button type="submit" id="preference-selector" onclick="addSelections(); return false;">Add to the prefered route</button>
             </form>
         </div>
     </section>
 
     <footer>
         <div id="display-choices"></div>
-        <button id="preference-deletor">Clear your preferences.</button>
+        <br>
+        <button id="preference-deletor" onclick="clearSelections(); return false;">Clear your preferences.</button>
     </footer>
 
     <script src="./script.js"></script>

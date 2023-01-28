@@ -28,29 +28,105 @@ for(city of cities){
     toLocation.innerHTML += `<option value=${city}> ${city} </option>`;
 }
 
-//code for onchange and eventlistener for the buttons pending----
-
-selector.addEventListener("click", () => {
+const addSelections = () => {
     let from = fromLocation.value;
     let to = toLocation.value;
 
-    for(val in from_choices){
-        
+    if(from=="none" || to=="none"){
+        alert("Please select both destinations.");
+    }else{
+        for(val in from_choices){
+            if(val==from){
+                from_choices[val].push(to);
+            }
+        }
+        for(val in to_choices){
+            if(val==to){
+                to_choices[val].push(from);
+            }
+        }
+        document.getElementById("display-choices").innerHTML += `<h1>${from} to ${to}</h1>`;  
     }
-}) //fill the mapping object values (array)
 
-deletor.addEventListener("click", () => {
+    fromLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
+    toLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
+    
+    for(city of cities){
+        fromLocation.innerHTML += `<option value=${city}> ${city} </option>`;
+        toLocation.innerHTML += `<option value=${city}> ${city} </option>`;
+    }
+}
 
-}) //empty the arrays (value)
+const clearSelections = () => {
+    for(val in from_choices){
+        from_choices[val].length = 0;
+    }
+    for(val in to_choices){
+        to_choices[val].length = 0;
+    }
+    document.getElementById("display-choices").innerHTML = ``;
+
+    fromLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
+    toLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
+
+    for(city of cities){
+        fromLocation.innerHTML += `<option value=${city}> ${city} </option>`;
+        toLocation.innerHTML += `<option value=${city}> ${city} </option>`;
+    }
+}
 
 
 fromLocation.addEventListener("change", () => {
+    let val = fromLocation.value;
+    let temp = [];
 
-}) //handles selective options on "from" selection
+    for(key in to_choices){
+        if(key!=val){
+            var found = false; 
+            for(city of to_choices[key]){
+                if(city==val){
+                    found = true;
+                    break
+                }
+            }
+            if(!found){
+                temp.push(key);
+            }
+        }
+    }
+
+    toLocation.innerHTML = ``;
+  
+    for(ct of temp){
+        toLocation.innerHTML += `<option value=${ct}> ${ct} </option>`;
+    }
+})
 
 toLocation.addEventListener("change", () => {
+    let val = toLocation.value;
+    let temp = [];
 
-}) //handles selective options on "from" selection
+    for(key in from_choices){
+        if(key!=val){
+            var found = false; 
+            for(city of from_choices[key]){
+                if(city==val){
+                    found = true;
+                    break
+                }
+            }
+            if(!found){
+                temp.push(key);
+            }
+        }
+    }
+  
+    fromLocation.innerHTML = ``;
+
+    for(ct of temp){
+        fromLocation.innerHTML += `<option value=${ct}> ${ct} </option>`;
+    }
+})
 
 
 
