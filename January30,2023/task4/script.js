@@ -6,7 +6,5 @@ promise.then(response => {
     for(joke of data){
         document.getElementById("wrapper").innerHTML += `<div><h2>${joke["setup"]}</h2><br><h3>${joke["punchline"]}</h3></div>`
     }
-}).catch(error => {
-    console.log("error");
 })
 //setup punchline
