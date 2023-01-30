@@ -1,0 +1,40 @@
+header{
+    text-align: center;
+}
+header h1{
+    font-size: 3em;
+}
+section{
+    padding: 2em;
+}
+.containers{
+    margin: 1em auto;
+    height: auto;
+    width: 50%;
+    border: 2px solid rgb(100, 100, 100);
+    text-align: center;
+}
+#on-click{
+    background-color: cadetblue;
+}
+#on-context-menu{
+    background-color: hotpink;
+}
+#on-double-click{
+    background-color: darksalmon;
+}
+#on-mouse-down{
+    background-color: darkslateblue;
+}
+#on-mouse-enter{
+    background-color: bisque;
+}
+#on-mouse-leave{
+    background-color: whitesmoke;
+}
+#on-mouse-over{
+    background-color: yellow;
+}
+#on-mouse-up{
+    background-color: chartreuse;
+}

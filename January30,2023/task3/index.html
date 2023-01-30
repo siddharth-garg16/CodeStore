@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Mouse Events - Task 3</title>
+</head>
+<body>
+    <header><h1>Mouse Events in JS</h1></header>
+
+    <section>
+        <div class="containers" id="on-click" onclick="onClick();"><h1>onclick()</h1><p>clicking here will pop an alert.</p></div>
+        
+        <div class="containers" id="on-context-menu"><h1>oncontextmenu()</h1><p>right click on this element will not open any option menu.</p></div>
+        
+        <div class="containers" id="on-double-click" ondblclick="onDoubleClick();"><h1>ondblclick()</h1><p>double clicking will show text telling you that you double clicked.</p></div>
+        
+        <div class="containers" id="on-mouse-down" onmousedown="onMouseDown();"><h1>onmousedown()</h1><p>Mouse down will set the color of the text to white.</p></div>
+        
+        <div class="containers" id="on-mouse-enter" onmouseenter="onMouseEnter()"><h1>onmouseenter()</h1><p>taking mouse pointer inside this element will immediately thicken the border.</p></div>
+        
+        <div class="containers" id="on-mouse-leave" onmouseleave="onMouseLeave()"><h1>onmouseleave()</h1><p>taking mouse pointer outside this will change color of the element</p></div>
+        
+        <div class="containers" id="on-mouse-up" onmouseup="onMouseUp()"><h1>onmouseup()</h1><p>releasing your mouse on this element will alert you about it.</p></div>
+
+        <div class="containers" id="on-mouse-over" onmouseover="onMouseOver()"><h1>onmouseover()</h1><p>everytime you move mouse pointer over this element, it will add random text in the element.</p></div>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>

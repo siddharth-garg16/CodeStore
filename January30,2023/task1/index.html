@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Student Registration Form - Task 1</title>
+</head>
+<body>
+    <header><h1>Registration Form</h1></header>
+
+    <section>
+        <form action="" id="registration-form" >
+            <fieldset>
+                <legend><b>Fill the below given details</b></legend>
+                <br>
+                <label for="fullName">Full Name:</label>
+                <input type="text" name="FullName" id="fullName" placeholder="Full Name" min="3" max="30" required> 
+                <p class="warning" id="fullname-warning"></p>
+                <br><br>
+
+                <label for="age">Age:</label>
+                <input type="number" name="Age" id="age" min="18" max="30" placeholder="Age" required> <br><br>
+
+                <label for="contact">Contact No.</label>
+                <input type="number" name="Contact" id="contact" required>
+                <p class="warning" id="contact-warning"></p>
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" name="Contact" id="contact" required> <br><br>
+
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="Male" required> Male
+                <input type="radio" name="gender" value="Female"> Female
+                <input type="radio" name="gender" value="Other"> Other
+                <br><br>
+
+                <label for="address">Permanent Address:</label>
+                <textarea name="Address" id="address" cols="100" rows="5" placeholder="Address" required></textarea> <br><br>
+                
+                <button type="submit" onclick="validate(); return false;">Submit</button>
+            </fieldset>
+        </form>
+
+        <div id="message-display"></div>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>

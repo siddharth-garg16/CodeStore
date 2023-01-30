@@ -39,7 +39,7 @@ const addSelections = () => {
 
     document.getElementById("display-choices").innerHTML = ``;
     for(let obj of choices){
-        document.getElementById("display-choices").innerHTML += `<h1>${obj['from']} - ${obj['to']}</h1>`;
+        document.getElementById("display-choices").innerHTML += `<h1>${obj['from']} to ${obj['to']}</h1>`;
     }
 }
 
