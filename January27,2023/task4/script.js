@@ -97,8 +97,12 @@ fromLocation.addEventListener("change", () => {
 
     toLocation.innerHTML = ``;
   
-    for(ct of temp){
+    if(temp.length==0){
+        toLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
+    }else{
+        for(ct of temp){
         toLocation.innerHTML += `<option value=${ct}> ${ct} </option>`;
+    }
     }
 })
 
@@ -122,9 +126,12 @@ toLocation.addEventListener("change", () => {
     }
   
     fromLocation.innerHTML = ``;
-
-    for(ct of temp){
+    if(temp.length==0){
+        fromLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
+    }else{
+        for(ct of temp){
         fromLocation.innerHTML += `<option value=${ct}> ${ct} </option>`;
+    }
     }
 })
 
