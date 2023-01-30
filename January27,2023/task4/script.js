@@ -1,21 +1,6 @@
 const cities = ["Delhi", "Mumbai", "Bangalore", "Pune", "Hyderabad", "Chandigarh"];
 
-let from_choices = {
-    Delhi: [],
-    Mumbai: [],
-    Bangalore: [],
-    Pune: [],
-    Hyderabad: [],
-    Chandigarh: []
-}
-let to_choices = {
-    Delhi: [],
-    Mumbai: [],
-    Bangalore: [],
-    Pune: [],
-    Hyderabad: [],
-    Chandigarh: []
-}
+let choices = [];
 
 let selector = document.getElementById("preference-selector");
 let deletor = document.getElementById("preference-deletor");
@@ -34,19 +19,15 @@ const addSelections = () => {
 
     if(from=="none" || to=="none"){
         alert("Please select both destinations.");
-    }else{
-        for(val in from_choices){
-            if(val==from){
-                from_choices[val].push(to);
-            }
-        }
-        for(val in to_choices){
-            if(val==to){
-                to_choices[val].push(from);
-            }
-        }
-        document.getElementById("display-choices").innerHTML += `<h1>${from} to ${to}</h1>`;  
+        return
     }
+
+    choices.push({
+        from: from,
+        to: to
+    });
+
+    // console.log(choices);
 
     fromLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
     toLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
@@ -55,16 +36,17 @@ const addSelections = () => {
         fromLocation.innerHTML += `<option value=${city}> ${city} </option>`;
         toLocation.innerHTML += `<option value=${city}> ${city} </option>`;
     }
+
+    document.getElementById("display-choices").innerHTML = ``;
+    for(let obj of choices){
+        document.getElementById("display-choices").innerHTML += `<h1>${obj['from']} - ${obj['to']}</h1>`;
+    }
 }
 
 const clearSelections = () => {
-    for(val in from_choices){
-        from_choices[val].length = 0;
-    }
-    for(val in to_choices){
-        to_choices[val].length = 0;
-    }
+    choices.length = 0;
     document.getElementById("display-choices").innerHTML = ``;
+    // console.log(choices);
 
     fromLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
     toLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
@@ -75,63 +57,42 @@ const clearSelections = () => {
     }
 }
 
-
 fromLocation.addEventListener("change", () => {
     let val = fromLocation.value;
-    let temp = [];
+    
+    let to_options = toLocation.options;
+    // console.log(to_options);
 
-    for(key in to_choices){
-        if(key!=val){
-            var found = false; 
-            for(city of to_choices[key]){
-                if(city==val){
-                    found = true;
-                    break
-                }
-            }
-            if(!found){
-                temp.push(key);
+    for(let i=1; i<to_options.length;i++){
+        for(obj of choices){
+            if(obj["from"]==val && to_options[i].value == obj["to"]){
+                console.log(obj["from"], val, choices)
+                to_options[i].disabled = true;//code
             }
         }
-    }
 
-    toLocation.innerHTML = ``;
-  
-    if(temp.length==0){
-        toLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
-    }else{
-        for(ct of temp){
-        toLocation.innerHTML += `<option value=${ct}> ${ct} </option>`;
-    }
+        if(val == to_options[i].value){
+            to_options[i].disabled = true;
+        }
     }
 })
 
 toLocation.addEventListener("change", () => {
     let val = toLocation.value;
-    let temp = [];
+    
+    let from_options = fromLocation.options;
+    // console.log(to_options);
 
-    for(key in from_choices){
-        if(key!=val){
-            var found = false; 
-            for(city of from_choices[key]){
-                if(city==val){
-                    found = true;
-                    break
-                }
-            }
-            if(!found){
-                temp.push(key);
+    for(let i=1; i<from_options.length;i++){
+        for(let obj of choices){
+            if(obj["to"]==val && from_options[i].value == obj["from"]){
+                from_options[i].disabled = true;//code
             }
         }
-    }
-  
-    fromLocation.innerHTML = ``;
-    if(temp.length==0){
-        fromLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
-    }else{
-        for(ct of temp){
-        fromLocation.innerHTML += `<option value=${ct}> ${ct} </option>`;
-    }
+
+        if(val == from_options[i].value){
+            from_options[i].disabled = true;
+        }
     }
 })
 
