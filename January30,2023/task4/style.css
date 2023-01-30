@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+}
+header{
+    text-align: center;
+    height: 6.5em;
+    background-color: rgb(159, 43, 104);
+}
+header h1{
+    font-size: 3em;
+    color: whitesmoke;
+    font-family: 'Unbounded', cursive;
+}
+header p{
+    color: whitesmoke;
+    font-family: 'Unbounded', cursive;
+}
+section{
+    padding: 2em;
+}
+section div{
+    border: 2px solid rgb(159, 43, 104);
+    padding: 2em;
+    margin: 2em;
+    border-radius: 15px;
+}
+section div h2, h3{
+    font-family: 'Unbounded', cursive;
+}
+section div h3{
+    color: rgb(110, 110, 110);
+}
