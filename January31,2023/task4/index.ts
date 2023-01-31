@@ -1,3 +1,5 @@
+//enum in typescript
+
 enum weekdays {
     Monday,
     Tuesday,
@@ -11,12 +13,25 @@ console.log(weekdays);
 console.log(weekdays[2]);
 console.log(weekdays.Tuesday);
 
-//we can use string enum and computed enums as well
-enum faceCards {
-    King = "K",
-    Queen = "Q",
-    Jack = "J"
+interface Employee {
+    name : string,
+    employeeID : number,
+    weekAttendance : boolean[],
+    weeklyLeaveStatus() : string;
 }
-console.log(faceCards);
-console.log(faceCards.King);
+
+let emp1 = {
+    name : "random",
+    employeeID : 25678,
+    weekAttendance : [true, true, false, true, true],
+    weeklyLeaveStatus(){
+        for(let i=0; i<5; i++){
+            if(!this.weekAttendance[i]){
+                return weekdays[i];
+            }
+        }
+    }
+}
+console.log(emp1);
+console.log(emp1.weeklyLeaveStatus());
 

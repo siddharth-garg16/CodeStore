@@ -11,12 +11,17 @@ var weekdays;
 console.log(weekdays);
 console.log(weekdays[2]);
 console.log(weekdays.Tuesday);
-//we can use string enum and computed enums as well
-var faceCards;
-(function (faceCards) {
-    faceCards["King"] = "K";
-    faceCards["Queen"] = "Q";
-    faceCards["Jack"] = "J";
-})(faceCards || (faceCards = {}));
-console.log(faceCards);
-console.log(faceCards.King);
+var emp1 = {
+    name: "random",
+    employeeID: 25678,
+    weekAttendance: [true, true, false, true, true],
+    weeklyLeaveStatus: function () {
+        for (var i = 0; i < 5; i++) {
+            if (!this.weekAttendance[i]) {
+                return weekdays[i];
+            }
+        }
+    }
+};
+console.log(emp1);
+console.log(emp1.weeklyLeaveStatus());
