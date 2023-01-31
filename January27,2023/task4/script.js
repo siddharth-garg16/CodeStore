@@ -17,7 +17,7 @@ const addSelections = () => {
     let from = fromLocation.value;
     let to = toLocation.value;
 
-    if(from=="none" || to=="none"){
+    if(from==="none" || to==="none"){
         alert("Please select both destinations.");
         return
     }
@@ -65,13 +65,13 @@ fromLocation.addEventListener("change", () => {
 
     for(let i=1; i<to_options.length;i++){
         for(obj of choices){
-            if(obj["from"]==val && to_options[i].value == obj["to"]){
+            if(obj["from"]===val && to_options[i].value === obj["to"]){
                 console.log(obj["from"], val, choices)
                 to_options[i].disabled = true;//code
             }
         }
 
-        if(val == to_options[i].value){
+        if(val === to_options[i].value){
             to_options[i].disabled = true;
         }
     }
@@ -85,12 +85,12 @@ toLocation.addEventListener("change", () => {
 
     for(let i=1; i<from_options.length;i++){
         for(let obj of choices){
-            if(obj["to"]==val && from_options[i].value == obj["from"]){
+            if(obj["to"]===val && from_options[i].value === obj["from"]){
                 from_options[i].disabled = true;//code
             }
         }
 
-        if(val == from_options[i].value){
+        if(val === from_options[i].value){
             from_options[i].disabled = true;
         }
     }
