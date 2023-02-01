@@ -31,7 +31,7 @@ class differentlyAbledStudent extends Student {
 
     getDetails(): void {
         console.log(this.name, this.age, this.course, this.yearOfPassing, this.specialClasses);
-    } //method overriding
+    }
 
 }
 
