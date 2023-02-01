@@ -15,12 +15,12 @@ class Person {
     }
 }
 
-var users : Person[]= [];
+const users : Person[]= [];
 
 var showUser = () => {
     let display : HTMLElement | null;
     display = document.getElementById("display");
-    if(display instanceof HTMLDivElement && display != null){
+    if(display instanceof HTMLDivElement && display !== null){
         display.innerHTML = ``;
         display.innerHTML = `<h1>List of registered users.</h1><br>`;
         for(let user of users){
@@ -32,19 +32,19 @@ var showUser = () => {
 var gatherData = () => {
     let fName:HTMLElement | null;
     fName = document.getElementById("fname");
-    if(fName instanceof HTMLInputElement && fName != null){
+    if(fName instanceof HTMLInputElement && fName !== null){
         var firstName = fName.value;
     }
 
     let lName:HTMLElement | null;
     lName = document.getElementById("lname");
-    if(lName instanceof HTMLInputElement && lName != null){
+    if(lName instanceof HTMLInputElement && lName !== null){
         var lastName = lName.value;
     }
 
     let ag:HTMLElement | null;
     ag = document.getElementById("age");
-    if(ag instanceof HTMLInputElement && ag != null){
+    if(ag instanceof HTMLInputElement && ag !== null){
         var age = +(ag.value);
     }
 
@@ -52,13 +52,13 @@ var gatherData = () => {
 
     users.push(newUser);
 
-    if(fName instanceof HTMLInputElement && fName != null){
+    if(fName instanceof HTMLInputElement && fName !== null){
         fName.value = "";
     }
-    if(lName instanceof HTMLInputElement && lName != null){
+    if(lName instanceof HTMLInputElement && lName !== null){
         lName.value = "";
     }
-    if(ag instanceof HTMLInputElement && ag != null){
+    if(ag instanceof HTMLInputElement && ag !== null){
         ag.value = "";
     }
 
