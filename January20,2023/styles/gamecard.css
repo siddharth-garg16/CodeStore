@@ -175,6 +175,7 @@ footer .social-logos {
 @media screen and (max-width: 600px) {
   section .game-card {
     padding: 1em;
+    margin: 2em 1em 2em 1em;
   }
   section .game-card p {
     font-size: 1em;

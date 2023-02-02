@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  background-color: rgb(114, 47, 55);
+  height: 8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header h1 {
+  font-size: 3em;
+  color: ghostwhite;
+  font-family: "Righteous", cursive;
+}
+
+section {
+  padding: 2em;
+}
+section #available-options {
+  padding: 2em;
+  border: 2px solid rgb(50, 50, 50);
+  border-radius: 20px;
+  text-align: center;
+}
+section #available-options h1 {
+  font-family: "Righteous", cursive;
+  color: rgb(70, 70, 70);
+  font-size: 2em;
+}
+section #available-options form {
+  padding: 1em;
+}
+section #available-options form .options {
+  background-color: rgb(210, 210, 210);
+  padding: 1.5em;
+  margin: 1.5em;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+section #available-options form .options h2 {
+  font-family: "Itim", cursive;
+}
+section #available-options form .options input[type=radio] {
+  width: 25px;
+  height: 25px;
+  accent-color: rgb(114, 47, 55);
+}
+section #available-options form .options:hover {
+  background-color: rgb(180, 180, 180);
+}
+section #available-options form button {
+  background-color: rgb(114, 47, 55);
+  padding: 0.75em 7.5em 0.75em 7.5em;
+  border-radius: 10px;
+  font-family: "Itim", cursive;
+  color: ghostwhite;
+  border: none;
+  font-size: 1.5em;
+}
+section #available-options form button:hover {
+  background-color: rgb(74, 4, 4);
+  font-weight: bolder;
+}
+section #alert {
+  font-family: "Itim", cursive;
+}/*# sourceMappingURL=style.css.map */

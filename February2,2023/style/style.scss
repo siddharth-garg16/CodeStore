@@ -1,0 +1,90 @@
+$headingText : 'Righteous', cursive;
+
+$bodyText : 'Itim', cursive;
+
+$mainColor : rgb(114, 47, 55);
+
+*{
+    margin: 0;
+}
+
+header{
+    text-align: center;
+    background-color: $mainColor;
+    height: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        font-size: 3em;
+        color: ghostwhite;
+        font-family: $headingText;
+    }
+}
+
+section{
+    padding: 2em;
+
+    #available-options{
+        padding: 2em;
+        border: 2px solid rgb(50, 50, 50);
+        border-radius: 20px;
+        text-align: center;
+        
+        h1{
+            font-family: $headingText;
+            color: rgb(70, 70, 70);
+            font-size: 2em;
+        }
+
+        form{
+            padding: 1em;
+
+            .options{
+                background-color: rgb(210, 210, 210);
+                padding: 1.5em;
+                margin: 1.5em;
+                border: none;
+                border-radius: 10px;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+
+                h2{
+                    font-family: $bodyText;
+                }
+
+                input[type="radio"]{
+                    width: 25px;
+                    height: 25px;
+                    accent-color: $mainColor;;
+                }
+            }
+
+            .options:hover{
+                background-color: rgb(180, 180, 180);
+            }
+
+            button{
+                background-color: $mainColor;
+                padding: 0.75em 7.5em 0.75em 7.5em;
+                border-radius: 10px;
+                font-family: $bodyText;
+                color: ghostwhite;
+                border: none;
+                font-size: 1.5em;
+            }
+            button:hover{
+                background-color:rgb(74, 4, 4);
+                font-weight: bolder;
+            }
+        }
+    }
+
+    #alert{
+        font-family: $bodyText;
+    }
+}
+
+
