@@ -7,6 +7,9 @@ var Booking = /** @class */ (function () {
     Booking.prototype.getTableID = function () {
         return this.tableID;
     };
+    Booking.prototype.getPrice = function () {
+        return this.price;
+    };
     Booking.prototype.getDate = function () {
         return this.dateOfBooking;
     };
@@ -37,13 +40,12 @@ if (form instanceof HTMLFormElement && form != null) {
 }
 var alertAndRefreshOption = function () {
     var tables = document.getElementsByName("table");
-    if (tables !== null && tables instanceof HTMLInputElement) {
+    if (tables !== null) {
         for (var _i = 0, tables_1 = tables; _i < tables_1.length; _i++) {
             var table = tables_1[_i];
             if (table instanceof HTMLInputElement) {
                 if (table.checked) {
                     var selection = table.value;
-                    console.log(selection);
                 }
             }
         }
@@ -59,6 +61,6 @@ var alertAndRefreshOption = function () {
         }
     }
     if (alertView instanceof HTMLDivElement && alertView !== null) {
-        // alertView.innerHTML = `You made a booking for ${myBooking.getTableID()} on ${myBooking.getDate().toLocaleDateString()}`;
+        alertView.innerHTML = "You made a booking for ".concat(myBooking.getTableID(), " on ").concat(myBooking.getDate().toLocaleDateString(), ". Amount Paid: ").concat(myBooking.getPrice());
     }
 };

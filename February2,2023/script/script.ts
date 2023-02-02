@@ -13,6 +13,10 @@ class Booking {
         return this.tableID;
     }
 
+    getPrice(){
+        return this.price;
+    }
+
     getDate(){
         return this.dateOfBooking;
     }
@@ -45,30 +49,30 @@ if(form instanceof HTMLFormElement && form != null){
 
 const alertAndRefreshOption = () => {
     let tables = document.getElementsByName("table");
-    if(tables !== null && tables instanceof HTMLInputElement){
+    let selection;
+    if(tables !== null){
         for(let table of tables){
             if(table instanceof HTMLInputElement){
                 if(table.checked){
-                    var selection = table.value;
-                    console.log(selection);
+                    selection = table.value;
                 }
             } 
         }
     }
-
+    
     if(display instanceof HTMLDivElement && display !== null){
         display.style.border = "none";
         display.innerHTML = ``;
     }
 
+    let myBooking : Booking;
     for(let obj of availableOptions){
         if(obj.tableID === selection){
-            var myBooking = new Booking(obj.tableID, obj.price, obj.date);
+            myBooking = new Booking(obj.tableID, obj.price, obj.date);
         }
     }
 
     if(alertView instanceof HTMLDivElement && alertView !== null){
-        // alertView.innerHTML = `You made a booking for ${myBooking.getTableID()} on ${myBooking.getDate().toLocaleDateString()}`;
+        alertView.innerHTML = `You made a booking for ${myBooking.getTableID()} on ${myBooking.getDate().toLocaleDateString()}. Amount Paid: ${myBooking.getPrice()}`;
     }
 }
-
