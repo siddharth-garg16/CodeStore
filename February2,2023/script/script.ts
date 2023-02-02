@@ -55,6 +55,7 @@ const alertAndRefreshOption = () => {
             if(table instanceof HTMLInputElement){
                 if(table.checked){
                     selection = table.value;
+                    break;
                 }
             } 
         }
