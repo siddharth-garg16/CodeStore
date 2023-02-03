@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js"></script>
+    <title>Ad spend and revenue</title>
+</head>
+<body>
+    <header>
+        <div id="logo-wrapper"><img src="./media/storj.svg" alt="main-logo"></div>
+        <div id="heading-wrapper"><h1>Ad Data Dashboard</h1></div>
+    </header>
+
+    <div id="dashboard-detail"><h2>Ad-spend and impression data for year 2022</h2></div>
+
+    <section>
+        <div id="adcost-chart-wrapper">
+            <canvas id="adcost-canvas"></canvas>
+        </div>
+        <div id="visitstrend-chart-wrapper">
+            <canvas id="visitstrend-canvas"></canvas>
+        </div>
+
+        <div id="efficiency-wrapper">
+            <canvas id="efficiency-canvas"></canvas>
+        </div>
+
+        <div id="totalvisits-chart-wrapper">
+            <canvas id="totalvisits-canvas"></canvas>
+        </div>
+        <div id="cpc-chart-wrapper">
+            <canvas id="cpc-canvas"></canvas>
+        </div>
+        
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./components/adCost.js"></script>
+    <script src="./components/visitTrend.js"></script>
+    <script src="./components/cpc.js"></script>
+    <script src="./components/pageView.js"></script>
+    <script src="./components/totalVisit.js"></script>
+    <script src="./components/efficiency.js"></script>
+</body>
+</html>
