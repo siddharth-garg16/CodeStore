@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <title>Fine Diners</title>
+</head>
+<body>
+    <header><h1>Fine Diners</h1></header>
+
+    <section>
+        <div id="desc">
+            <h2>The perfect place for your perfect date.</h2>
+            <br>
+        </div>
+        <div id="image-wrapper">
+            <img src="./media/img1.jpg" alt="dining-image-1" height="300px" width="350px">
+            <img src="./media/img2.jpg" alt="dining-image-2" height="300px" width="350px">
+            <img src="./media/img3.jpg" alt="dining-image-3" height="300px" width="350px">
+            <img src="./media/img5.jpg" alt="dining-image-4" height="300px" width="350px">
+            <img src="./media/img6.jpg" alt="dining-image-4" height="300px" width="350px">
+            <img src="./media/img7.jpg" alt="dining-image-4" height="300px" width="350px">
+            <img src="./media/img8.jpg" alt="dining-image-4" height="300px" width="350px">
+            <img src="./media/img9.jpg" alt="dining-image-4" height="300px" width="350px">
+        </div>
+        <br><br><hr><br><br>
+        <div id="form-wrapper">
+            <h2>Book a table</h2>
+            <form action="">
+                <input type="text" id="fullname" placeholder="Full Name" required> <br><br>
+                <input type="email" id="email" placeholder="Email Address" required> <br><br>
+                <input type="tel" id="contact" placeholder="Contact No." pattern="[0-9]{5}-[0-9]{5}" required> <br><br>
+                <select name="tables" id="tables">
+                    <option value="none" selected disabled hidden>--Pick a table--</option>
+                </select> <br><br>
+                <button id="book-btn" onclick="bookTable(); return false;">Book Now</button>
+            </form>
+        </div>
+        <br><br><br>
+        <div id="show-bookings"></div>
+    </section>
+
+    <script src="./script/script.js"></script>
+</body>
+</html>

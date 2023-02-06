@@ -1,0 +1,82 @@
+$mainColor : rgb(129, 19, 49);
+$headingText : 'Righteous', cursive;
+$bodyText : 'Itim', cursive;
+
+*{
+    margin: 0;
+}
+header{
+    background-color: $mainColor;
+    padding: 1em 0 1em 0;
+    text-align: center;
+    h1{
+        font-size: 4em;
+        color: rgb(240, 240, 240);
+        font-family: $headingText;
+    }
+}
+section{
+    padding: 2em;
+    #desc{
+        text-align: center;
+        h2{
+            font-size: 3em;
+            font-family: $bodyText;
+            color: rgb(90, 90, 90);
+        }
+    }
+    #image-wrapper{
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 1em;
+        overflow-x : auto;
+        border-radius: 20px;
+        background-color: rgba(129, 19, 49, 0.2);
+
+        img{
+            margin: 1em;
+        }
+        img:hover{
+            opacity: 0.5;
+        }
+    }
+    #form-wrapper{
+        text-align: center;
+        h2{
+            color: $mainColor;
+            font-family: $bodyText;
+            font-size: 3em;
+        }
+        form{
+            margin: 1em;
+        }
+        input, select{
+            width: 30em;
+            height: 3em;
+            padding-left: 0.5em;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        button{
+            width: 20em;
+            height: 3em;
+            background-color: $mainColor;
+            color: rgb(240, 240, 240);
+            font-size: 1em;
+            border: none;
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: rgb(74, 4, 4);
+            font-weight: 600;
+        }
+    }
+    #show-bookings{
+        text-align: center;
+        h2{
+            font-family: $bodyText;
+            font-size: 2em;
+            color: rgb(50, 50, 50);
+        }
+    }
+}
