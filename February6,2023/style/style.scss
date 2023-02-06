@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+}
+
+header{
+    background-color: rgb(55, 55, 55);
+    text-align: center;
+    padding: 1em 0 1em 0;
+
+    h1{
+        color: azure;
+    }
+}
+
+section{
+    padding: 2em;
+    margin: 2em;
+
+    h2{
+        color: rgb(40, 40, 40);
+        font-size: 2em;
+    }
+
+    #input-form-wrapper{
+        text-align: center;
+        padding: 1em 0 1em 0;
+
+        input{
+            width: 30em;
+            height: 2.5em;
+            font-weight: 500;
+            font-size: 1em;
+            padding-left: 0.5em;
+            border-radius: 10px;
+            border: 1px solid rgb(50, 50, 50);
+        }
+        button{
+            width: 20em;
+            height: 2.5em;
+            background-color: rgb(20, 52, 164);
+            color: white;
+            border: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 0.5em;
+            border-radius: 20px;
+        }
+        button:hover{
+            background-color: rgb(0, 163, 108);
+        }
+    }
+    #entity-display{
+        border: 1px solid rgb(50, 50, 50);
+        padding: 1em;
+        hr{
+            width: 85%;
+            margin: auto;
+        }
+        #data{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+
+            p{
+                font-size: 1.5em;
+                font-weight: 400;
+            }
+        }
+    }
+    #update-form-wrapper{
+        text-align: center;
+        padding: 1em 0 1em 0;
+
+        input{
+            width: 30em;
+            height: 2.5em;
+            font-weight: 500;
+            font-size: 1em;
+            padding-left: 0.5em;
+            border-radius: 10px;
+            border: 1px solid rgb(50, 50, 50);
+        }
+        button{
+            width: 20em;
+            height: 2.5em;
+            background-color: rgb(20, 52, 164);
+            color: white;
+            border: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 0.5em;
+            border-radius: 20px;
+        }
+        button:hover{
+            background-color: rgb(0, 163, 108);
+        }
+    }
+}

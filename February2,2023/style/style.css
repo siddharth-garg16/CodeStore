@@ -30,6 +30,22 @@ section #available-options h1 {
   color: rgb(70, 70, 70);
   font-size: 2em;
 }
+section #available-options #userform-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+section #available-options #userform-wrapper label {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+section #available-options #userform-wrapper input {
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 1em;
+  font-weight: 700;
+  padding-left: 0.5em;
+}
 section #available-options form {
   padding: 1em;
 }
