@@ -2,7 +2,7 @@ const url = "http://127.0.0.1:3000/v1"
 
 
 function redirectToStudent(id){
-    window.location.href = `./studentPage/main.html?id=${id}`
+    window.location.href = `./detailPage/detail.html?id=${id}`
 }
 
 

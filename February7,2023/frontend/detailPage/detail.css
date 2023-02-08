@@ -175,6 +175,7 @@ main{
     text-transform: uppercase;
     color: white;
     font-family: 'Itim', cursive;
+    padding: 1em;
 }
 
 input{
