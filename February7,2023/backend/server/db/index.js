@@ -2,7 +2,6 @@ const { MongoClient } = require('mongodb');
 
 const url = 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.2';
 
-// Database Name
 const dbName = 'studentDB';
 
 let cd_db = {};
@@ -10,14 +9,11 @@ let database = null;
 let client = null;
 
 async function configureDB() {
-
-    // Connection URL
     client = new MongoClient(url);
     await client.connect();
     console.log('Connected successfully to server');
 
     database = client.db(dbName);
-    // console.log(database)
 }
 
 
@@ -32,27 +28,7 @@ cd_db.createDocument = async (collectionName, documentData) => {
         console.log("Connection CLosed");
         await client.close();
     }
-};
-
-
-cd_db.updateDocument = async (collectionName, documentData, oldData) => {
-    try{
-        await configureDB();
-        const options = { upsert: false };
-        
-        console.log(collectionName + " "+ JSON.stringify(documentData) + " "+ JSON.stringify(oldData));
- 
-        const collection = database.collection(collectionName);
-        await collection.updateOne(oldData, documentData, options);
-
-    } catch(e){
-        console.log("Error: " + e);
-    } finally {
-        console.log("Connection CLosed");
-        await client.close()
-    }
 }
-
 
 cd_db.getDocument = async (collectionName, field, value) => {
     try{
@@ -78,7 +54,6 @@ cd_db.getDocument = async (collectionName, field, value) => {
     }
 }
 
-
 cd_db.getAllDocuments = async (collectionName) => {
     try{
         await configureDB();
@@ -98,6 +73,23 @@ cd_db.getAllDocuments = async (collectionName) => {
     }
 }
 
+cd_db.updateDocument = async (collectionName, documentData, oldData) => {
+    try{
+        await configureDB();
+        const options = { upsert: false };
+        
+        console.log(collectionName + " "+ JSON.stringify(documentData) + " "+ JSON.stringify(oldData));
+ 
+        const collection = database.collection(collectionName);
+        await collection.updateOne(oldData, documentData, options);
+
+    } catch(e){
+        console.log("Error: " + e);
+    } finally {
+        console.log("Connection CLosed");
+        await client.close()
+    }
+}
 
 cd_db.deleteDocument = async (collectionName, documentId) => {
     try{
@@ -113,7 +105,6 @@ cd_db.deleteDocument = async (collectionName, documentId) => {
         await client.close();
     }
 }
-
 
 cd_db.maxId = async (collectionName) => {
     let maxCount = null;

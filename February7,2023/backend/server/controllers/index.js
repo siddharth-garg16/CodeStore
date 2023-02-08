@@ -10,8 +10,6 @@ module.exports.createStudentDetails = async function(req, res){
     const studentData = req.body;
     const collectionName = "student";
     
-    console.log("Created document", JSON.stringify(studentData))
-
     try{
         let count = await cd_db.maxId(collectionName);
         studentData.id = count + 1;
@@ -167,7 +165,6 @@ module.exports.updateSubjectById = async function(req, res){
     }
 
     try{
-
         const student = await cd_db.getDocument(collectionName, "id", studentId);
 
         if(student.length <= 0){
@@ -190,5 +187,4 @@ module.exports.updateSubjectById = async function(req, res){
         console.log("Error" + err);
         return buildResponse(res, "Internal error", 500);
     }
-
 }
