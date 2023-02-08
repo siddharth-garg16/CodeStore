@@ -1,0 +1,19 @@
+const express = require('express');
+const router = express.Router();
+
+const studentController = require('../controllers');
+
+router.get('/health', async (req, res) => {
+    return res.json({msg: "Server is up"})
+});
+
+router.post('/createStudent', studentController.createStudentDetails);
+router.get('/getAllStudents', studentController.getStudentDetails);
+router.get('/getStudentDetailsById/:id', studentController.getStudentDetailsById);
+router.put('/updateStudentById/:id', studentController.updateStudentById);
+router.put('/addStudentSubject/:id', studentController.addStudentSubjectById);
+router.put('/updateSubjectById/:studentId/:subjectId', studentController.updateSubjectById);
+router.delete('/deleteStudent/:id', studentController.deleteStudent)
+router.delete('/deleteSubject/:studentId/:subjectId', studentController.deleteSubject)
+
+module.exports = router;
