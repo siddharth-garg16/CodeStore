@@ -1,10 +1,8 @@
 const url = "http://127.0.0.1:3000/v1"
 
-
 function redirectToStudent(id){
     window.location.href = `./detailPage/detail.html?id=${id}`
 }
-
 
 function tableRow({ id, name, image, className, age, rollNo, contactNo }){
     console.log(image)
@@ -25,7 +23,6 @@ function tableRow({ id, name, image, className, age, rollNo, contactNo }){
     </tr>`
     )
 }
-
 
 function editTableRow(id, name, image, className, age, rollNo, contactNo ){
     return (
@@ -62,7 +59,6 @@ function editTableRow(id, name, image, className, age, rollNo, contactNo ){
     )
 } 
 
-
 function addTableRow(){
     return (
     `<div class="table-row" id="new_row">		
@@ -98,7 +94,6 @@ function addTableRow(){
     )
 }
 
-
 function updatedTableData( id, name, image, className, age, rollNo, contactNo ){
     return (
     `	
@@ -117,12 +112,10 @@ function updatedTableData( id, name, image, className, age, rollNo, contactNo ){
     )
 } 
 
-
 function editStudent(id, name, image, className, age, rollNo, contactNo){
     let row = document.getElementById(id);
     row.innerHTML = editTableRow(id, name, image, className, age, rollNo, contactNo);
 }
-
 
 function renderUpdatedStudent({ id, formdata, image }){
     const profileData = {};
@@ -136,7 +129,6 @@ function renderUpdatedStudent({ id, formdata, image }){
     let row = document.getElementById(id);
     row.innerHTML = updatedTableData(id, name, image, className, age, rollNo, contactNo);
 }
-
 
 function addStudent(){
     let row = document.getElementById('studentTable');
@@ -174,7 +166,6 @@ function updateStudent(id, image_){
     })
 }
 
-
 function createStudent(){
 
     const name = document.getElementById(`name`).value;
@@ -206,7 +197,6 @@ function createStudent(){
     })
 }
 
-
 function getAllStudents(){
     fetch(`${url}/getAllStudents`)
     .then((res) => res.json())
@@ -214,13 +204,10 @@ function getAllStudents(){
         let table = document.getElementById("studentTable")
         
         res.response.forEach(element => {
-            // console.log(element, table)
             table.innerHTML += tableRow({ ...element })
         });
-        // console.log(res, "STUDENT DATA")
     })
 }
-
 
 function deleteStudent(id){
     fetch(`${url}/deleteStudent/${id}`,{
