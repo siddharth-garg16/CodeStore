@@ -8,7 +8,6 @@ module.exports.createStudentDetails = async function(req, res){
     const studentData = req.body;
     const tableName = "student";
     const columns = '(name, image, className, age, rollNo, contactNo)';
-    console.log(req.file);
     const image = req.file.filename 
     const values = `('${studentData.name}', '${image}', '${studentData.className}', 
         ${studentData.age}, ${studentData.rollNo}, ${studentData.contactNo})`;
@@ -46,7 +45,7 @@ module.exports.getStudentDetailsById = async function(req, res){
     try{
         const db = studentDB.getstudentDBInstance();
         const response = await db.getDocument(tableName,"id", studId);
-        const responsev1 = await db.getDocument("subjects", "studentId", studId);
+        const responsev1 = await db.getDocument("subjectmarks", "studentId", studId);
         console.log(response, 'student details')
         if(response.length === 0){
             return buildResponse(res, "No data found", 404)

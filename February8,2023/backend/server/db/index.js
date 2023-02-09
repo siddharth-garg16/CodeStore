@@ -9,7 +9,6 @@ async function connectDB() {
         user: 'root',
         password: 'root@123',
         database: 'studentdb',
-        connectionLimit: 20
     })
     await new Promise((resolve, reject) => {
         connection.connect(function(err) {

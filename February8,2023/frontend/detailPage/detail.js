@@ -9,11 +9,9 @@ function getStudent(){
     .then((res) => {        
         console.log(res, "STUDENT DATA")
         let table = document.getElementById("subjectTable")
-        let profile = document.getElementById("details")
 
-        profile.innerHTML += showProfile(res.response)
         res.response.subjects.forEach(element => {
-            // console.log(element, table)
+            // console.log(element)
             table.innerHTML += tableRow({ ...element })
         });
     })
@@ -22,16 +20,16 @@ function getStudent(){
 getStudent();
 
 
-function tableRow({ id, name, marks, total }){
+function tableRow({ id, subject, obtainedmarks, totalmarks }){
     return (
     `<tr class="table-row" id=${id}>		
         <td class="table-data ">${id}</td>
-        <td class="table-data">${name}</td>
-        <td class="table-data">${marks}</td>
-        <td class="table-data">${total}</td>
+        <td class="table-data">${subject}</td>
+        <td class="table-data">${obtainedmarks}</td>
+        <td class="table-data">${totalmarks}</td>
 
         <td class="table-data">
-            <i class="fa-solid fa-pen-to-square edit" onclick='editSubject(${id}, "${name}", ${marks}, "${total}")'></i>
+            <i class="fa-solid fa-pen-to-square edit" onclick='editSubject(${id}, "${subject}", ${obtainedmarks}, "${totalmarks}")'></i>
             <i class="fa-solid fa-trash delete" onclick="deleteSubject(${id})"></i>
         </td>
     </tr>`
