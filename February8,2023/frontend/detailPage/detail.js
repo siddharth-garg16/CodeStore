@@ -88,7 +88,7 @@ function createSubject(){
     const data = { name, marks, total };
     
     fetch(`${url}/addStudentSubject/${id}`, {
-        method: 'PUT',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...data })
     })

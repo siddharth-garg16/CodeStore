@@ -99,9 +99,7 @@ nav ul li {
 }
 
 main{
-    margin-top: 10vh;
-    display: flex;
-    justify-content: space-between;
+    margin-top: 15vh;
 }
 
 .active-link{
@@ -116,9 +114,6 @@ main{
 main{
     padding-top: 40px;
     margin-bottom: 20vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 .details{
@@ -138,7 +133,7 @@ main{
 }
 
 .table {
-    width: 100%;
+    width: 100vw;
     border: 1px solid #eeeeee;
     font-family: 'Itim', cursive;
 }

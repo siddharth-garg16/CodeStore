@@ -8,7 +8,7 @@ let cd_db = {};
 let database = null;
 let client = null;
 
-async function configureDB() {
+async function connectDB() {
     client = new MongoClient(url);
     await client.connect();
     console.log('Connected successfully to server');
@@ -19,7 +19,7 @@ async function configureDB() {
 
 cd_db.createDocument = async (collectionName, documentData) => {
     try {
-        await configureDB();  
+        await connectDB();  
         const collection = database.collection(collectionName);
         await collection.insertOne(documentData);
     } catch (e) {
@@ -37,7 +37,7 @@ cd_db.getDocument = async (collectionName, field, value) => {
 
         console.log("query "+ JSON.stringify(query));    
         let items = [];
-        await configureDB();  
+        await connectDB();  
         const collection = database.collection(collectionName);
         const cursor = await collection.find(query)
         await cursor.forEach((item)=>{
@@ -56,7 +56,7 @@ cd_db.getDocument = async (collectionName, field, value) => {
 
 cd_db.getAllDocuments = async (collectionName) => {
     try{
-        await configureDB();
+        await connectDB();
         let items = [];
         const collection = database.collection(collectionName);
         const cursor = await collection.find();
@@ -75,7 +75,7 @@ cd_db.getAllDocuments = async (collectionName) => {
 
 cd_db.updateDocument = async (collectionName, documentData, oldData) => {
     try{
-        await configureDB();
+        await connectDB();
         const options = { upsert: false };
         
         console.log(collectionName + " "+ JSON.stringify(documentData) + " "+ JSON.stringify(oldData));
@@ -93,7 +93,7 @@ cd_db.updateDocument = async (collectionName, documentData, oldData) => {
 
 cd_db.deleteDocument = async (collectionName, documentId) => {
     try{
-        await configureDB();
+        await connectDB();
 
         let data = { "id": parseInt(documentId) };
         const collection = database.collection(collectionName);
@@ -109,7 +109,7 @@ cd_db.deleteDocument = async (collectionName, documentId) => {
 cd_db.maxId = async (collectionName) => {
     let maxCount = null;
     try {
-        await configureDB();  
+        await connectDB();  
         const collection = database.collection(collectionName);
         const cursor = collection.aggregate([
             { "$group": {
