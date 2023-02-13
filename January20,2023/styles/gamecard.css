@@ -1,11 +1,3 @@
-@-webkit-keyframes card {
-  from {
-    border-radius: 0;
-  }
-  to {
-    border-radius: 20px;
-  }
-}
 @keyframes card {
   from {
     border-radius: 0;
@@ -57,10 +49,8 @@ section .game-card {
   flex-wrap: wrap;
   justify-content: space-around;
   border-radius: 20px;
-  -webkit-animation-name: card;
-          animation-name: card;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  animation-name: card;
+  animation-duration: 3s;
 }
 section .game-card p {
   font-family: "Sofia Sans Extra Condensed", sans-serif;

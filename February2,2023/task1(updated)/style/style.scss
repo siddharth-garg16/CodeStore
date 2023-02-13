@@ -1,9 +1,14 @@
 $mainColor : rgb(129, 19, 49);
 $headingText : 'Righteous', cursive;
 $bodyText : 'Itim', cursive;
+$secondaryColor :rgb(196, 30, 58);
+$baseBreakPoint : 500px;
 
 *{
     margin: 0;
+}
+body{
+    overflow-x: hidden;
 }
 header{
     background-color: $mainColor;
@@ -38,6 +43,24 @@ section{
         }
         img:hover{
             opacity: 0.5;
+        }
+    }
+    #info-wrapper{
+        padding: 20px;
+        #table-info{
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 20px;
+            border: none;
+            font-family: $bodyText;
+            margin: 20px;
+            background-color: $secondaryColor;
+            color: white;
+        }
+        #table-info:hover{
+            font-size: 2em;
+            transition: all .7s ease;
+            -webkit-transition: all .4s ease;
         }
     }
     #form-wrapper{
@@ -77,6 +100,38 @@ section{
             font-family: $bodyText;
             font-size: 2em;
             color: rgb(50, 50, 50);
+        }
+    }
+}
+@media screen and (max-width:$baseBreakPoint) {
+    body{
+        overflow-x: scroll;
+    }
+    header{
+        width: 100vw;
+        h1{
+            font-size: 2em;
+        }
+    }
+    section{
+        #desc{
+            h2{
+                font-size: 1.5em;
+            }
+        }
+        #info-wrapper{
+            padding: 5px;
+            #table-info{
+                margin: 10px;
+            }
+        }
+        #form-wrapper{
+            input, select{
+                width: 15em;
+            }
+            button{
+                width: 10em;
+            }
         }
     }
 }

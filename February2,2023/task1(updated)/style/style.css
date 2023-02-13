@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header {
   background-color: rgb(129, 19, 49);
   padding: 1em 0 1em 0;
@@ -37,6 +41,24 @@ section #image-wrapper img {
 }
 section #image-wrapper img:hover {
   opacity: 0.5;
+}
+section #info-wrapper {
+  padding: 20px;
+}
+section #info-wrapper #table-info {
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  border: none;
+  font-family: "Itim", cursive;
+  margin: 20px;
+  background-color: rgb(196, 30, 58);
+  color: white;
+}
+section #info-wrapper #table-info:hover {
+  font-size: 2em;
+  transition: all 0.7s ease;
+  -webkit-transition: all 0.4s ease;
 }
 section #form-wrapper {
   text-align: center;
@@ -76,4 +98,31 @@ section #show-bookings h2 {
   font-family: "Itim", cursive;
   font-size: 2em;
   color: rgb(50, 50, 50);
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    overflow-x: scroll;
+  }
+  header {
+    width: 100vw;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+  section #desc h2 {
+    font-size: 1.5em;
+  }
+  section #info-wrapper {
+    padding: 5px;
+  }
+  section #info-wrapper #table-info {
+    margin: 10px;
+  }
+  section #form-wrapper input, section #form-wrapper select {
+    width: 15em;
+  }
+  section #form-wrapper button {
+    width: 10em;
+  }
 }/*# sourceMappingURL=style.css.map */
