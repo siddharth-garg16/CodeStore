@@ -1,0 +1,8 @@
+.nav-items{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-items > li {
+    margin: 0 1em;
+}
