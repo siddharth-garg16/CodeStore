@@ -62,13 +62,13 @@ const bookTable = () => {
             var emailValue = email.value;
             var contactValue = contact.value;
             // console.log(fullNameValue, emailValue, contactValue);
-        }
-        if(tables instanceof HTMLSelectElement){
-            var selectedTableValue = [...tables.selectedOptions].map(option=>option.value);
-            // console.log(selectedTableValue);
-        }
+            if(tables instanceof HTMLSelectElement){
+                var selectedTableValue = [...tables.selectedOptions].map(option=>option.value);
+                // console.log(selectedTableValue);
+                bookings.push(new Booking(fullNameValue, emailValue, contactValue, selectedTableValue[0]));
+            }         
+        }   
     }
-    bookings.push(new Booking(fullNameValue, emailValue, contactValue, selectedTableValue[0]));
 
     for(let table of availableOptions){
         if(table.tableID === selectedTableValue[0]){
