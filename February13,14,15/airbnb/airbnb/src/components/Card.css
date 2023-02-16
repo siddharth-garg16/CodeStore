@@ -1,0 +1,26 @@
+.card{
+    width: 15vw;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+}
+.card--image{
+    width: 15vw;
+    border-radius: 20px;
+}
+.card--star{
+    width: 20px;
+    height: 20px;
+}
+.card span{
+    font-weight: 300;
+}
+.card--info{
+    display: flex;
+    align-items: center;
+}
+.card p{
+    font-weight: 300;
+}
+.gray{
+    color: rgb(100, 100, 100);
+}

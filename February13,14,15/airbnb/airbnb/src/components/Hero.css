@@ -1,0 +1,21 @@
+.hero-wrapper{
+    padding: 50px;
+    font-family: 'Kanit', sans-serif;
+}
+.info-wrapper > h1{
+    font-size: 3em;
+}
+.info-wrapper > p{
+    font-size: 2em;
+    font-weight: 200;
+    color: rgb(50, 50, 50);
+}
+.display-image{
+    width: 70vw;
+    margin-left: 20vw;
+}
+.info-wrapper{
+    width: 30vw;
+    margin-left: 100px;
+    margin-top: 50px;
+}
