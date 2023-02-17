@@ -1,7 +1,6 @@
 <template>
-  <h1 class="form-heading">Sign Up</h1>
-  <div class="register">
-    <input type="text" v-model="name" placeholder="Enter Name" required />
+  <h1 class="form-heading">Log In</h1>
+  <div class="login">
     <input type="email" v-model="email" placeholder="Enter Email" required />
     <input
       type="password"
@@ -10,9 +9,9 @@
       minlength="8"
       required
     />
-    <button v-on:click="signUp">Sign Up</button>
-    <span>Already registered with us? &nbsp;</span>
-    <span><router-link to="/login">Login</router-link></span>
+    <button v-on:click="logIn">Log In</button>
+    <span>Don't have an account yet? &nbsp;</span>
+    <span><router-link to="/sign-up">SignUp</router-link></span>
   </div>
 </template>
 
@@ -20,26 +19,22 @@
 import axios from "axios";
 
 export default {
-  name: "SignUp",
+  name: "LogIn",
   data() {
     return {
-      name: "",
       email: "",
       password: "",
     };
   },
   methods: {
-    async signUp() {
-      if (this.name && this.email && this.password) {
-        let result = await axios.post("http://localhost:3000/user", {
-          name: this.name,
-          email: this.email,
-          password: this.password,
-        });
+    async logIn() {
+      if (this.email && this.password) {
+        let result = await axios.get(
+          `http://localhost:3000/user?email=${this.email}&passowrd=${this.password}`
+        );
 
-        if (result.status == 201) {
-          alert("Signed up successfully!");
-          localStorage.setItem("user-info", JSON.stringify(result.data));
+        if (result.status == 200 && result.data.length) {
+          localStorage.setItem("user-info", JSON.stringify(result.data[0]));
           this.$router.push({ name: "LoggedHome" });
         }
       }
@@ -60,7 +55,7 @@ export default {
   letter-spacing: -0.05em;
   margin-top: 50px;
 }
-.register input {
+.login input {
   width: 300px;
   height: 30px;
   padding-left: 10px;
@@ -71,7 +66,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-.register button {
+.login button {
   width: 310px;
   padding: 10px 30px;
   font-size: 1em;
@@ -86,11 +81,11 @@ export default {
   margin-right: auto;
   margin-bottom: 15px;
 }
-.register button:hover {
+.login button:hover {
   background-color: rgb(53, 94, 59);
   font-weight: 600;
 }
-.register a {
+.login a {
   color: rgb(97, 118, 78);
   font-weight: 500;
 }
