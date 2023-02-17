@@ -1,14 +1,23 @@
 <template>
+  <NavBar />
   <SignUp />
+  <LoggedHome />
+  <BaseFoot />
 </template>
 
 <script>
 import SignUp from "./components/SignUp.vue"
+import NavBar from "./components/NavBar.vue"
+import BaseFoot from "./components/BaseFoot.vue"
+import LoggedHome from "./components/LoggedHome.vue"
 
 export default {
   name: 'App',
   components: {
-    SignUp
+    NavBar,
+    BaseFoot,
+    SignUp,
+    LoggedHome
   }
 }
 </script>
@@ -20,6 +29,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
