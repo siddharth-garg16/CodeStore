@@ -1,9 +1,5 @@
 <template>
-  <img
-    class="logo"
-    src="../assets/restaurant-logo.webp"
-    alt="restaurant-logo"
-  />
+  <img class="logo" src="../assets/restaurant-logo.webp" alt="restaurant-logo" />
 </template>
 
 <script>

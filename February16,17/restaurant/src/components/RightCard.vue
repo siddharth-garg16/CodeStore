@@ -1,8 +1,11 @@
 <template>
     <div class="right-card">
         <div class="detail-wrapper">
-            <h1>{{cuisine}}</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, quasi accusantium. Itaque ad pariatur eos? Laborum, error architecto dicta maiores impedit explicabo cupiditate labore fuga sunt maxime odit ratione nesciunt quisquam rem accusantium hic nihil debitis corrupti rerum culpa deserunt delectus quis. Debitis officia, nesciunt eligendi omnis minima commodi nostrum.</p>
+            <h1>{{ cuisine }}</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, quasi accusantium. Itaque ad pariatur eos?
+                Laborum, error architecto dicta maiores impedit explicabo cupiditate labore fuga sunt maxime odit ratione
+                nesciunt quisquam rem accusantium hic nihil debitis corrupti rerum culpa deserunt delectus quis. Debitis
+                officia, nesciunt eligendi omnis minima commodi nostrum.</p>
         </div>
         <div class="image-wrapper">
             <img src="../assets/mexican1.jpg" alt="food">
@@ -13,10 +16,10 @@
 </template>
 
 <script>
-export default{
-    name:"RightCard",
-    props:{
-        cuisine:String,
+export default {
+    name: "RightCard",
+    props: {
+        cuisine: String,
         filename: String
     }
 }
@@ -24,51 +27,58 @@ export default{
 
 
 <style scoped>
-.right-card{
+.right-card {
     margin-left: 20px;
     margin-right: 20px;
     display: flex;
     flex-wrap: nowrap;
     margin-block: 50px;
 }
-.detail-wrapper{
+
+.detail-wrapper {
     width: 50%;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 50px;
     color: whitesmoke;
 }
-.detail-wrapper h1{
+
+.detail-wrapper h1 {
     font-size: 2.5em;
     font-weight: 700;
     font-family: 'Phudu', cursive;
 }
-.detail-wrapper h1:hover{
+
+.detail-wrapper h1:hover {
     text-decoration: underline;
-   font-size: 3em;
-   transition: all .9s ease;
-   -webkit-transition: all .9s ease;
+    font-size: 3em;
+    transition: all .9s ease;
+    -webkit-transition: all .9s ease;
 }
-.detail-wrapper p{
+
+.detail-wrapper p {
     font-size: 0.9em;
     font-weight: 100;
     font-family: 'Phudu', cursive;
 }
-.image-wrapper{
+
+.image-wrapper {
     width: 50%;
 }
-.image-wrapper img{
+
+.image-wrapper img {
     height: 300px;
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 20px;
 }
-.image-wrapper img:hover{
+
+.image-wrapper img:hover {
     filter: brightness(20%);
     transition: all .7s ease;
     -webkit-transition: all .7s ease;
 }
-hr{
+
+hr {
     opacity: 0.2;
-}
-</style>
+}</style>

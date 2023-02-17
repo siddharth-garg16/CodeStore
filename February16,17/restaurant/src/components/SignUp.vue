@@ -3,13 +3,7 @@
   <div class="register">
     <input type="text" v-model="name" placeholder="Enter Name" required />
     <input type="email" v-model="email" placeholder="Enter Email" required />
-    <input
-      type="password"
-      v-model="password"
-      placeholder="Enter Password"
-      minlength="8"
-      required
-    />
+    <input type="password" v-model="password" placeholder="Enter Password" minlength="8" required />
     <button v-on:click="signUp">Sign Up</button>
     <span>Already registered with us? &nbsp;</span>
     <span><router-link to="/login">Login</router-link></span>
@@ -60,6 +54,7 @@ export default {
   letter-spacing: -0.05em;
   margin-top: 50px;
 }
+
 .register input {
   width: 300px;
   height: 30px;
@@ -71,6 +66,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
+
 .register button {
   width: 310px;
   padding: 10px 30px;
@@ -86,10 +82,12 @@ export default {
   margin-right: auto;
   margin-bottom: 15px;
 }
+
 .register button:hover {
   background-color: rgb(53, 94, 59);
   font-weight: 600;
 }
+
 .register a {
   color: rgb(97, 118, 78);
   font-weight: 500;

@@ -2,13 +2,7 @@
   <h1 class="form-heading">Log In</h1>
   <div class="login">
     <input type="email" v-model="email" placeholder="Enter Email" required />
-    <input
-      type="password"
-      v-model="password"
-      placeholder="Enter Password"
-      minlength="8"
-      required
-    />
+    <input type="password" v-model="password" placeholder="Enter Password" minlength="8" required />
     <button v-on:click="logIn">Log In</button>
     <span>Don't have an account yet? &nbsp;</span>
     <span><router-link to="/sign-up">SignUp</router-link></span>
@@ -55,6 +49,7 @@ export default {
   letter-spacing: -0.05em;
   margin-top: 50px;
 }
+
 .login input {
   width: 300px;
   height: 30px;
@@ -66,6 +61,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
+
 .login button {
   width: 310px;
   padding: 10px 30px;
@@ -81,10 +77,12 @@ export default {
   margin-right: auto;
   margin-bottom: 15px;
 }
+
 .login button:hover {
   background-color: rgb(53, 94, 59);
   font-weight: 600;
 }
+
 .login a {
   color: rgb(97, 118, 78);
   font-weight: 500;
