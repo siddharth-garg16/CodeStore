@@ -16,7 +16,8 @@
 export default{
     name:"RightCard",
     props:{
-        cuisine:String
+        cuisine:String,
+        filename: String
     }
 }
 </script>
@@ -39,10 +40,19 @@ export default{
 }
 .detail-wrapper h1{
     font-size: 2.5em;
+    font-weight: 700;
+    font-family: 'Phudu', cursive;
+}
+.detail-wrapper h1:hover{
+    text-decoration: underline;
+   font-size: 3em;
+   transition: all .9s ease;
+   -webkit-transition: all .9s ease;
 }
 .detail-wrapper p{
     font-size: 0.9em;
     font-weight: 100;
+    font-family: 'Phudu', cursive;
 }
 .image-wrapper{
     width: 50%;
@@ -55,6 +65,8 @@ export default{
 }
 .image-wrapper img:hover{
     filter: brightness(20%);
+    transition: all .7s ease;
+    -webkit-transition: all .7s ease;
 }
 hr{
     opacity: 0.2;

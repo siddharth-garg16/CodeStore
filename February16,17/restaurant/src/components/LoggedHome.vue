@@ -4,9 +4,10 @@
     <a v-on:click="logOut" href="#"><img src="../assets/logout-icon.png" alt="logout"></a>
   </div>
   <div class="content">
-    <RightCard cuisine="Mexican"/>
-    <LeftCard cuisine="Italian"/>
-    <RightCard cuisine="Indian"/>
+    <h1 class="content-heading">Our most ordered Cuisines</h1>
+    <RightCard cuisine="Mexican" />
+    <LeftCard cuisine="Italian" />
+    <RightCard cuisine="Indian" />
   </div>
   <div class="lifter"></div>
 </template>
@@ -59,7 +60,13 @@ export default {
     padding-block: 50px;
     box-shadow: rgba(0, 0, 0, 0.2) 7px 5px 7px 2px;
     border-radius: 10px;
-    background-color: rgba(40,44,52,0.9);
+    background-color: rgba(40,44,52,0.99);
+}
+.content-heading{
+    color: rgb(160, 160, 180);
+    font-size: 3em;
+    font-weight: 400;
+    margin-bottom: 100px;
 }
 .lifter{
     height:200px;
