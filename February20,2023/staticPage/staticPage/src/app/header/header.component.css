@@ -1,0 +1,24 @@
+nav{
+    display: flex;
+    background-color: #002244;
+    height: 6em;
+    align-items: center;
+    justify-content: center;
+}
+#header-logo{
+    margin: 0;
+    height: 4em;
+}
+#header-nba-text{
+    font-size: 3.5em;
+    font-family: 'Oswald', sans-serif;
+    color: aliceblue;
+    margin-right: 30px;
+    margin-left: 5px;
+}
+#header-allstar-text{
+    font-size: 3em;
+    font-family: 'Phudu', cursive;
+    color: rgb(255, 215, 0);
+    font-weight: bold;
+}
