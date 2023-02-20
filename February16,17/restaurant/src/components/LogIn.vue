@@ -30,7 +30,11 @@ export default {
         if (result.status == 200 && result.data.length) {
           localStorage.setItem("user-info", JSON.stringify(result.data[0]));
           this.$router.push({ name: "LoggedHome" });
+        }else{
+          alert("Invalid email or password.")
         }
+      }else{
+        alert("All fields are mandatory to fill.")
       }
     },
   },

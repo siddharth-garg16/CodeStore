@@ -36,6 +36,8 @@ export default {
           localStorage.setItem("user-info", JSON.stringify(result.data));
           this.$router.push({ name: "LoggedHome" });
         }
+      }else{
+        alert("All fields are mandatory.")
       }
     },
   },
