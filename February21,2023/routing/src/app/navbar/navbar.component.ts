@@ -14,10 +14,10 @@ export class NavbarComponent {
   }
 
   about(){
-    this.router.navigate(['/about'])
+    this.router.navigate(['about'])
   }
 
   contact(){
-    this.router.navigate(['/contact'])
+    this.router.navigateByUrl('contact')
   }
 }
