@@ -24,7 +24,7 @@ export default {
     async logIn() {
       if (this.email && this.password) {
         let result = await axios.get(
-          `http://localhost:3000/user?email=${this.email}&passowrd=${this.password}`
+          `http://localhost:3000/user?email=${this.email}&password=${this.password}`
         );
 
         if (result.status == 200 && result.data.length) {
