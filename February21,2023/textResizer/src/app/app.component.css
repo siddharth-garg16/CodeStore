@@ -1,0 +1,29 @@
+#main-wrapper{
+    padding-block: 250px;
+    overflow: hidden;
+    text-align: center;
+}
+textarea{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.change-btn{
+    padding: 10px 30px;
+    border: 1px solid black;
+    border-radius: 25px;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    background-color: rgb(220, 220, 220);
+    margin-block: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.change-btn:hover{
+    background-color: rgb(50, 50, 50);
+    color: white;
+    transition: all 0.5s ease;
+}
+#button-wrapper{
+    display: flex;
+    justify-content: center;
+}

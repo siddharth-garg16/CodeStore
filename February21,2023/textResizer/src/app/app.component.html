@@ -1,0 +1,7 @@
+<div id="main-wrapper">
+  <div id="button-wrapper">
+    <button class="change-btn" (click)="changeSize('decrease')">--</button>
+    <button class="change-btn" (click)="changeSize('increase')">++</button>
+  </div>
+  <textarea id="para" cols="100" rows="5" [disabled]="disable" [style.font-size.px]="fontSize">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, minima.</textarea>
+</div>
