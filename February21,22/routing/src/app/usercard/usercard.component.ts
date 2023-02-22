@@ -22,32 +22,40 @@ export class UsercardComponent {
       id: "2",
       username: "Glen Quagmire",
       email: "quagmire@mail.com",
-      contact: "987654321",
+      contact: "987654321"
     },
     {
       id: "3",
       username: "Stewie Griffin",
       email: "stewie@mail.com",
-      contact: "123454321",
+      contact: "123454321"
     },
     {
       id: "4",
       username: "Meg Griffin",
       email: "meg@mail.com",
-      contact: "123789456",
+      contact: "123789456"
     }
   ];
 
-  showDetails(id = this.route.snapshot.params['id'] /*id=this.route.snapshot.paramMap.get("id")*/):string[]{
+  showDetails(id = this.route.snapshot.params['id'], userRole = this.route.snapshot.queryParamMap.get('role')):string[]{
+    let role;
+    if(userRole){
+      role = userRole;
+    }
+    else{
+      role="Roll not assigned yet."
+    }
+
     for(let user of this.users){
       if(user.id === id){
         let name = user.username
         let mail = user.email
         let phone = user.contact
-        return [name, mail, phone]
+        return [name, mail, phone, role]
       }
     }
-    return []
+    return ["No user exists"]
   }
 
 }
