@@ -20,6 +20,11 @@ const routes: Routes = [
     component:HomeComponent
   },
   {
+    path:"home",
+    redirectTo:"/home",
+    pathMatch:"full"
+  },
+  {
     path:"users",
     component:UsersComponent
   },

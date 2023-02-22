@@ -38,7 +38,7 @@ export class UsercardComponent {
     }
   ];
 
-  showDetails(id = this.route.snapshot.params['id']):string[]{
+  showDetails(id = this.route.snapshot.params['id'] /*id=this.route.snapshot.paramMap.get("id")*/):string[]{
     for(let user of this.users){
       if(user.id === id){
         let name = user.username
@@ -50,7 +50,4 @@ export class UsercardComponent {
     return []
   }
 
-  // ngOnInit(){
-  //   let selectedId = this.route.snapshot.params['id'];
-  // }
 }
