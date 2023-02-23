@@ -6,11 +6,13 @@
             <label for="from">From:</label>
             <select name="destinations" id="from">
                 <option value="none" selected disabled hidden>Select a city</option>
+                <option *ngFor="let city of cities" value={{city}}>{{city}}</option>
             </select>
 
             <label for="to">To:</label>
             <select name="destinations" id="to">
                 <option value="none" selected disabled hidden>Select a city</option>
+                <option *ngFor="let city of cities" value={{city}}>{{city}}</option>
             </select>
 
             <button type="submit" id="preference-selector">Add to the prefered route</button>
