@@ -1,0 +1,23 @@
+<app-header></app-header>
+
+<section>
+    <div id="wrapper">
+        <div id="form">
+            <label for="from">From:</label>
+            <select name="destinations" id="from">
+                <option value="none" selected disabled hidden>Select a city</option>
+            </select>
+
+            <label for="to">To:</label>
+            <select name="destinations" id="to">
+                <option value="none" selected disabled hidden>Select a city</option>
+            </select>
+
+            <button type="submit" id="preference-selector">Add to the prefered route</button>
+        </div>
+    </div>
+</section>
+
+<footer *ngFor="let route of routes">
+    <app-travelroute [from]="route.from" [to]="route.to"></app-travelroute>
+</footer>
