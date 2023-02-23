@@ -3,24 +3,26 @@
 <section>
     <div id="wrapper">
         <div id="form">
+
             <label for="from">From:</label>
-            <select name="destinations" id="from" (change)="onChangeFrom($event)">
+            <select name="fromDropDown" [(ngModel)]="fromCityDropdownValue" (change)="changeFromCityValue($event)">
                 <option value="none" selected disabled hidden>Select a city</option>
-                <option *ngFor="let city of cities" value={{city}}>{{city}}</option>
+                <option *ngFor="let fromCity of cities; let i = index" [value]="fromCity" [disabled]="i==idx">{{fromCity}}</option>
             </select>
 
             <label for="to">To:</label>
-            <select name="destinations" id="to" (change)="onChangeTo($event)">
+            <select name="toDropDown" [(ngModel)]="toCityDropdownValue" (change)="changeToCityValue($event)">
                 <option value="none" selected disabled hidden>Select a city</option>
-                <option *ngFor="let city of cities" value={{city}}>{{city}}</option>
+                <option *ngFor="let toCity of cities; let i = index" [value]="toCity" [disabled]="i==idx">{{toCity}}</option>
             </select>
 
-            <button type="submit" id="preference-selector" (click)="saveAndHandleRoutes()">Add to the prefered route</button>
+            <button type="submit" id="preference-selector" (click)="saveRoute()">Add to the prefered route</button>
+
         </div>
     </div>
 </section>
 
 <footer>
     <app-travelroute *ngFor="let route of routes" [from]="route.from" [to]="route.to"></app-travelroute>
-    <button (click)="clearSelections()" id="clear">Clear Selections</button>
+    <!-- <button (click)="clearSelections()" id="clear">Clear Selections</button> -->
 </footer>

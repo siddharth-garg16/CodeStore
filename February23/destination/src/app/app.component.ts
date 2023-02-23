@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  toCityDropdownValue:string = "";
+  fromCityDropdownValue:string = "";
+  disabled : boolean = false;
+  idx:any;
+
   public cities:string[] = ["Delhi", "Mumbai", "Chandigarh", "Bangalore", "Hyderabad"]
 
   public routes = [
@@ -15,28 +20,27 @@ export class AppComponent {
     }
   ]
 
-  currFrom:string = "";
-  currTo:string = "";
-
-  onChangeFrom(fromVal){
-    this.currFrom = fromVal.target.value
-  }
-  onChangeTo(toVal){
-    this.currTo = toVal.target.value
+  changeFromCityValue(event:any){
+    console.log(this.fromCityDropdownValue)
+    console.log(event)
+    this.idx = this.cities.indexOf(this.fromCityDropdownValue)
   }
 
-  saveAndHandleRoutes(){
-    if(this.currFrom==="none" || this.currTo==="none" || this.currFrom === this.currTo){
+  changeToCityValue(event:any){
+    console.log(this.toCityDropdownValue)
+    console.log(event)
+    this.idx = this.cities.indexOf(this.toCityDropdownValue)
+  }
+
+  saveRoute(){
+    if(this.fromCityDropdownValue==="none" || this.toCityDropdownValue==="none"){
       return
-  }
-    this.routes.push({
-      from:this.currFrom,
-      to: this.currTo
-    })
-  }
+    }
 
-  clearSelections(){
-    this.routes.splice(1)
+    this.routes.push({
+      from:this.fromCityDropdownValue,
+      to: this.toCityDropdownValue
+    })
   }
 
 }
