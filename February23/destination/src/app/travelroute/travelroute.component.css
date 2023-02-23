@@ -1,9 +1,12 @@
 .route{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding-block: 10px;
 }
 .route span{
     font-family: sans-serif;
     color: rgb(50, 50, 50);
     font-size: 1.25em;
+    margin-left: 35px;
+    margin-right: 35px;
 }

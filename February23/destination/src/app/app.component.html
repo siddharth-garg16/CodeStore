@@ -4,22 +4,23 @@
     <div id="wrapper">
         <div id="form">
             <label for="from">From:</label>
-            <select name="destinations" id="from">
+            <select name="destinations" id="from" (change)="onChangeFrom($event)">
                 <option value="none" selected disabled hidden>Select a city</option>
                 <option *ngFor="let city of cities" value={{city}}>{{city}}</option>
             </select>
 
             <label for="to">To:</label>
-            <select name="destinations" id="to">
+            <select name="destinations" id="to" (change)="onChangeTo($event)">
                 <option value="none" selected disabled hidden>Select a city</option>
                 <option *ngFor="let city of cities" value={{city}}>{{city}}</option>
             </select>
 
-            <button type="submit" id="preference-selector">Add to the prefered route</button>
+            <button type="submit" id="preference-selector" (click)="saveAndHandleRoutes()">Add to the prefered route</button>
         </div>
     </div>
 </section>
 
-<footer *ngFor="let route of routes">
-    <app-travelroute [from]="route.from" [to]="route.to"></app-travelroute>
+<footer>
+    <app-travelroute *ngFor="let route of routes" [from]="route.from" [to]="route.to"></app-travelroute>
+    <button (click)="clearSelections()" id="clear">Clear Selections</button>
 </footer>
