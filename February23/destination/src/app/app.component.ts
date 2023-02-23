@@ -13,12 +13,7 @@ export class AppComponent {
 
   public cities:string[] = ["Delhi", "Mumbai", "Chandigarh", "Bangalore", "Hyderabad"]
 
-  public routes = [
-    {
-      from:"",
-      to:""
-    }
-  ]
+  public routes = []
 
   changeFromCityValue(event:any){
     console.log(this.fromCityDropdownValue)
@@ -43,4 +38,7 @@ export class AppComponent {
     })
   }
 
+  clearSelections(){
+    this.routes.length = 0;
+  }
 }

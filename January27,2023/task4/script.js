@@ -27,7 +27,6 @@ const addSelections = () => {
         to: to
     });
 
-    // console.log(choices);
 
     fromLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
     toLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
@@ -46,7 +45,6 @@ const addSelections = () => {
 const clearSelections = () => {
     choices.length = 0;
     document.getElementById("display-choices").innerHTML = ``;
-    // console.log(choices);
 
     fromLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
     toLocation.innerHTML = `<option value="none" selected disabled hidden>Select a city</option>`;
@@ -61,7 +59,6 @@ fromLocation.addEventListener("change", () => {
     let val = fromLocation.value;
     
     let to_options = toLocation.options;
-    // console.log(to_options);
 
     for(let i=1; i<to_options.length;i++){
         for(obj of choices){
@@ -81,7 +78,6 @@ toLocation.addEventListener("change", () => {
     let val = toLocation.value;
     
     let from_options = fromLocation.options;
-    // console.log(to_options);
 
     for(let i=1; i<from_options.length;i++){
         for(let obj of choices){

@@ -23,6 +23,8 @@
 </section>
 
 <footer>
-    <app-travelroute *ngFor="let route of routes" [from]="route.from" [to]="route.to"></app-travelroute>
-    <!-- <button (click)="clearSelections()" id="clear">Clear Selections</button> -->
+    <ng-template [ngIf]="routes.length">
+        <app-travelroute *ngFor="let route of routes" [from]="route.from" [to]="route.to"></app-travelroute>
+        <button (click)="clearSelections()" id="clear">Clear Selections</button>
+    </ng-template>
 </footer>

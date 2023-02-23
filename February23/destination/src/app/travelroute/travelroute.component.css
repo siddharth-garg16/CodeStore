@@ -2,6 +2,11 @@
     display: flex;
     justify-content: center;
     padding-block: 10px;
+    border: 1px solid black;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
 }
 .route span{
     font-family: sans-serif;
