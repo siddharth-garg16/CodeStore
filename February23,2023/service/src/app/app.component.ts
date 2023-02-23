@@ -8,9 +8,7 @@ import {JokedataService} from "./services/jokedata.service"
 })
 export class AppComponent {
   fetchedJokes:any;
-  constructor(private jokeData:JokedataService){
-    
-  }
+  constructor(private jokeData:JokedataService){}
 
   getData(){
     this.jokeData.jokes().subscribe((data)=>{this.fetchedJokes=data})

@@ -7,11 +7,8 @@ import {HttpClient} from '@angular/common/http'
 export class JokedataService {
 
   constructor(private http:HttpClient) { }
+  
   jokes(){
-    try{
-      this.http.get('https://official-joke-api.appspot.com/random_ten')
-    }catch(err){
-      console.log(err)
-    }  
+    return this.http.get('https://official-joke-api.appspot.com/random_ten') 
   }
 }
