@@ -11,6 +11,15 @@ export class StudentdataService {
 
   }
 
+  // interface student{
+  //   name:string,
+  //   className:string,
+  //   age:string,
+  //   rollNo:string,
+  //   contactNo:string,
+  //   image:string
+  // }
+
   getAllStudents(){
     return this.httpClient.get('/getAllStudents')
   }
