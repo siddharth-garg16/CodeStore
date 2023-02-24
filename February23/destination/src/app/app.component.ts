@@ -13,7 +13,7 @@ export class AppComponent {
 
   // public cities:string[] = ["Delhi", "Mumbai", "Chandigarh", "Bangalore", "Hyderabad", "Pune"]
 
-  newArray = [
+  public fromCitiesArray = [
     {
       name:"Delhi",
       isDisabled:false
@@ -40,11 +40,46 @@ export class AppComponent {
     }
   ]
 
-  public fromCitiesArray = this.newArray.slice()
-
-  public toCitiesArray = this.newArray.slice()
+  public toCitiesArray = [
+    {
+      name:"Delhi",
+      isDisabled:false
+    },
+    {
+      name:"Mumbai",
+      isDisabled:false
+    },
+    {
+      name:"Chandigarh",
+      isDisabled:false
+    },
+    {
+      name:"Bangalore",
+      isDisabled:false
+    },
+    {
+      name:"Hyderabad",
+      isDisabled:false
+    },
+    {
+      name:"Pune",
+      isDisabled:false
+    }
+  ]
 
   public routes = []
+
+  resetFrom(){
+    for(let i=0; i<6; i++){
+      this.fromCitiesArray[i].isDisabled = false;
+    }
+  }
+
+  resetTo(){
+    for(let i=0; i<6; i++){
+      this.toCitiesArray[i].isDisabled = false;
+    }
+  }
 
   changeFromCityValue(event:any){
     console.log(this.fromCityDropdownValue)
@@ -52,13 +87,12 @@ export class AppComponent {
     
     for(let toCityOption of this.toCitiesArray){
       for(let route of this.routes){
-        if(route.from===this.fromCityDropdownValue){
-          if(toCityOption === route.to){
+        if(route.from===this.fromCityDropdownValue && route.to===this.toCityDropdownValue){
             toCityOption.isDisabled = true
           }
-        }
       }
       if(toCityOption.name === this.fromCityDropdownValue){
+        this.resetTo()
         toCityOption.isDisabled = true
       }
     }
@@ -70,13 +104,12 @@ export class AppComponent {
 
     for(let fromCityOption of this.fromCitiesArray){
       for(let route of this.routes){
-        if(route.to===this.toCityDropdownValue){
-          if(fromCityOption === route.from){
+        if(route.to===this.toCityDropdownValue && route.from===this.fromCityDropdownValue){
             fromCityOption.isDisabled = true
-          }
         }
       }
       if(fromCityOption.name === this.toCityDropdownValue){
+        this.resetFrom()
         fromCityOption.isDisabled = true
       }
     }
@@ -93,13 +126,12 @@ export class AppComponent {
       disabled: true
     })
 
-    console.log(this.fromCitiesArray, this.newArray)
 
-    this.fromCityDropdownValue = ""
-    this.toCityDropdownValue = ""
-    this.fromCitiesArray = this.newArray
-    this.toCitiesArray = this.newArray
+    this.fromCityDropdownValue = "none"
+    this.toCityDropdownValue = "none"
 
+    this.resetFrom()
+    this.resetTo()
 
   }
 
