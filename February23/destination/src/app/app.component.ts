@@ -138,6 +138,9 @@ export class AppComponent {
   clearSelections(){
     this.routes.length = 0;
 
+    this.fromCityDropdownValue = "none"
+    this.toCityDropdownValue = "none"
+
     this.resetTo()
     this.resetFrom()
   }
