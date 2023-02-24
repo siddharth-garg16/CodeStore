@@ -84,7 +84,10 @@ export class ReactiveComponent {
   }
 
   changeFromCityValue(): void {
-    this.resetTo();
+    // console.log(this.bookRouteForm.value.fromCityName)
+    // debugger
+    // console.log(this.bookRouteForm.value.fromCityName)
+
 
     let temp: string[] = [];
     for (let route of this.routes) {
@@ -93,6 +96,7 @@ export class ReactiveComponent {
       }
     }
     temp.push(this.bookRouteForm.value.fromCityName);
+    this.resetTo();
     for (let toCityOption of this.toCitiesArray) {
       for (let val of temp) {
         if (toCityOption.name === val) {
@@ -103,7 +107,9 @@ export class ReactiveComponent {
   }
 
   changeToCityValue(): void {
-    this.resetFrom();
+    // console.log(this.bookRouteForm.value.toCityName)
+    // console.log(this.bookRouteForm.value.toCityName)
+
 
     let temp: string[] = [];
     for (let route of this.routes) {
@@ -112,6 +118,8 @@ export class ReactiveComponent {
       }
     }
     temp.push(this.bookRouteForm.value.toCityName);
+    this.resetFrom();
+
     for (let fromCityOption of this.fromCitiesArray) {
       for (let val of temp) {
         if (fromCityOption.name === val) {
@@ -133,13 +141,15 @@ export class ReactiveComponent {
       from: this.bookRouteForm.value.fromCityName,
       to: this.bookRouteForm.value.toCityName,
     });
+    // console.log(this.bookRouteForm.value)
+    console.log(this.routes);
+
 
     this.bookRouteForm.value.fromCityName = 'none';
     this.bookRouteForm.value.toCityName = 'none';
 
     this.resetFrom();
     this.resetTo();
-    // console.log(this.reactiveForm.value)
   }
 
   clearSelections(): void {
