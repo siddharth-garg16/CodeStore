@@ -1,0 +1,34 @@
+<section>
+    <div id="wrapper">
+        <form [formGroup]="reactiveForm" (ngSubmit)="saveRoute()">
+            <label for="from">From:</label>
+            <select formControlName="fromDropDown" (change)="changeFromCityValue()">
+                <option value="none" selected disabled>Select a city</option>
+                <option *ngFor="let fromCity of fromCitiesArray" [value]="fromCity.name"
+                    [disabled]="fromCity.isDisabled">
+                    {{ fromCity.name }}
+                </option>
+            </select>
+
+            <label for="to">To:</label>
+            <select formControlName="toDropDown" (change)="changeToCityValue()">
+                <option value="none" selected disabled>Select a city</option>
+                <option *ngFor="let toCity of toCitiesArray" [value]="toCity.name" [disabled]="toCity.isDisabled">
+                    {{ toCity.name }}
+                </option>
+            </select>
+
+            <button type="submit" id="preference-selector" (click)="saveRoute()">
+                Add to the prefered route
+            </button>
+        </form>
+
+    </div>
+</section>
+
+<footer>
+    <ng-template [ngIf]="routes.length">
+        <app-travelroute *ngFor="let route of routes" [from]="route.from" [to]="route.to"></app-travelroute>
+        <button (click)="clearSelections()" id="clear">Clear Selections</button>
+    </ng-template>
+</footer>
