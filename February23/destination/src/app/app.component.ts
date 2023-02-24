@@ -70,13 +70,13 @@ export class AppComponent {
   public routes = []
 
   resetFrom(){
-    for(let i=0; i<6; i++){
+    for(let i=0; i<this.fromCitiesArray.length; i++){
       this.fromCitiesArray[i].isDisabled = false;
     }
   }
 
   resetTo(){
-    for(let i=0; i<6; i++){
+    for(let i=0; i<this.toCitiesArray.length; i++){
       this.toCitiesArray[i].isDisabled = false;
     }
   }
@@ -87,7 +87,7 @@ export class AppComponent {
     
     for(let toCityOption of this.toCitiesArray){
       for(let route of this.routes){
-        if(route.from===this.fromCityDropdownValue && route.to===this.toCityDropdownValue){
+        if(route.from===this.fromCityDropdownValue && route.to===toCityOption.name){
             toCityOption.isDisabled = true
           }
       }
@@ -104,7 +104,7 @@ export class AppComponent {
 
     for(let fromCityOption of this.fromCitiesArray){
       for(let route of this.routes){
-        if(route.to===this.toCityDropdownValue && route.from===this.fromCityDropdownValue){
+        if(route.to===this.toCityDropdownValue && route.from===fromCityOption.name){
             fromCityOption.isDisabled = true
         }
       }
@@ -137,5 +137,8 @@ export class AppComponent {
 
   clearSelections(){
     this.routes.length = 0;
+
+    this.resetTo()
+    this.resetFrom()
   }
 }
