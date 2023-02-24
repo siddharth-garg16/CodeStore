@@ -1,24 +1,24 @@
 <section>
     <div id="wrapper">
-        <form [formGroup]="reactiveForm" (ngSubmit)="saveRoute()">
+        <form [formGroup]="bookRouteForm" (ngSubmit)="saveRoute()">
             <label for="from">From:</label>
-            <select formControlName="fromDropDown" (change)="changeFromCityValue()">
+            <select formControlName="fromCityName" (change)="changeFromCityValue($event)">
                 <option value="none" selected disabled>Select a city</option>
-                <option *ngFor="let fromCity of fromCitiesArray" [value]="fromCity.name"
+                <option *ngFor="let fromCity of fromCitiesArray" [ngValue]="fromCity.name"
                     [disabled]="fromCity.isDisabled">
                     {{ fromCity.name }}
                 </option>
             </select>
 
             <label for="to">To:</label>
-            <select formControlName="toDropDown" (change)="changeToCityValue()">
+            <select formControlName="toCityName" (change)="changeToCityValue($event)">
                 <option value="none" selected disabled>Select a city</option>
-                <option *ngFor="let toCity of toCitiesArray" [value]="toCity.name" [disabled]="toCity.isDisabled">
+                <option *ngFor="let toCity of toCitiesArray" [ngValue]="toCity.name" [disabled]="toCity.isDisabled">
                     {{ toCity.name }}
                 </option>
             </select>
 
-            <button type="submit" id="preference-selector" (click)="saveRoute()">
+            <button type="submit" id="preference-selector">
                 Add to the prefered route
             </button>
         </form>

@@ -7,13 +7,13 @@ import { FormGroup, FormControl } from '@angular/forms'
   styleUrls: ['./reactive.component.css'],
 })
 export class ReactiveComponent {
-  reactiveForm = new FormGroup({
-    fromDropDown: new FormControl("none"),
-    toDropDown: new FormControl("none")
+  bookRouteForm = new FormGroup({
+    fromCityName: new FormControl("none"),
+    toCityName: new FormControl("none")
   })
 
-  toCityDropdownValue = this.reactiveForm.value.fromDropDown;
-  fromCityDropdownValue = this.reactiveForm.value.toDropDown;
+  // bookRouteForm.value.toCityName = this.bookRouteForm.value.fromDropDown;
+  // bookRouteForm.value.fromCityName = this.bookRouteForm.value.toDropDown;
 
   public fromCitiesArray: { name: string; isDisabled: boolean }[] = [
     {
@@ -83,16 +83,16 @@ export class ReactiveComponent {
     }
   }
 
-  changeFromCityValue(): void {
+  changeFromCityValue(event:any): void {
     this.resetTo();
 
     let temp: string[] = [];
     for (let route of this.routes) {
-      if (route.from === this.fromCityDropdownValue) {
+      if (route.from === String(this.bookRouteForm.value.fromCityName)) {
         temp.push(route.to);
       }
     }
-    temp.push(this.fromCityDropdownValue);
+    temp.push(this.bookRouteForm.value.fromCityName);
     for (let toCityOption of this.toCitiesArray) {
       for (let val of temp) {
         if (toCityOption.name === val) {
@@ -102,16 +102,16 @@ export class ReactiveComponent {
     }
   }
 
-  changeToCityValue(): void {
+  changeToCityValue(event:any): void {
     this.resetFrom();
 
     let temp: string[] = [];
     for (let route of this.routes) {
-      if (route.to === this.toCityDropdownValue) {
+      if (route.to === this.bookRouteForm.value.toCityName) {
         temp.push(route.from);
       }
     }
-    temp.push(this.toCityDropdownValue);
+    temp.push(this.bookRouteForm.value.toCityName);
     for (let fromCityOption of this.fromCitiesArray) {
       for (let val of temp) {
         if (fromCityOption.name === val) {
@@ -123,30 +123,30 @@ export class ReactiveComponent {
 
   saveRoute(): void {
     if (
-      this.fromCityDropdownValue === 'none' ||
-      this.toCityDropdownValue === 'none'
+      this.bookRouteForm.value.fromCityName === 'none' ||
+      this.bookRouteForm.value.toCityName === 'none'
     ) {
       return;
     }
 
     this.routes.push({
-      from: this.fromCityDropdownValue,
-      to: this.toCityDropdownValue,
+      from: this.bookRouteForm.value.fromCityName,
+      to: this.bookRouteForm.value.toCityName,
     });
 
-    this.fromCityDropdownValue = 'none';
-    this.toCityDropdownValue = 'none';
+    this.bookRouteForm.value.fromCityName = 'none';
+    this.bookRouteForm.value.toCityName = 'none';
 
     this.resetFrom();
     this.resetTo();
-    console.log(this.reactiveForm.value)
+    // console.log(this.reactiveForm.value)
   }
 
   clearSelections(): void {
     this.routes.length = 0;
 
-    this.fromCityDropdownValue = 'none';
-    this.toCityDropdownValue = 'none';
+    this.bookRouteForm.value.fromCityName = 'none';
+    this.bookRouteForm.value.toCityName = 'none';
 
     this.resetTo();
     this.resetFrom();
