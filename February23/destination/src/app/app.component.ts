@@ -8,23 +8,97 @@ import { Component } from '@angular/core';
 export class AppComponent {
   toCityDropdownValue:string = "";
   fromCityDropdownValue:string = "";
-  disabled : boolean = false;
-  idx:any;
+  // disabled : boolean = false;
+  // idx:any;
 
-  public cities:string[] = ["Delhi", "Mumbai", "Chandigarh", "Bangalore", "Hyderabad"]
+  // public cities:string[] = ["Delhi", "Mumbai", "Chandigarh", "Bangalore", "Hyderabad", "Pune"]
+
+  public fromCitiesArray = [
+    {
+      name:"Delhi",
+      isDisabled:false
+    },
+    {
+      name:"Mumbai",
+      isDisabled:false
+    },
+    {
+      name:"Chandigarh",
+      isDisabled:false
+    },
+    {
+      name:"Bangalore",
+      isDisabled:false
+    },
+    {
+      name:"Hyderabad",
+      isDisabled:false
+    },
+    {
+      name:"Pune",
+      isDisabled:false
+    }
+  ]
+
+  public toCitiesArray = [
+    {
+      name:"Delhi",
+      isDisabled:false
+    },
+    {
+      name:"Mumbai",
+      isDisabled:false
+    },
+    {
+      name:"Chandigarh",
+      isDisabled:false
+    },
+    {
+      name:"Bangalore",
+      isDisabled:false
+    },
+    {
+      name:"Hyderabad",
+      isDisabled:false
+    },
+    {
+      name:"Pune",
+      isDisabled:false
+    }
+  ]
 
   public routes = []
 
   changeFromCityValue(event:any){
     console.log(this.fromCityDropdownValue)
-    console.log(event)
-    this.idx = this.cities.indexOf(this.fromCityDropdownValue)
+    console.log(this.toCityDropdownValue)
+    
+    for(let toCityOption of this.toCitiesArray){
+      for(let route of this.routes){
+        if(route.from===this.fromCityDropdownValue && route.to===this.toCityDropdownValue){
+          toCityOption.isDisabled = true
+        }
+      }
+      if(toCityOption.name === this.fromCityDropdownValue){
+        toCityOption.isDisabled = true
+      }
+    }
   }
 
   changeToCityValue(event:any){
+    console.log(this.fromCityDropdownValue)
     console.log(this.toCityDropdownValue)
-    console.log(event)
-    this.idx = this.cities.indexOf(this.toCityDropdownValue)
+
+    for(let fromCityOption of this.fromCitiesArray){
+      for(let route of this.routes){
+        if(route.from===this.fromCityDropdownValue && route.to===this.toCityDropdownValue){
+          fromCityOption.isDisabled = true
+        }
+      }
+      if(fromCityOption.name === this.toCityDropdownValue){
+        fromCityOption.isDisabled = true
+      }
+    }
   }
 
   saveRoute(){

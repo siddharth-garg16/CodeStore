@@ -7,13 +7,13 @@
             <label for="from">From:</label>
             <select name="fromDropDown" [(ngModel)]="fromCityDropdownValue" (change)="changeFromCityValue($event)">
                 <option value="none" selected disabled hidden>Select a city</option>
-                <option *ngFor="let fromCity of cities; let i = index" [value]="fromCity" [disabled]="i==idx">{{fromCity}}</option>
+                <option *ngFor="let fromCity of fromCitiesArray" [value]="fromCity.name" [disabled]="fromCity.isDisabled">{{fromCity.name}}</option>
             </select>
 
             <label for="to">To:</label>
             <select name="toDropDown" [(ngModel)]="toCityDropdownValue" (change)="changeToCityValue($event)">
                 <option value="none" selected disabled hidden>Select a city</option>
-                <option *ngFor="let toCity of cities; let i = index" [value]="toCity" [disabled]="i==idx">{{toCity}}</option>
+                <option *ngFor="let toCity of toCitiesArray" [value]="toCity.name" [disabled]="toCity.isDisabled">{{toCity.name}}</option>
             </select>
 
             <button type="submit" id="preference-selector" (click)="saveRoute()">Add to the prefered route</button>
