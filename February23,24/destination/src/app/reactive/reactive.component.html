@@ -2,7 +2,7 @@
     <div id="wrapper">
         <form [formGroup]="bookRouteForm" (ngSubmit)="saveRoute()">
             <label for="from">From:</label>
-            <select formControlName="fromCityName" (change)="changeFromCityValue($event)">
+            <select formControlName="fromCityName" (change)="changeFromCityValue()">
                 <option value="none" selected disabled>Select a city</option>
                 <option *ngFor="let fromCity of fromCitiesArray" [ngValue]="fromCity.name"
                     [disabled]="fromCity.isDisabled">
@@ -11,7 +11,7 @@
             </select>
 
             <label for="to">To:</label>
-            <select formControlName="toCityName" (change)="changeToCityValue($event)">
+            <select formControlName="toCityName" (change)="changeToCityValue()">
                 <option value="none" selected disabled>Select a city</option>
                 <option *ngFor="let toCity of toCitiesArray" [ngValue]="toCity.name" [disabled]="toCity.isDisabled">
                     {{ toCity.name }}

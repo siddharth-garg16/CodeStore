@@ -83,7 +83,7 @@ export class ReactiveComponent {
     }
   }
 
-  changeFromCityValue(event:any): void {
+  changeFromCityValue(): void {
     this.resetTo();
 
     let temp: string[] = [];
@@ -102,7 +102,7 @@ export class ReactiveComponent {
     }
   }
 
-  changeToCityValue(event:any): void {
+  changeToCityValue(): void {
     this.resetFrom();
 
     let temp: string[] = [];
