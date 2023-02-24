@@ -8,10 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   toCityDropdownValue:string = "none";
   fromCityDropdownValue:string = "none";
-  // disabled : boolean = false;
-  // idx:any;
-
-  // public cities:string[] = ["Delhi", "Mumbai", "Chandigarh", "Bangalore", "Hyderabad", "Pune"]
 
   public fromCitiesArray = [
     {
@@ -84,6 +80,7 @@ export class AppComponent {
   changeFromCityValue(event:any){
     console.log(this.fromCityDropdownValue)
     console.log(this.toCityDropdownValue)
+    this.resetTo()
     
     // for(let toCityOption of this.toCitiesArray){
     //   for(let route of this.routes){
@@ -115,6 +112,7 @@ export class AppComponent {
   changeToCityValue(event:any){
     console.log(this.fromCityDropdownValue)
     console.log(this.toCityDropdownValue)
+    this.resetFrom()
 
     // for(let fromCityOption of this.fromCitiesArray){
     //   for(let route of this.routes){
