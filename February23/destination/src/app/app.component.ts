@@ -85,15 +85,29 @@ export class AppComponent {
     console.log(this.fromCityDropdownValue)
     console.log(this.toCityDropdownValue)
     
-    for(let toCityOption of this.toCitiesArray){
-      for(let route of this.routes){
-        if(route.from===this.fromCityDropdownValue && route.to===toCityOption.name){
-            toCityOption.isDisabled = true
-          }
+    // for(let toCityOption of this.toCitiesArray){
+    //   for(let route of this.routes){
+    //     if(route.from===this.fromCityDropdownValue && route.to===toCityOption.name){
+    //         toCityOption.isDisabled = true
+    //       }
+    //   }
+    //   if(toCityOption.name === this.fromCityDropdownValue){
+    //     this.resetTo()
+    //     toCityOption.isDisabled = true
+    //   }
+    // }
+    let temp = []
+    for(let route of this.routes){
+      if(route.from === this.fromCityDropdownValue){
+        temp.push(route.to)
       }
-      if(toCityOption.name === this.fromCityDropdownValue){
-        this.resetTo()
-        toCityOption.isDisabled = true
+    }
+    temp.push(this.fromCityDropdownValue)
+    for(let toCityOption of this.toCitiesArray){
+      for(let val of temp){
+        if(toCityOption.name === val){
+          toCityOption.isDisabled = true
+        }
       }
     }
   }
@@ -102,15 +116,29 @@ export class AppComponent {
     console.log(this.fromCityDropdownValue)
     console.log(this.toCityDropdownValue)
 
-    for(let fromCityOption of this.fromCitiesArray){
-      for(let route of this.routes){
-        if(route.to===this.toCityDropdownValue && route.from===fromCityOption.name){
-            fromCityOption.isDisabled = true
-        }
+    // for(let fromCityOption of this.fromCitiesArray){
+    //   for(let route of this.routes){
+    //     if(route.to===this.toCityDropdownValue && route.from===fromCityOption.name){
+    //         fromCityOption.isDisabled = true
+    //     }
+    //   }
+    //   if(fromCityOption.name === this.toCityDropdownValue){
+    //     this.resetFrom()
+    //     fromCityOption.isDisabled = true
+    //   }
+    // }
+    let temp = []
+    for(let route of this.routes){
+      if(route.to === this.toCityDropdownValue){
+        temp.push(route.from)
       }
-      if(fromCityOption.name === this.toCityDropdownValue){
-        this.resetFrom()
-        fromCityOption.isDisabled = true
+    }
+    temp.push(this.toCityDropdownValue)
+    for(let fromCityOption of this.fromCitiesArray){
+      for(let val of temp){
+        if(fromCityOption.name === val){
+          fromCityOption.isDisabled = true
+        }
       }
     }
   }
