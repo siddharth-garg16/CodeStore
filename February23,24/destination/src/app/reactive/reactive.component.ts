@@ -145,8 +145,10 @@ export class ReactiveComponent {
     console.log(this.routes);
 
 
-    this.bookRouteForm.value.fromCityName = 'none';
-    this.bookRouteForm.value.toCityName = 'none';
+    // this.bookRouteForm.value.fromCityName = 'none';
+    // this.bookRouteForm.value.toCityName = 'none';
+
+    this.bookRouteForm.setValue({fromCityName:'none', toCityName:'none'})
 
     this.resetFrom();
     this.resetTo();
@@ -155,9 +157,10 @@ export class ReactiveComponent {
   clearSelections(): void {
     this.routes.length = 0;
 
-    this.bookRouteForm.value.fromCityName = 'none';
-    this.bookRouteForm.value.toCityName = 'none';
+    // this.bookRouteForm.value.fromCityName = 'none';
+    // this.bookRouteForm.value.toCityName = 'none';
 
+    this.bookRouteForm.setValue({fromCityName:'none', toCityName:'none'})
     this.resetTo();
     this.resetFrom();
   }
