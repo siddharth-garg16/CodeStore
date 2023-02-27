@@ -19,6 +19,11 @@ export class SignupComponent {
     this.showWarning = this.password!==this.confirmPassword;
     if(!this.showWarning){
       console.log(this.fullName, this.email, this.phone, this.age,this.password, this.confirmPassword)
-    }  
+      this.fullName = '';
+      this.email = '';
+      this.phone = '';
+      this.age = undefined;
+      this.fullName = '';
+    } 
   }
 }
