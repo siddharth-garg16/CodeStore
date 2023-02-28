@@ -1,0 +1,8 @@
+#display-wrapper{
+    border: 3px solid rgb(100, 100, 100);
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding: 20px;
+}
