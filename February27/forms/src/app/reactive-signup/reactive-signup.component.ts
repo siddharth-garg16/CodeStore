@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms'
-import { ValidateName } from '../../shared/name.validator'
+import { ValidateName } from '../shared/name.validator'
 
 @Component({
   selector: 'app-reactive-signup',
