@@ -1,0 +1,14 @@
+<img src="https://i.gifer.com/2QrM.gif" height="300px">
+<h1>Your one place solution to every computer issue.</h1>
+<div id="chip-wrapper">
+    <h3>Available Products and Services</h3>
+    <mat-chip-set aria-label="Fish selection">
+        <mat-chip *ngFor="let product of productsList">{{product}}</mat-chip>
+    </mat-chip-set>
+</div>
+<mat-divider></mat-divider>
+<br>
+<h3 style="color:crimson !important;">Latest Arrivals</h3>
+<div id="hot-deals-wrapper">
+    <app-latest-item *ngFor="let arrival of arrivals" [imgPath]="arrival.imgPath" [productName]="arrival.productName" [productPrice]="arrival.productPrice"></app-latest-item>
+</div>

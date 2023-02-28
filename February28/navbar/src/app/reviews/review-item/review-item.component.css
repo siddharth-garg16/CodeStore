@@ -1,0 +1,15 @@
+.review-card {
+    width: 900px;
+    background-color: rgb(40, 44, 52);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-block: 10px;
+}
+
+.review-header-image {
+    background-image: url('../../../assets/person-circle.svg');
+    background-size: cover;
+    background-color: white;
+}

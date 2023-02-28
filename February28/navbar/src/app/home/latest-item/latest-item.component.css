@@ -1,0 +1,15 @@
+.example-card {
+    width: 450px;
+    margin-block: 20px;
+}
+.action-btn{
+    background-color: #5072A7;
+    border: none;
+    padding-block: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-block: 10px;
+    border-radius: 5px;
+}
