@@ -1,0 +1,12 @@
+<div class="container mt-5">
+    <legend>Add A New Cake</legend>
+    <div class="mb-3">
+        <label for="txtName" class="form-label">Name of Cake</label>
+        <input type="text" class="form-control" id="txtName" [(ngModel)]="cakeForm.name" />
+    </div>
+    <div class="mb-3">
+        <label for="txtCost" class="form-label">Cost</label>
+        <input type="number" class="form-control" id="txtCost" [(ngModel)]="cakeForm.cost" />
+    </div>
+    <button type="button" class="btn btn-success" (click)="save()">Add</button>
+</div>

@@ -1,0 +1,29 @@
+{
+  "cakes": [
+    {
+      "id": 1,
+      "name": "Red Velvet",
+      "cost": 1900
+    },
+    {
+      "id": 2,
+      "name": "Dark Chocolate",
+      "cost": 1700
+    },
+    {
+      "id": 3,
+      "name": "Coffee Express",
+      "cost": 2000
+    },
+    {
+      "id": 4,
+      "name": "Vanilla Fountain",
+      "cost": 1600
+    },
+    {
+      "id": 5,
+      "name": "Butter Scotch",
+      "cost": 1800
+    }
+  ]
+}
