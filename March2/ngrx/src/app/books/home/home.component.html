@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let book of books$ | async">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{book.title}}</h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="author">- {{book.author}}</li>
+                <li class="list-group-item" id="price">INR {{book.cost}}</li>
+              </ul>            
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

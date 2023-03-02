@@ -1,0 +1,28 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Ikigai",
+      "author": "Heather Cleary",
+      "cost":"700"
+    },
+    {
+      "id": 2,
+      "title": "Harry Potter - Hogwarts Legacy",
+      "author": "J.K. Rowling",
+      "cost":"1500"
+    },
+    {
+      "id": 3,
+      "title": "Atomic Habbits",
+      "author": "James Clear",
+      "cost":"500"
+    },
+    {
+      "id": 4,
+      "title": "Manifest",
+      "author": "Roxie Nafousi",
+      "cost":"800"
+    }
+  ]
+}
