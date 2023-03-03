@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BooksService } from './books/books.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngrx';
+  constructor(private bookService:BooksService){
+    // console.log(bookService.get())
+  }
 }
