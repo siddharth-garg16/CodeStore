@@ -1,19 +1,31 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map, switchMap } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import { EMPTY, map, mergeMap, withLatestFrom } from 'rxjs';
 import { BooksService } from '../books.service';
 import { booksFetchAPISuccess, invokeBooksApi } from './books.action';
-
+import { selectBooks } from './books.selector';
+ 
 @Injectable()
-export class BookEffects {
-    constructor(private actions$: Actions, private bookService: BooksService) { }
-
-    loadAllBooks$ = createEffect(() => 
-        this.actions$.pipe(
-            ofType(invokeBooksApi),
-            switchMap(()=>{
-                return this.bookService.get().pipe(map((data)=> booksFetchAPISuccess({allBooks:data})))
-            })
-        )
-    )
+export class BooksEffect {
+  constructor(
+    private actions$: Actions,
+    private booksService: BooksService,
+    private store: Store
+  ) {}
+ 
+//   loadAllBooks$ = createEffect(() =>
+//     this.actions$.pipe(
+//       ofType(invokeBooksApi),
+//       withLatestFrom(this.store.pipe(select(selectBooks))),
+//       mergeMap(([, bookformStore]) => {
+//         if (bookformStore.length > 0) {
+//           return EMPTY;
+//         }
+//         return this.booksService
+//           .get()
+//           .pipe(map((data) => booksFetchAPISuccess({ allBooks: data })));
+//       })
+//     )
+//   );
 }

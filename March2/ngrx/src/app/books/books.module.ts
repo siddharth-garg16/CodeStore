@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { Store, StoreModule } from '@ngrx/store';
 import { bookReducer } from './store/books.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { BookEffects } from './store/books.effects';
+import { BooksEffect } from './store/books.effects';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { BookEffects } from './store/books.effects';
     CommonModule,
     BooksRoutingModule,
     StoreModule.forFeature("myBooks", bookReducer),
-    EffectsModule.forFeature([BookEffects])
+    EffectsModule.forFeature([BooksEffect])
   ]
 })
 export class BooksModule { }
