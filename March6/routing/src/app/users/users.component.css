@@ -1,0 +1,18 @@
+#user-wrapper{
+    text-align: center;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.user-detail{
+    display: flex;
+    background-color: azure;
+    justify-content: space-around;
+    padding-block: 15px;
+    margin-block: 20px;
+    font-size: 2em;
+    border: none;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}

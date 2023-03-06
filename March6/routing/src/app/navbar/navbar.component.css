@@ -1,0 +1,29 @@
+nav{
+    background-color: rgb(27,32,50);
+    padding-block: 10px;
+    padding: 20px;
+    padding-right: 100px;
+}
+nav img{
+    height: 50px;
+    padding-left: 30px;
+}
+nav ul{
+    float: right;
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    font-family: sans-serif;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+nav ul li a{
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+.active{
+    font-weight: bolder;
+}
