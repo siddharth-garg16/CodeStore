@@ -19,12 +19,16 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
+import { StudentListComponent } from './student-list/student-list.component';
+import { CanDeactivateGuardService } from './services/formGuard.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentAddEditComponent
+    StudentAddEditComponent,
+    StudentListComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +49,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [CanDeactivateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

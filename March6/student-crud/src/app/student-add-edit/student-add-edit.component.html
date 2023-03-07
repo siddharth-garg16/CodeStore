@@ -1,8 +1,7 @@
-<div mat-dialog-title>
+<div id="form-wrapper">
     <h1>Student Form</h1>
-</div>
-<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
-    <div mat-dialog-content>
+
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <mat-form-field appearance="fill">
                 <input matInput type="text" placeholder="First Name" formControlName="firstName" (focus)="true">
@@ -11,28 +10,31 @@
                 <input matInput type="text" placeholder="Last Name" formControlName="lastName">
             </mat-form-field>
         </div>
+        <br>
         <div class="row">
             <mat-form-field appearance="fill">
                 <input matInput placeholder="Email Address" formControlName="email">
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>Date of Birth</mat-label>
+                <mat-label>DOB (MM/DD/YYYY)</mat-label>
                 <input matInput [matDatepicker]="picker" formControlName="dob">
-                <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
         </div>
-        <div class="row" formArrayName="selectedSubjects">
+        <br>
+        <div class="row">
             <ng-container *ngFor="let subject of studentForm.get('selectedSubjects')['controls']; index as i">
                 <mat-form-field appearance="fill">
                     <input matInput type="text" placeholder="Subject" formControlName="{{i}}">
                 </mat-form-field>
             </ng-container>
         </div>
-    </div>
-    <div mat-dialog-actions class="action">
-        <button type="button" mat-raised-button mat-dialog-close="false">Cancel</button>
-        <button type="submit" mat-raised-button color="warn">{{data?"Update":"Save"}}</button>
-    </div>
-</form>
+        <button mat-button type="button" (click)="addField()" color="accent">+Subjects</button>       
+        <br><br><br>
+        <div class="action">
+            <button type="button" mat-raised-button mat-dialog-close="false">Cancel</button>
+            <button type="submit" mat-raised-button color="warn">Save</button>
+        </div>
+    </form>
+</div>

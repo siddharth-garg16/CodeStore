@@ -1,7 +1,5 @@
-import { DialogRef } from '@angular/cdk/dialog';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { StudentService } from '../services/student.service';
 
 @Component({
@@ -12,11 +10,7 @@ import { StudentService } from '../services/student.service';
 export class StudentAddEditComponent implements OnInit{
   studentForm : FormGroup;
 
-  subjects:string[] = ['Maths', 'Physics', 'Chemistry', 'Biology', 'Economics', 'History', 'Business Studies']
-
-  constructor(private _studentService : StudentService,
-    private _dialogRef:MatDialogRef<StudentAddEditComponent>,
-    @Inject(MAT_DIALOG_DATA) public data:any
+  constructor(private _studentService : StudentService
     ){}
 
   ngOnInit(){
@@ -26,38 +20,32 @@ export class StudentAddEditComponent implements OnInit{
       email:new FormControl('', [Validators.required, Validators.email]),
       dob:new FormControl('', Validators.required),
       selectedSubjects: new FormArray([
-        new FormControl('', Validators.required),
-        new FormControl(''),
-        new FormControl('')
+        new FormControl('', Validators.required)
       ])
     })
-    this.studentForm.patchValue(this.data)
+  }
+
+  canExit():boolean{
+    if(this.studentForm.value.firstName || this.studentForm.value.lastName || this.studentForm.value.email || this.studentForm.value.dob){
+      alert("You have unsaved changes. Do you want to quit?")
+    }
+    return true;
+  }
+
+  addField(){
+    (<FormArray>this.studentForm.get('selectedSubjects')).push(new FormControl(''))
   }
 
   onSubmit(){
-    if(this.studentForm.valid){
-      if(this.data){
-        this._studentService.updateStudent(this.data.id, this.studentForm.value).subscribe({
-          next: (val:any)=>{
-            alert("Student record updated")
-            this._dialogRef.close(true)
-          },
-          error: (err:any)=>{
-            console.log(err)
-          }
-        })
-      }
-      else{
-        this._studentService.addStudent(this.studentForm.value).subscribe({
-          next: (val:any)=>{
-            alert("Student record added")
-            this._dialogRef.close(true)
-          },
-          error: (err:any)=>{
-            console.log(err)
-          }
-        })
-      }
-    } 
+    this._studentService.addStudent(this.studentForm.value).subscribe({
+        next: (val:any)=>{
+          alert("Student record updated")
+        },
+        error: (err:any)=>{
+          console.log(err)
+        }
+      })
+    // console.log(this.studentForm.value)
+    this.studentForm.reset()
   }
 }
