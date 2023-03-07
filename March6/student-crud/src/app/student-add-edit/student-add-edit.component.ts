@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { StudentService } from '../services/student.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { StudentService } from '../services/student.service';
 export class StudentAddEditComponent implements OnInit{
   studentForm : FormGroup;
 
-  constructor(private _studentService : StudentService
+  constructor(private _studentService : StudentService,
+    private fb:FormBuilder
     ){}
 
   ngOnInit(){
@@ -23,6 +24,14 @@ export class StudentAddEditComponent implements OnInit{
         new FormControl('', Validators.required)
       ])
     })
+
+    // this.studentForm = this.fb.group({
+    //   firstName:[""],
+    //   lastName:[""],
+    //   email:[""],
+    //   dob:[""],
+    //   selectedSubjects:[""]
+    // })
   }
 
   canExit():boolean{
