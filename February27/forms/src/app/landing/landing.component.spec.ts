@@ -20,4 +20,10 @@ describe('LandingComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should check the landing text', () => {
+    let centerElement:HTMLHeadingElement = fixture.nativeElement;
+    let landingeText = centerElement.querySelector('#landing-text');
+    expect(landingeText.textContent).toBe("This is your landing page!");
+  })
 });

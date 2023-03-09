@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,7 +11,6 @@ import { ReactiveSignupComponent } from './reactive-signup/reactive-signup.compo
 import { LandingComponent } from './landing/landing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     SignupComponent,
     ReactiveSignupComponent,
     LandingComponent,
-    NavbarComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +28,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule
+  ],
+  schemas  : [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
   ],
   providers: [],
   bootstrap: [AppComponent]
