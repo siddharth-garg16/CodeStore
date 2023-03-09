@@ -1,4 +1,4 @@
-<button (click)="getData()"> Click to get new Jokes</button>
+<button (click)="getData()"> Click here to get new Jokes</button>
 <div *ngFor="let joke of fetchedJokes" id="main-wrapper">
   <app-joke [setup]="joke.setup" [punchline]="joke.punchline"></app-joke>
 </div>

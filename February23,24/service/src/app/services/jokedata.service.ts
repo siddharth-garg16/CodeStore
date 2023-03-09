@@ -8,7 +8,7 @@ export class JokedataService {
 
   constructor(private http:HttpClient) { }
   
-  jokes(){
+  getJokes(){
     return this.http.get('https://official-joke-api.appspot.com/random_ten') 
   }
 }

@@ -11,6 +11,6 @@ export class AppComponent {
   constructor(private jokeData:JokedataService){}
 
   getData(){
-    this.jokeData.jokes().subscribe((data)=>{this.fetchedJokes=data})
+    this.jokeData.getJokes().subscribe((data)=>{this.fetchedJokes=data})
   }
 }
