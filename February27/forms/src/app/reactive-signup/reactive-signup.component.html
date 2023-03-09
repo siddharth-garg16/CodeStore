@@ -8,14 +8,14 @@
             <div class="row">
                 <mat-form-field class="mb-3">
                     <mat-label>Full Name</mat-label>
-                    <input type="text" matInput id="formGroupExampleInput" formControlName="fullName">
-                    <mat-error>Entered name must only contain alphabetical characters.</mat-error>
+                    <input type="text" matInput id="nameInput" formControlName="fullName">
+                    <mat-error id="name-error">Entered name must only contain alphabetical characters.</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="mb-3">
                     <mat-label>Email</mat-label>
                     <input type="email" matInput id="emailInput" formControlName="email">
-                    <mat-error>Enter a valid email address.</mat-error>
+                    <mat-error id="email-error">Enter a valid email address.</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="mb-3 col-md-6">

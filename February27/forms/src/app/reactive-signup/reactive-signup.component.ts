@@ -13,8 +13,8 @@ export class ReactiveSignupComponent {
   userSignupForm = new FormGroup({
     fullName:new FormControl('', [Validators.required, Validators.maxLength(30), ValidateName]),
     email:new FormControl('', [Validators.required, Validators.email]),
-    phone:new FormControl('', [Validators.required]),
-    age:new FormControl('', [Validators.required, Validators.min(18)]),
+    phone:new FormControl(''),
+    age:new FormControl('', [Validators.min(18)]),
     password:new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]),
     confirmPassword:new FormControl('', [Validators.required])
   })
