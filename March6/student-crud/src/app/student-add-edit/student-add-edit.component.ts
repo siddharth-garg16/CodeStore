@@ -37,6 +37,7 @@ export class StudentAddEditComponent implements OnInit{
   canExit():boolean{
     if(this.studentForm.value.firstName || this.studentForm.value.lastName || this.studentForm.value.email || this.studentForm.value.dob){
       alert("You have unsaved changes. Do you want to quit?")
+      return false;
     }
     return true;
   }

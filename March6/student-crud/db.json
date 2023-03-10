@@ -10,26 +10,6 @@
         "Physics"
       ],
       "id": 1
-    },
-    {
-      "firstName": "Test",
-      "lastName": "One",
-      "email": "test1@mail.com",
-      "dob": "2016-01-02T18:30:00.000Z",
-      "selectedSubjects": [
-        "TestSubject"
-      ],
-      "id": 2
-    },
-    {
-      "firstName": "Test",
-      "lastName": "Two",
-      "email": "test2@mail.com",
-      "dob": "2023-03-01T18:30:00.000Z",
-      "selectedSubjects": [
-        "Subject"
-      ],
-      "id": 3
     }
   ]
 }

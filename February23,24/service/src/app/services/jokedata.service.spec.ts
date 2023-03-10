@@ -9,7 +9,7 @@ describe('JokedataService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule, RouterTestingModule],
+      imports:[HttpClientTestingModule, RouterTestingModule, HttpTestingController],
       providers:[JokedataService]
     });
   });

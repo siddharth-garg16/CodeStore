@@ -50,7 +50,8 @@ import { CanDeactivateGuardService } from './services/formGuard.service';
     MatSortModule,
     MatIconModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [CanDeactivateGuardService],
   bootstrap: [AppComponent]
