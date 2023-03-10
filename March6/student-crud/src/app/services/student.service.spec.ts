@@ -22,6 +22,10 @@ describe('StudentService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should be defined', ()=>{
+    expect(service).toBeDefined();
+  })
+
   it('should get the data on GET request', ()=>{
     const service:StudentService = TestBed.get(StudentService);
     expect(service.getStudentsList).toBeTruthy();
