@@ -25,6 +25,15 @@ describe('StudentService', () => {
   it('should get the data on GET request', ()=>{
     const service:StudentService = TestBed.get(StudentService);
     expect(service.getStudentsList).toBeTruthy();
+  })
+  
+  it('should post the data on POST request', ()=>{
+    const service:StudentService = TestBed.get(StudentService);
+    expect(service.addStudent).toBeTruthy();
+  })
 
+  it('should delete the data on DELETE request', ()=>{
+    const service:StudentService = TestBed.get(StudentService);
+    expect(service.deleteStudent).toBeTruthy();
   })
 });
