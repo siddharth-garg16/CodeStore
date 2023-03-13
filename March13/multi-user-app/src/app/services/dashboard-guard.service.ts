@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router'
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
 })
-export class DashboardGuardService {
+export class DashboardGuardService implements CanActivate{
 
   constructor(private route: Router) { }
 
-  checkLocal(){
-    return localStorage.getItem('usertype')
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{
+    if(localStorage.getItem('usertype')){
+      return true;
+    }
+    else{
+      // this.route.navigate(['/'])
+      return false;
+    }
   }
-
-  if(this.checkLocal()){
-    return true;
-  }
-
-  return false;
-
 }

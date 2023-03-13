@@ -1,4 +1,4 @@
-#form-wrapper{
+#form-wrapper {
     width: 35vw;
     margin-left: auto;
     margin-right: auto;
@@ -8,7 +8,8 @@
     padding-block: 100px;
     background-color: rgb(230, 230, 230);
 
-    mat-form-field, #signup-btn{
+    mat-form-field,
+    #signup-btn {
         width: 30vw;
         margin-block: 10px;
     }

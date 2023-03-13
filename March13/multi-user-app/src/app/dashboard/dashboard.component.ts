@@ -7,19 +7,35 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  constructor(private router: Router, private route: ActivatedRoute){}
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
-  openAddAdmin(){
-    this.router.navigate(['add-admin'], {relativeTo: this.route});
-    console.log("admin")
+  currentLoggedInUsertype: string = localStorage.getItem('usertype')
+
+  superAdminCheck(): boolean {
+    if (this.currentLoggedInUsertype === "super-admin") {
+      return true;
+    }
+    return false;
   }
 
-  openAddUser(){
-    this.router.navigate(['add-user'], {relativeTo: this.route});
-    console.log("user")
+  adminCheck(): boolean {
+    if (this.currentLoggedInUsertype === "admin") {
+      return true;
+    }
+    return false;
   }
 
-  logOut(){
+  openAddAdmin(): void {
+    this.router.navigate(['add-admin'], { relativeTo: this.route });
+    // console.log("admin")
+  }
+
+  openAddUser(): void {
+    this.router.navigate(['add-user'], { relativeTo: this.route });
+    // console.log("user")
+  }
+
+  logOut(): void {
     localStorage.clear()
     this.router.navigate(["/"])
   }

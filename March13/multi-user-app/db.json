@@ -17,6 +17,12 @@
       "username": "test1",
       "password": "password",
       "usertype": "user"
+    },
+    {
+      "username": "admin1",
+      "password": "passwordfff",
+      "usertype": "admin",
+      "id": 4
     }
   ]
 }

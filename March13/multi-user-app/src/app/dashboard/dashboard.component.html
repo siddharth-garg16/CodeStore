@@ -1,7 +1,8 @@
 <div id="dashboard">
     <div id="user-options">
-        <button type="button" mat-flat-button (click)="openAddAdmin()">Add Admin</button>
-        <button type="button" mat-flat-button (click)="openAddUser()">Add User</button>
+        <button type="button" *ngIf="superAdminCheck()" mat-flat-button (click)="openAddAdmin()">Add Admin</button>
+        <button type="button" *ngIf="superAdminCheck() || adminCheck()" mat-flat-button (click)="openAddUser()">Add
+            User</button>
     </div>
     <button mat-raised-button color="warn" (click)="logOut()">LogOut</button>
 </div>
