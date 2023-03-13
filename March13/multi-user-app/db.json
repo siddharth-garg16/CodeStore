@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "super-admin",
+      "password": "super-admin",
+      "usertype": "super-admin"
+    }
+  ]
+}
