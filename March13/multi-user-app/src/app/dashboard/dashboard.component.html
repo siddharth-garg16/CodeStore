@@ -1,1 +1,9 @@
-<p>dashboard works!</p>
+<div id="dashboard">
+    <div id="user-options">
+        <button type="button" mat-flat-button (click)="openAddAdmin()">Add Admin</button>
+        <button type="button" mat-flat-button (click)="openAddUser()">Add User</button>
+    </div>
+    <button mat-raised-button color="warn" (click)="logOut()">LogOut</button>
+</div>
+
+<router-outlet></router-outlet>
