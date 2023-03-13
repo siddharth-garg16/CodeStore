@@ -5,6 +5,18 @@
       "username": "super-admin",
       "password": "super-admin",
       "usertype": "super-admin"
+    },
+    {
+      "id": 2,
+      "username": "admin1",
+      "password": "password",
+      "usertype": "admin"
+    },
+    {
+      "id": 3,
+      "username": "test1",
+      "password": "password",
+      "usertype": "user"
     }
   ]
 }

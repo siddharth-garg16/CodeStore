@@ -5,6 +5,7 @@ import { AddUserComponent } from './dashboard/add-user/add-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { DashboardGuardService } from './services/dashboard-guard.service';
 import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   {
     path:"dashboard",
     component: DashboardComponent,
+    canActivate:[DashboardGuardService],
     children: [
       {
         path: 'add-admin',

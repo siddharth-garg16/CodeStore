@@ -23,7 +23,7 @@ export class AddUserComponent{
       password:this.addUserForm.value.password,
       usertype:this.usertype
       }
-    )
+    ).subscribe(res => console.log(res))
     this.addUserForm.reset();
   }
 }

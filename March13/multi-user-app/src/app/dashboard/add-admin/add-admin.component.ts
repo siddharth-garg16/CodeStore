@@ -17,13 +17,13 @@ export class AddAdminComponent{
   usertype:string = 'admin';
 
   addAdmin(){
-    console.log(this.addAdminForm.value.username, this.addAdminForm.value.password, this.usertype)
+    console.log(this.addAdminForm.value)
     this.http.post("http://localhost:3000/users", {
       username:this.addAdminForm.value.username,
       password:this.addAdminForm.value.password,
-      usertype:this.usertype
-      }
-    )
+      usertype: this.usertype
+    }).subscribe(res => console.log(res))
     this.addAdminForm.reset()
   }
 }
+

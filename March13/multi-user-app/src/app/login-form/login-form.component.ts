@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router, private http: HttpClient){}
 
   loginForm = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -16,7 +17,13 @@ export class LoginFormComponent {
   })
 
   onLogin(){
-    console.log(this.loginForm.value.username, this.loginForm.value.password);
+    console.log(this.loginForm.value);
+    this.http.get(`http://localhost:3000/users?username=${this.loginForm.value.username}&password=${this.loginForm.value.password}`)
+    .subscribe(res => {
+      console.log(res[0]);
+      localStorage.setItem('usertype', res[0].usertype)
+    })
+
     this.loginForm.reset();
     this.router.navigate(['/dashboard'])
   }
