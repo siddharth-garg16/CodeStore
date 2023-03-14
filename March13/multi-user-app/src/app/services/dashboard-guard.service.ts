@@ -9,14 +9,15 @@ export class DashboardGuardService implements CanActivate{
   constructor(private route: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{
-    // if(localStorage.getItem('usertype')){
-    //   return true;
-    // }
-    if(localStorage.getItem('token')){
+    if(localStorage.getItem('usertype')){
       return true;
     }
+    // if(localStorage.getItem('token')){
+    //   return true;
+    // }
     else{
-      // this.route.navigate(['/'])
+      this.route.navigate(['/'])
+
       return false;
     }
   }

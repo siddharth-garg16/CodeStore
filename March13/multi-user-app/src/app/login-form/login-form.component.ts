@@ -22,7 +22,7 @@ export class LoginFormComponent {
       .subscribe(res => {
         console.log(res[0]);
         localStorage.setItem('usertype', res[0].usertype)
-        localStorage.setItem('token', res.token)
+        // localStorage.setItem('token', res.token)
       })
 
     this.router.navigate(['/dashboard'])
