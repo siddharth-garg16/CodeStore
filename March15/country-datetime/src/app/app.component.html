@@ -1,0 +1,30 @@
+<div id="app-wrapper">
+
+  <form [formGroup]="countryDateForm" (ngSubmit)="onSubmit()">
+    <select class="form-select" aria-label="Default select example" formControlName="country">
+      <option selected disabled value="none">--Select a Country--</option>
+      <option value="es-MX">Mexico</option>
+      <option value="en-AU">Australia</option>
+      <option value="nl-BE">Belgium</option>
+      <option value="zh-CN">China</option>
+      <option value="ko-KR">Korea</option>
+      <option value="es-ES">Spain</option>
+      <option value="zh-HK">Hong Kong</option>
+      <option value="sr-BA">Bosnia and Herzegovina</option>
+      <option value="hi-IN">India</option>
+      <option value="ja-JP">Japan</option>
+    </select>
+  
+    <input type="date" id="date-input" min="2023-01-01" max="2024-12-31" formControlName="date">
+    <span id="error">{{error}}</span> <br>
+  
+    <button type="submit" class="btn btn-success">Show Locale Date</button>
+  </form>
+
+  <hr>
+
+  <h3>{{localeDate}}</h3>
+
+</div>
+
+<router-outlet></router-outlet>
