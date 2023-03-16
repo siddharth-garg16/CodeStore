@@ -32,8 +32,6 @@ export class ConnectorComponent implements OnInit{
     }
   }
 
-
-
   show(){
     console.log(this.importedData)
     console.log(this.processedData)
