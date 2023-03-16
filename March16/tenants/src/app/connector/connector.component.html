@@ -1,7 +1,7 @@
 <div id="connector-wrapper">
     <mat-form-field>
         <mat-label>Connecting Options</mat-label>
-        <mat-select [(value)]="first">
+        <mat-select [(value)]="firstOptionVal">
             <mat-form-field appearance="outline" id="search">
                 <mat-label>Search</mat-label>
                 <input matInput (keyup)="onKey($event.target)">
@@ -13,7 +13,7 @@
     </mat-form-field>
     <mat-form-field>
         <mat-label>Connecting Options</mat-label>
-        <mat-select [(value)]="second">
+        <mat-select [(value)]="secondOptionVal">
             <mat-form-field appearance="outline" id="search">
                 <mat-label>Search</mat-label>
                 <input matInput (keyup)="onKey($event.target)">

@@ -11,8 +11,8 @@ import {FormControl} from '@angular/forms';
 export class ConnectorComponent implements OnInit{
   importedData: any[];
   processedData: any[] = [];
-  first = new FormControl('');
-  second = new FormControl('');
+  firstOptionVal:string;
+  secondOptionVal:string;
 
   constructor(private dataService: DataService){}
 
@@ -25,13 +25,14 @@ export class ConnectorComponent implements OnInit{
       this.processedData.push(tempName)
       let tempOptions = [];
       for(let options of tenant.crossTenantWorkflowSchemas){
-        // debugger
+        debugger
         tempOptions.push([options.workflowSchemaId, options.name])
       }
       tempName.push(tempOptions)
     }
-
   }
+
+
 
   show(){
     console.log(this.importedData)
@@ -43,7 +44,7 @@ export class ConnectorComponent implements OnInit{
   }
 
   showSelections(){
-    console.log(this.first, this.second)
+    console.log(this.firstOptionVal, this.secondOptionVal)
   }
 
 }
