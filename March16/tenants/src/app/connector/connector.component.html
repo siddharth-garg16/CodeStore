@@ -1,0 +1,30 @@
+<div id="connector-wrapper">
+    <mat-form-field>
+        <mat-label>Connecting Options</mat-label>
+        <mat-select [(value)]="first">
+            <mat-form-field appearance="outline" id="search">
+                <mat-label>Search</mat-label>
+                <input matInput (keyup)="onKey($event.target)">
+            </mat-form-field>
+            <mat-optgroup *ngFor="let group of processedData" [label]="group[0]">
+                <mat-option *ngFor="let options of group[1]" [value]="options[0]">{{options[1]}}</mat-option>
+            </mat-optgroup>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Connecting Options</mat-label>
+        <mat-select [(value)]="second">
+            <mat-form-field appearance="outline" id="search">
+                <mat-label>Search</mat-label>
+                <input matInput (keyup)="onKey($event.target)">
+            </mat-form-field>
+            <mat-optgroup *ngFor="let group of processedData" [label]="group[0]">
+                <mat-option *ngFor="let options of group[1]" [value]="options[0]">{{options[1]}}</mat-option>
+            </mat-optgroup>
+        </mat-select>
+    </mat-form-field>
+
+    <button type="button" mat-flat-button color="warn" (click)="showSelections()">Show Selected Value</button>
+</div>
+
+<button (click)="show()">Show data in console</button>
