@@ -14,9 +14,16 @@
       <option value="hi-IN">India</option>
       <option value="ja-JP">Japan</option>
     </select>
+
+    <br>
   
-    <input type="date" id="date-input" min="2023-01-01" max="2024-12-31" formControlName="date">
-    <span id="error">{{error}}</span> <br>
+    <!-- <input type="date" id="date-input" min="2023-01-01" max="2024-12-31" formControlName="date">
+    <span id="error">{{error}}</span> <br> -->
+    <div id="calendar-wrapper">
+      <mat-calendar [(selected)]="receivedDate"></mat-calendar>
+    </div>
+
+    <br>
   
     <button type="submit" class="btn btn-success">Show Locale Date</button>
   </form>
@@ -24,10 +31,9 @@
   <hr>
 
   <h3>{{localeDate}}</h3>
-
   <hr>
 
-  <ejs-calendar id=calendar [value]="receivedDate"> </ejs-calendar >    
+  <!-- <ejs-calendar id=calendar [value]="receivedDate"> </ejs-calendar >  -->
 
 </div>
 

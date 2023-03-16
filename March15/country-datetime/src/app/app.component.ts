@@ -10,15 +10,14 @@ import * as tz from "moment-timezone";
 })
 export class AppComponent {
   title = 'country-datetime';
-  localeDate;
+  localeDate:string;
   error="";
-  receivedDate:Date;
+  receivedDate;
   receivedCountryZone:string;
   // utc;
 
   countryDateForm = new FormGroup({
-    country: new FormControl('none'),
-    date: new FormControl('', Validators.required)
+    country: new FormControl('none')
   })
 
   onSubmit():void{
@@ -26,12 +25,13 @@ export class AppComponent {
       this.error = "Both fields are mandatory.";
       return
     }
-    this.receivedDate = new Date(this.countryDateForm.value.date);
+    // this.receivedDate = new Date(this.countryDateForm.value.date);
     console.log(this.receivedDate)
     this.receivedCountryZone = this.countryDateForm.value.country;
     // this.utc = this.receivedDate.getTime()+(this.receivedDate.getTimezoneOffset()*60000)
     // this.localeDate = new Date(this.utc+(3600000*this.receivedCountryZone))
-    this.localeDate = this.receivedDate.toLocaleString(this.receivedCountryZone);
+    // this.localeDate = this.receivedDate.toLocaleString(this.receivedCountryZone);
+    this.localeDate = new Date(this.receivedDate).toLocaleString(this.receivedCountryZone);
     
   }
 }
