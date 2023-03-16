@@ -32,5 +32,6 @@ export class AppComponent {
     // this.utc = this.receivedDate.getTime()+(this.receivedDate.getTimezoneOffset()*60000)
     // this.localeDate = new Date(this.utc+(3600000*this.receivedCountryZone))
     this.localeDate = this.receivedDate.toLocaleString(this.receivedCountryZone);
+    
   }
 }
