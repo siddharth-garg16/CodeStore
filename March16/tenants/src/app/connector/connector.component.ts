@@ -5,9 +5,9 @@ import { Tenant } from '../Models/tenant.model';
 import { Observable } from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
 
-export const _filter = (opt: [string, string][], value: string): [string, string][] => {
+export const _filter = (opt: {workflowName?:string, workflowID?:string}[], value: string): {workflowName?:string, workflowID?:string}[] => {
   const filterValue = value.toLowerCase();
-  return opt.filter(item => item[0].toLowerCase().includes(filterValue));
+  return opt.filter(item => item.workflowName.toLowerCase().includes(filterValue));
 };
 
 @Component({
@@ -21,6 +21,7 @@ export class ConnectorComponent implements OnInit {
 
   importedData: any[];
   processedData: Tenant[] = [];
+  selectedValue:string;
 
   tenantForm = this._formBuilder.group({
     tenantGroup: ''
@@ -30,18 +31,6 @@ export class ConnectorComponent implements OnInit {
 
   ngOnInit() {
     this.importedData = this.dataService.tenantData;
-    // for (let tenant of this.importedData) {
-    //   if (tenant.crossTenantWorkflowSchemas.length > 0) {
-    //     let currentTenant: Tenant = {
-    //       tenantName: tenant.tenantName,
-    //       workflow: []
-    //     }
-    //     for (let options of tenant.crossTenantWorkflowSchemas) {
-    //       currentTenant.workflow.push({ workflowID: options.workflowSchemaId, workflowName: options.name });
-    //     }
-    //     this.processedData.push(currentTenant);
-    //   }
-    // }
 
     for(let tenant of this.importedData){
       if(tenant.crossTenantWorkflowSchemas.length>0){
@@ -50,7 +39,10 @@ export class ConnectorComponent implements OnInit {
           workflow: []
         }
         for(let options of tenant.crossTenantWorkflowSchemas){
-          currentTenant.workflow.push([options.name, options.workflowSchemaId])
+          currentTenant.workflow.push({
+            workflowName: options.name,
+            workflowID: options.workflowSchemaId
+          })
         }
         this.processedData.push(currentTenant)
       }
