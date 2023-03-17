@@ -7,7 +7,7 @@
                 <input type="text" matInput required formControlName="tenantGroup" [matAutocomplete]="autoGroup">
                 <mat-autocomplete #autoGroup="matAutocomplete">
                     <mat-optgroup *ngFor="let tenant of tenantGroupOptions | async" [label]="tenant.tenantName">
-                        <mat-option *ngFor="let option of tenant.workflow" [value]="option">{{option}}</mat-option>
+                        <mat-option *ngFor="let option of tenant.workflow" [value]="option[1]">{{option[0]}}</mat-option>
                     </mat-optgroup>
                 </mat-autocomplete>
             </mat-form-field> 

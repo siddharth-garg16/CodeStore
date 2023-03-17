@@ -5,5 +5,5 @@
 
 export interface Tenant {
     tenantName:string,
-    workflow: string[]
+    workflow: [string, string][]
 }
