@@ -1,30 +1,30 @@
 <div id="connector-wrapper">
     <mat-form-field>
-        <mat-label>Connecting Options</mat-label>
+        <mat-label>Tenants</mat-label>
         <mat-select [(value)]="firstOptionVal">
             <mat-form-field appearance="outline" id="search">
                 <mat-label>Search</mat-label>
                 <input matInput (keyup)="onKey($event.target)">
             </mat-form-field>
-            <mat-optgroup *ngFor="let group of processedData" [label]="group[0]">
-                <mat-option *ngFor="let options of group[1]" [value]="options[0]">{{options[1]}}</mat-option>
+            <mat-optgroup *ngFor="let tenant of processedData" [label]="tenant.tenantName">
+                <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
             </mat-optgroup>
         </mat-select>
     </mat-form-field>
     <mat-form-field>
-        <mat-label>Connecting Options</mat-label>
+        <mat-label>Tenants</mat-label>
         <mat-select [(value)]="secondOptionVal">
             <mat-form-field appearance="outline" id="search">
                 <mat-label>Search</mat-label>
                 <input matInput (keyup)="onKey($event.target)">
             </mat-form-field>
-            <mat-optgroup *ngFor="let group of processedData" [label]="group[0]">
-                <mat-option *ngFor="let options of group[1]" [value]="options[0]">{{options[1]}}</mat-option>
+            <mat-optgroup *ngFor="let tenant of processedData" [label]="tenant.tenantName">
+                <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
             </mat-optgroup>
         </mat-select>
     </mat-form-field>
 
-    <button type="button" mat-flat-button color="warn" (click)="showSelections()">Show Selected Value</button>
+    <button type="button" mat-flat-button color="warn" (click)="showSelections()">Connect</button>
 </div>
 
 <button (click)="show()">Show data in console</button>

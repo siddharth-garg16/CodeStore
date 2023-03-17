@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../Services/data.service';
 import {FormControl} from '@angular/forms';
+import {Tenant} from '../Models/tenant.model';
+
 
 @Component({
   selector: 'app-connector',
@@ -10,7 +12,7 @@ import {FormControl} from '@angular/forms';
 })
 export class ConnectorComponent implements OnInit{
   importedData: any[];
-  processedData: any[] = [];
+  processedData: Tenant[] = [];
   firstOptionVal:string;
   secondOptionVal:string;
 
@@ -19,20 +21,37 @@ export class ConnectorComponent implements OnInit{
   ngOnInit(){
     this.importedData = this.dataService.tenantData;
 
+    // for(let tenant of this.importedData){
+    //   if(tenant.crossTenantWorkflowSchemas.length>0){
+    //     for(let options of tenant.crossTenantWorkflowSchemas){
+    //       let currentTenant:Tenant = {
+    //         tenantName : tenant.tenantName,
+    //         workflowName: "",
+    //         workflowID: ""
+    //       };
+    //       // debugger
+    //       currentTenant.workflowName = options.name;
+    //       currentTenant.workflowID = options.workflowSchemaId;
+    //       this.processedData.push(currentTenant);
+    //     }
+    //   }
+    // }
     for(let tenant of this.importedData){
-      let tempName = [];
-      tempName.push(tenant.tenantName)
-      this.processedData.push(tempName)
-      let tempOptions = [];
-      for(let options of tenant.crossTenantWorkflowSchemas){
-        debugger
-        tempOptions.push([options.workflowSchemaId, options.name])
+      if(tenant.crossTenantWorkflowSchemas.length>0){
+        let currentTenant:Tenant = {
+          tenantName: tenant.tenantName,
+          workflow: []
+        }
+        for(let options of tenant.crossTenantWorkflowSchemas){
+          currentTenant.workflow.push({workflowID:options.workflowSchemaId, workflowName: options.name});
+        }
+        this.processedData.push(currentTenant);
       }
-      tempName.push(tempOptions)
     }
   }
 
   show(){
+    //testing
     console.log(this.importedData)
     console.log(this.processedData)
   }
