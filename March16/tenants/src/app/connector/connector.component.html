@@ -1,10 +1,10 @@
 <form id="connector-wrapper" [formGroup]="tenantForm">
     <mat-form-field>
         <mat-label>Tenants</mat-label>
-        <mat-select [(value)]="selectedValue">
+        <mat-select>
             <mat-form-field appearance="outline">
                 <mat-label>Search for Tenants</mat-label>
-                <input type="text" matInput required formControlName="tenantGroup" [matAutocomplete]="autoGroup">
+                <input type="text" matInput required formControlName="tenantGroup1" [matAutocomplete]="autoGroup">
                 <mat-autocomplete #autoGroup="matAutocomplete">
                     <mat-optgroup *ngFor="let tenant of tenantGroupOptions | async" [label]="tenant.tenantName">
                         <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
@@ -13,12 +13,12 @@
             </mat-form-field> 
         </mat-select>
     </mat-form-field>
-    <!-- <mat-form-field>
+    <mat-form-field>
         <mat-label>Tenants</mat-label>
         <mat-select>
             <mat-form-field appearance="outline">
                 <mat-label>Search for Tenants</mat-label>
-                <input type="text" matInput required formControlName="tenantGroup" [matAutocomplete]="autoGroup">
+                <input type="text" matInput required formControlName="tenantGroup2" [matAutocomplete]="autoGroup">
                 <mat-autocomplete #autoGroup="matAutocomplete">
                     <mat-optgroup *ngFor="let tenant of tenantGroupOptions | async" [label]="tenant.tenantName">
                         <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
@@ -26,7 +26,8 @@
                 </mat-autocomplete>
             </mat-form-field> 
         </mat-select>
-    </mat-form-field> -->
+    </mat-form-field>
+   
 
     <button type="button" mat-flat-button color="warn" (click)="showSelections()">Connect</button>
 </form>
