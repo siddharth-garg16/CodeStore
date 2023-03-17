@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConnectorComponent } from './connector/connector.component';
 
 import { MaterialModules } from './Material/material.module';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [

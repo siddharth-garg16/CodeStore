@@ -5,11 +5,9 @@ import { Tenant } from '../Models/tenant.model';
 import { Observable } from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
 
-export const _filter = (opt: {workflowName?:string, workflowID?:string}[], value: string): {workflowName?:string, workflowID?:string}[] => {
+export const _filter = (opt: string[], value: string): string[] => {
   const filterValue = value.toLowerCase();
-  return opt.filter((item) => {
-    item.workflowName.toLowerCase()===filterValue;
-  });
+  return opt.filter(item => item.toLowerCase().includes(filterValue));
 };
 
 @Component({
@@ -32,23 +30,36 @@ export class ConnectorComponent implements OnInit {
 
   ngOnInit() {
     this.importedData = this.dataService.tenantData;
-    for (let tenant of this.importedData) {
-      if (tenant.crossTenantWorkflowSchemas.length > 0) {
-        let currentTenant: Tenant = {
+    // for (let tenant of this.importedData) {
+    //   if (tenant.crossTenantWorkflowSchemas.length > 0) {
+    //     let currentTenant: Tenant = {
+    //       tenantName: tenant.tenantName,
+    //       workflow: []
+    //     }
+    //     for (let options of tenant.crossTenantWorkflowSchemas) {
+    //       currentTenant.workflow.push({ workflowID: options.workflowSchemaId, workflowName: options.name });
+    //     }
+    //     this.processedData.push(currentTenant);
+    //   }
+    // }
+
+    for(let tenant of this.importedData){
+      if(tenant.crossTenantWorkflowSchemas.length>0){
+        let currentTenant:Tenant = {
           tenantName: tenant.tenantName,
           workflow: []
         }
-        for (let options of tenant.crossTenantWorkflowSchemas) {
-          currentTenant.workflow.push({ workflowID: options.workflowSchemaId, workflowName: options.name });
+        for(let options of tenant.crossTenantWorkflowSchemas){
+          currentTenant.workflow.push(options.name)
         }
-        this.processedData.push(currentTenant);
+        this.processedData.push(currentTenant)
       }
     }
 
     this.tenantGroupOptions = this.tenantForm.get('tenantGroup')!.valueChanges.pipe(
       startWith(''),
-      map(value => this._filterGroup(value || ''))
-    )
+      map(value => this._filterGroup(value || '')),
+    );
   }
 
   show() {
@@ -57,11 +68,8 @@ export class ConnectorComponent implements OnInit {
   }
 
   showSelections() {
-    // console.log(this.firstOptionVal)
-    // console.log(this.firstOptionVal, this.secondOptionVal)
     console.log(this.tenantForm.get('tenantGroup').value)
   }
-
 
   private _filterGroup(value: string): Tenant[] {
     if (value) {
@@ -69,7 +77,6 @@ export class ConnectorComponent implements OnInit {
         .map(tenant => ({tenantName: tenant.tenantName, workflow: _filter(tenant.workflow, value)}))
         .filter(tenant => tenant.workflow.length > 0);
     }
-
     return this.processedData;
   }
 }
