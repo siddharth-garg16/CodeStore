@@ -25,7 +25,8 @@ export class ConnectorComponent implements OnInit {
 
   tenantForm = this._formBuilder.group({
     tenantGroup1: '',
-    tenantGroup2: ''
+    tenantGroup2: '',
+    tenantGroup3: ''
   })
 
   tenantGroupOptions: Observable<Tenant[]>
@@ -58,6 +59,11 @@ export class ConnectorComponent implements OnInit {
       startWith(''),
       map(value => this._filterGroup(value || '')),
     );
+
+    this.tenantGroupOptions = this.tenantForm.get('tenantGroup3')!.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filterGroup(value || '')),
+    );
   }
 
   show() {
@@ -66,7 +72,9 @@ export class ConnectorComponent implements OnInit {
   }
 
   showSelections() {
-    console.log(this.tenantForm.get('tenantGroup').value)
+    console.log(this.tenantForm.get('tenantGroup1').value)
+    console.log(this.tenantForm.get('tenantGroup2').value)
+    console.log(this.tenantForm.get('tenantGroup3').value)
   }
 
   private _filterGroup(value: string): Tenant[] {
