@@ -1,30 +1,32 @@
-<div id="connector-wrapper">
+<form id="connector-wrapper" [formGroup]="tenantForm">
     <mat-form-field>
         <mat-label>Tenants</mat-label>
         <mat-select [(value)]="firstOptionVal">
             <mat-form-field appearance="outline" id="search">
-                <mat-label>Search</mat-label>
-                <input matInput (keyup)="onKey($event.target)">
-            </mat-form-field>
-            <mat-optgroup *ngFor="let tenant of processedData" [label]="tenant.tenantName">
-                <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
-            </mat-optgroup>
+                <mat-label>Search for Tenants</mat-label>
+                <input type="text" matInput required formControlName="tenantGroup" [matAutocomplete]="autoGroup">
+                <mat-autocomplete #autoGroup="matAutocomplete">
+                    <mat-optgroup *ngFor="let tenant of processedData" [label]="tenant.tenantName">
+                        <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
+                    </mat-optgroup>
+                </mat-autocomplete>
+            </mat-form-field> 
         </mat-select>
     </mat-form-field>
-    <mat-form-field>
+    <!-- <mat-form-field>
         <mat-label>Tenants</mat-label>
-        <mat-select [(value)]="secondOptionVal">
+        <mat-select [(value)]="firstOptionVal">
             <mat-form-field appearance="outline" id="search">
-                <mat-label>Search</mat-label>
-                <input matInput (keyup)="onKey($event.target)">
-            </mat-form-field>
-            <mat-optgroup *ngFor="let tenant of processedData" [label]="tenant.tenantName">
-                <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
-            </mat-optgroup>
+                <mat-label>Search for Tenants</mat-label>
+                <input type="text" matInput (keyup)="onKey($event.target)">
+                <mat-optgroup *ngFor="let tenant of processedData" [label]="tenant.tenantName">
+                    <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
+                </mat-optgroup>
+            </mat-form-field>     
         </mat-select>
-    </mat-form-field>
+    </mat-form-field> -->
 
     <button type="button" mat-flat-button color="warn" (click)="showSelections()">Connect</button>
-</div>
+</form>
 
 <button (click)="show()">Show data in console</button>

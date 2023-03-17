@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../Services/data.service';
-import {FormControl} from '@angular/forms';
+import {FormBuilder} from '@angular/forms';
 import {Tenant} from '../Models/tenant.model';
+import { Observable } from 'rxjs';
 
+export const _filter = (opt: string[], value: string): string[] => {
+  const filterValue = value.toLowerCase();
+  return opt.filter(item => item.toLowerCase().includes(filterValue));
+};
 
 @Component({
   selector: 'app-connector',
@@ -11,12 +16,19 @@ import {Tenant} from '../Models/tenant.model';
   providers:[DataService]
 })
 export class ConnectorComponent implements OnInit{
+  constructor(private dataService: DataService, private _formBuilder: FormBuilder){}
+
   importedData: any[];
   processedData: Tenant[] = [];
   firstOptionVal:string;
   secondOptionVal:string;
 
-  constructor(private dataService: DataService){}
+  tenantForm = this._formBuilder.group({
+    tenantGroup:''
+  })
+
+
+  tenantGroupOptions: Observable<Tenant[]>
 
   ngOnInit(){
     this.importedData = this.dataService.tenantData;
@@ -48,6 +60,7 @@ export class ConnectorComponent implements OnInit{
         this.processedData.push(currentTenant);
       }
     }
+
   }
 
   show(){
@@ -56,12 +69,19 @@ export class ConnectorComponent implements OnInit{
     console.log(this.processedData)
   }
 
-  onKey(event){
-    let searchValue = event.value
-  }
-
   showSelections(){
     console.log(this.firstOptionVal, this.secondOptionVal)
+  }
+
+
+  private _filterGroup(value: string): Tenant[] {
+    if (value) {
+      return this.stateGroups
+        .map(group => ({letter: group.letter, names: _filter(group.names, value)}))
+        .filter(group => group.names.length > 0);
+    }
+
+    return this.stateGroups;
   }
 
 }
