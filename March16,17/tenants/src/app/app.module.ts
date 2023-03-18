@@ -8,11 +8,13 @@ import { ConnectorComponent } from './connector/connector.component';
 
 import { MaterialModules } from './Material/material.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import { DummyConnectorComponent } from './dummy-connector/dummy-connector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConnectorComponent
+    ConnectorComponent,
+    DummyConnectorComponent
   ],
   imports: [
     BrowserModule,
