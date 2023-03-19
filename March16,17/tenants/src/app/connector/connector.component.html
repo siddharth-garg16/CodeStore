@@ -1,44 +1,34 @@
 <form id="connector-wrapper" [formGroup]="tenantForm">
-    <mat-form-field>
-        <mat-label>Tenants</mat-label>
-        <mat-select>
-            <mat-form-field appearance="outline">
-                <mat-label>Search for Tenants</mat-label>
-                <input type="text" matInput required formControlName="tenantGroup1" [matAutocomplete]="autoGroup">
-                <mat-autocomplete #autoGroup="matAutocomplete">
-                    <mat-optgroup *ngFor="let tenant of tenantGroupOptions | async" [label]="tenant.tenantName">
-                        <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
-                    </mat-optgroup>
-                </mat-autocomplete>
-            </mat-form-field> 
+    <mat-form-field appearance="fill">
+        <mat-label>Tenant*</mat-label>
+        <mat-select formControlName="firstTenant" required>
+          <mat-form-field>
+            <mat-label>Search</mat-label>
+            <input type="text" matInput autocomplete="off" formControlName="firstTenantInp" (input)="OnFirstInputChange()">
+          </mat-form-field>
+          <mat-optgroup *ngFor="let tenant of tenantGroupOptionsA | async" [label]="tenant.tenantName">
+            <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
+        </mat-optgroup>
         </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Tenants</mat-label>
-        <mat-select>
-            <mat-form-field appearance="outline">
-                <mat-label>Search for Tenants</mat-label>
-                <input type="text" matInput required formControlName="tenantGroup2" [matAutocomplete]="autoGroup">
-                <mat-autocomplete #autoGroup="matAutocomplete">
-                    <mat-optgroup *ngFor="let tenant of tenantGroupOptions | async" [label]="tenant.tenantName">
-                        <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
-                    </mat-optgroup>
-                </mat-autocomplete>
-            </mat-form-field>
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Tenant*</mat-label>
+        <mat-select formControlName="secondTenant" required>
+          <mat-form-field>
+            <mat-label>Search</mat-label>
+              <input type="text" matInput placeholder="Search tenant name" autocomplete="off" formControlName="secondTenantInp" (input)="OnSecondInputChange()">
+          </mat-form-field>
+          
+          <mat-optgroup *ngFor="let tenant of tenantGroupOptionsB | async" [label]="tenant.tenantName">
+            <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
+        </mat-optgroup>
         </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Search for Tenants</mat-label>
-        <input type="text" matInput required formControlName="tenantGroup3" [matAutocomplete]="autoGroup">
-        <mat-autocomplete #autoGroup="matAutocomplete">
-            <mat-optgroup *ngFor="let tenant of tenantGroupOptions | async" [label]="tenant.tenantName">
-                <mat-option *ngFor="let option of tenant.workflow" [value]="option.workflowID">{{option.workflowName}}</mat-option>
-            </mat-optgroup>
-        </mat-autocomplete>
-    </mat-form-field>
+      </mat-form-field>
+      <button mat-flat-button color="primary" (click)="onClickSearch()">Search</button>
+  
+    </form>
 
-
-    <button type="button" mat-flat-button color="warn" (click)="showSelections()">Connect</button>
-</form>
-
-<button (click)="show()">Show data in console</button>
+    <button type="button" mat-flat-button (click)="show()" color="warn">Show processed data</button>
+    
+    
