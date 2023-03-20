@@ -89,10 +89,6 @@ export class ConnectorComponent {
     this.tenantForm.reset()
   }
 
-  OnFirstTenantInputChange() {
-    console.log(this.firstTenantInput)
-  }
-
   OnSecondInputChange() {
     console.log(this.tenantForm.get('secondTenantInp').value);
     this.tenantGroupOptionsB = this.tenantForm.get('secondTenantInp')!.valueChanges.pipe(
