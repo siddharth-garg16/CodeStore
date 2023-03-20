@@ -28,8 +28,8 @@ export class ConnectorComponent implements OnInit{
     connectorName: ['', Validators.required],
     firstTenant: ['', Validators.required],
     secondTenant: ['', Validators.required],
-    firstTenantInp: '',
-    secondTenantInp: ''
+    firstTenantSearchInput: '',
+    secondTenantSearchInput: ''
   })
 
   tenantGroupOptionsA: Observable<Tenant[]>
@@ -84,23 +84,70 @@ export class ConnectorComponent implements OnInit{
     console.log(this.tenantForm.get('connectorName').value)
     console.log(this.tenantForm.get('firstTenant').value)
     console.log(this.tenantForm.get('secondTenant').value)
-    if (this.tenantForm.get('connectorName').value && this.tenantForm.get('firstTenant').value && this.tenantForm.get('secondName').value) {
-      localStorage.setItem(this.tenantForm.get('connectorName').value, `{source:${this.tenantForm.get('firstTenant').value}, destination:${this.tenantForm.get('secondTenant').value}}`)
+    if (this.tenantForm.get('connectorName').value!=="" && this.tenantForm.get('firstTenant').value!=="" && this.tenantForm.get('secondTenant').value!==""){
+      localStorage.setItem(this.tenantForm.get('firstTenant').value, this.tenantForm.get('secondTenant').value);
       this.tenantForm.reset();
     }
   }
 
-  OnSecondInputChange():void {
-    this.tenantGroupOptionsB = this.tenantForm.get('secondTenantInp')!.valueChanges.pipe(
+  OnFirstInputChange():void {
+    this.tenantGroupOptionsA = this.tenantForm.get('firstTenantSearchInput')!.valueChanges.pipe(
       startWith(''),
-      map(value => this._filterGroup(this.tenantForm.get('secondTenantInp').value || '')),
+      map(value => this._filterGroup(this.tenantForm.get('firstTenantSearchInput').value || '')),
     );
   }
 
-  OnFirstInputChange():void {
-    this.tenantGroupOptionsA = this.tenantForm.get('firstTenantInp')!.valueChanges.pipe(
+  OnSecondInputChange():void {
+    this.tenantGroupOptionsB = this.tenantForm.get('secondTenantSearchInput')!.valueChanges.pipe(
       startWith(''),
-      map(value => this._filterGroup(this.tenantForm.get('firstTenantInp').value || '')),
+      map(value => this._filterGroup(this.tenantForm.get('secondTenantSearchInput').value || '')),
     );
   }
+
+  getFirstTenantSelection(){
+    // alert(this.tenantForm.get('firstTenant').value)
+    this.tenantGroupOptionsB.forEach(tenantVal => {
+      tenantIteration:
+        for(let tenant of tenantVal){
+          for(let workflow of tenant.workflow){
+            if(workflow.workflowID === this.tenantForm.get('firstTenant').value){
+              workflow.isDisabled = true;
+            }
+            if(localStorage.getItem(this.tenantForm.get('firstTenant').value)){
+              if(workflow.workflowID===localStorage.getItem(this.tenantForm.get('firstTenant').value)){
+                workflow.isDisabled = true;
+                break tenantIteration
+              }
+            }
+          }
+        }
+    })
+  }
+
+  getSecondTenantSelection(){
+    // alert(this.tenantForm.get('secondTenant').value)
+    this.tenantGroupOptionsA.forEach(tenantVal => {
+      tenantIteration:
+        for(let tenant of tenantVal){
+          for(let workflow of tenant.workflow){
+            if(workflow.workflowID === this.tenantForm.get('secondTenant').value){
+              workflow.isDisabled = true;
+            }
+            // if(localStorage.getItem(this.tenantForm.get('firstTenant').value)){
+            //   if(workflow.workflowID===localStorage.getItem(this.tenantForm.get('firstTenant').value)){
+            //     workflow.isDisabled = true;
+            //     break tenantIteration
+            //   }
+            // }
+          }
+        }
+    })
+  }
+  
+  reset(){
+    this.tenantForm.reset();
+    localStorage.clear();
+  }
 }
+
+

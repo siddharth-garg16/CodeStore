@@ -7,10 +7,10 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Tenant*</mat-label>
-    <mat-select formControlName="firstTenant">
+    <mat-select formControlName="firstTenant" (selectionChange)="getFirstTenantSelection()">
       <mat-form-field>
         <mat-label>Search</mat-label>
-        <input type="text" matInput autocomplete="off" formControlName="firstTenantInp" (input)="OnFirstInputChange()">
+        <input type="text" matInput autocomplete="off" formControlName="firstTenantSearchInput" (input)="OnFirstInputChange()">
       </mat-form-field>
       <mat-optgroup *ngFor="let tenant of tenantGroupOptionsA | async" [label]="tenant.tenantName">
         <mat-option *ngFor="let option of tenant.workflow"
@@ -22,15 +22,15 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Tenant*</mat-label>
-    <mat-select formControlName="secondTenant">
+    <mat-select formControlName="secondTenant" (selectionChange)="getSecondTenantSelection()">
       <mat-form-field>
         <mat-label>Search</mat-label>
         <input type="text" matInput placeholder="Search tenant name" autocomplete="off"
-          formControlName="secondTenantInp" (input)="OnSecondInputChange()">
+          formControlName="secondTenantSearchInput" (input)="OnSecondInputChange()">
       </mat-form-field>
       <mat-optgroup *ngFor="let tenant of tenantGroupOptionsB | async" [label]="tenant.tenantName">
         <mat-option *ngFor="let option of tenant.workflow"
-          [value]="option.workflowID">{{option.workflowName}}</mat-option>
+          [value]="option.workflowID" [disabled]="option.isDisabled">{{option.workflowName}}</mat-option>
       </mat-optgroup>
     </mat-select>
     <mat-error>This is a required field.</mat-error>
@@ -42,4 +42,5 @@
 
 <div id="outer-div">
   <button type="button" mat-raised-button (click)="showData()" color="warn">Show processed data</button>
+  <button type="button" mat-stroked-button (click)="reset()" color="warn" style="background-color: white;">Reset</button>
 </div>
