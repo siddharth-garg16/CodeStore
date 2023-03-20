@@ -38,6 +38,10 @@ export class ConnectorComponent implements OnInit {
   ngOnInit() {
     this.importedData = this.dataService.tenantData;
 
+    if(!localStorage.getItem('connections')){
+      localStorage.setItem('connections', '[]')
+    }
+
     for (let tenant of this.importedData) {
       if (tenant.crossTenantWorkflowSchemas.length > 0) {
         let currentTenant: Tenant = {
@@ -81,11 +85,16 @@ export class ConnectorComponent implements OnInit {
   }
 
   onClickSearch(): void {
-    console.log(this.tenantForm.get('connectorName').value)
-    console.log(this.tenantForm.get('firstTenant').value)
-    console.log(this.tenantForm.get('secondTenant').value)
     if (this.tenantForm.get('connectorName').value !== "" && this.tenantForm.get('firstTenant').value !== "" && this.tenantForm.get('secondTenant').value !== "") {
-      localStorage.setItem(this.tenantForm.get('firstTenant').value, this.tenantForm.get('secondTenant').value);
+
+      let locale = JSON.parse(localStorage.getItem('connections'))
+      let currentEntry = {
+        source: this.tenantForm.get('firstTenant').value,
+        destination: this.tenantForm.get('secondTenant').value
+      }
+      locale.push(currentEntry);
+      localStorage.setItem('connections', JSON.stringify(locale))
+
       this.tenantForm.reset();
     }
   }
@@ -112,10 +121,13 @@ export class ConnectorComponent implements OnInit {
           if (workflow.workflowID === this.tenantForm.get('firstTenant').value) {
             workflow.isDisabled = true;
           }
-          if (localStorage.getItem(this.tenantForm.get('firstTenant').value)) {
-            if (workflow.workflowID === localStorage.getItem(this.tenantForm.get('firstTenant').value)) {
-              workflow.isDisabled = true;
-              break tenantIteration
+
+          if(localStorage.getItem('connections')){
+            let locale = JSON.parse(localStorage.getItem('connections'))
+            for(let connection of locale){
+              if(connection.source === this.tenantForm.get('firstTenant').value && connection.destination === workflow.workflowID){
+                workflow.isDisabled = true;
+              }
             }
           }
         }
@@ -130,6 +142,15 @@ export class ConnectorComponent implements OnInit {
         for (let workflow of tenant.workflow) {
           if (workflow.workflowID === this.tenantForm.get('secondTenant').value) {
             workflow.isDisabled = true;
+          }
+
+          if(localStorage.getItem('connections')){
+            let locale = JSON.parse(localStorage.getItem('connections'))
+            for(let connection of locale){
+              if(connection.destination === this.tenantForm.get('secondTenant').value && connection.source === workflow.workflowID){
+                workflow.isDisabled = true;
+              }
+            }
           }
         }
       }
