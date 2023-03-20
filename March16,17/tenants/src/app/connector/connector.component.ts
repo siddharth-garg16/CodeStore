@@ -1,6 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../Services/data.service';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Tenant } from '../Models/tenant.model';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
@@ -16,7 +16,7 @@ export const _filter = (opt: { workflowName?: string, workflowID?: string }[], v
   styleUrls: ['./connector.component.scss'],
   providers: [DataService]
 })
-export class ConnectorComponent {
+export class ConnectorComponent implements OnInit{
 
   constructor(private dataService: DataService, private _formBuilder: FormBuilder) { }
 
@@ -24,16 +24,12 @@ export class ConnectorComponent {
   processedData: Tenant[] = [];
   selectedValue: string;
 
-  @ViewChild('firstTenantSearch') firstTenantInput: ElementRef;
-  @ViewChild('secondTenantSearch') secondTenantInput: ElementRef;
-
-
   tenantForm = this._formBuilder.group({
-    connectorName:['', Validators.required],
+    connectorName: ['', Validators.required],
     firstTenant: ['', Validators.required],
     secondTenant: ['', Validators.required],
     firstTenantInp: '',
-    secondTenantInp: '',
+    secondTenantInp: ''
   })
 
   tenantGroupOptionsA: Observable<Tenant[]>
@@ -51,7 +47,8 @@ export class ConnectorComponent {
         for (let options of tenant.crossTenantWorkflowSchemas) {
           currentTenant.workflow.push({
             workflowName: options.name,
-            workflowID: options.workflowSchemaId
+            workflowID: options.workflowSchemaId,
+            isDisabled: false
           })
         }
         this.processedData.push(currentTenant)
@@ -69,7 +66,7 @@ export class ConnectorComponent {
     );
   }
 
-  show() {
+  showData() {
     console.log(this.importedData)
     console.log(this.processedData)
   }
@@ -83,24 +80,24 @@ export class ConnectorComponent {
     return this.processedData;
   }
 
-  onClickSearch() {
+  onClickSearch():void {
     console.log(this.tenantForm.get('connectorName').value)
     console.log(this.tenantForm.get('firstTenant').value)
     console.log(this.tenantForm.get('secondTenant').value)
-    alert("Tenant 1  - " + this.tenantForm.get('firstTenant').value + " and Tenant 2 - " + this.tenantForm.get('secondTenant').value + " connected with the connector name - " + this.tenantForm.get('connectorName').value);
-    this.tenantForm.reset()
+    if (this.tenantForm.get('connectorName').value && this.tenantForm.get('firstTenant').value && this.tenantForm.get('secondName').value) {
+      localStorage.setItem(this.tenantForm.get('connectorName').value, `{source:${this.tenantForm.get('firstTenant').value}, destination:${this.tenantForm.get('secondTenant').value}}`)
+      this.tenantForm.reset();
+    }
   }
 
-  OnSecondInputChange() {
-    console.log(this.tenantForm.get('secondTenantInp').value);
+  OnSecondInputChange():void {
     this.tenantGroupOptionsB = this.tenantForm.get('secondTenantInp')!.valueChanges.pipe(
       startWith(''),
       map(value => this._filterGroup(this.tenantForm.get('secondTenantInp').value || '')),
     );
   }
 
-  OnFirstInputChange() {
-    console.log(this.tenantForm.get('firstTenantInp').value)
+  OnFirstInputChange():void {
     this.tenantGroupOptionsA = this.tenantForm.get('firstTenantInp')!.valueChanges.pipe(
       startWith(''),
       map(value => this._filterGroup(this.tenantForm.get('firstTenantInp').value || '')),

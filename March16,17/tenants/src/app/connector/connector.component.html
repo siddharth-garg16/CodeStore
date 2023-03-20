@@ -14,7 +14,7 @@
       </mat-form-field>
       <mat-optgroup *ngFor="let tenant of tenantGroupOptionsA | async" [label]="tenant.tenantName">
         <mat-option *ngFor="let option of tenant.workflow"
-          [value]="option.workflowID">{{option.workflowName}}</mat-option>
+          [value]="option.workflowID" [disabled]="option.isDisabled">{{option.workflowName}}</mat-option>
       </mat-optgroup>
     </mat-select>
     <mat-error>This is a required field.</mat-error>
@@ -36,10 +36,10 @@
     <mat-error>This is a required field.</mat-error>
   </mat-form-field>
 
-  <button mat-flat-button color="primary" (click)="onClickSearch()">Connect</button>
+  <button type="submit" mat-flat-button color="primary" (click)="onClickSearch()">Connect</button>
 
 </form>
 
 <div id="outer-div">
-  <button type="button" mat-flat-button (click)="show()" color="warn">Show processed data</button>
+  <button type="button" mat-raised-button (click)="showData()" color="warn">Show processed data</button>
 </div>
