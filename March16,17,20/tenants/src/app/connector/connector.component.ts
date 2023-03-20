@@ -16,7 +16,7 @@ export const _filter = (opt: { workflowName?: string, workflowID?: string }[], v
   styleUrls: ['./connector.component.scss'],
   providers: [DataService]
 })
-export class ConnectorComponent implements OnInit{
+export class ConnectorComponent implements OnInit {
 
   constructor(private dataService: DataService, private _formBuilder: FormBuilder) { }
 
@@ -80,71 +80,63 @@ export class ConnectorComponent implements OnInit{
     return this.processedData;
   }
 
-  onClickSearch():void {
+  onClickSearch(): void {
     console.log(this.tenantForm.get('connectorName').value)
     console.log(this.tenantForm.get('firstTenant').value)
     console.log(this.tenantForm.get('secondTenant').value)
-    if (this.tenantForm.get('connectorName').value!=="" && this.tenantForm.get('firstTenant').value!=="" && this.tenantForm.get('secondTenant').value!==""){
+    if (this.tenantForm.get('connectorName').value !== "" && this.tenantForm.get('firstTenant').value !== "" && this.tenantForm.get('secondTenant').value !== "") {
       localStorage.setItem(this.tenantForm.get('firstTenant').value, this.tenantForm.get('secondTenant').value);
       this.tenantForm.reset();
     }
   }
 
-  OnFirstInputChange():void {
+  OnFirstInputChange(): void {
     this.tenantGroupOptionsA = this.tenantForm.get('firstTenantSearchInput')!.valueChanges.pipe(
       startWith(''),
       map(value => this._filterGroup(this.tenantForm.get('firstTenantSearchInput').value || '')),
     );
   }
 
-  OnSecondInputChange():void {
+  OnSecondInputChange(): void {
     this.tenantGroupOptionsB = this.tenantForm.get('secondTenantSearchInput')!.valueChanges.pipe(
       startWith(''),
       map(value => this._filterGroup(this.tenantForm.get('secondTenantSearchInput').value || '')),
     );
   }
 
-  getFirstTenantSelection(){
-    // alert(this.tenantForm.get('firstTenant').value)
+  getFirstTenantSelection() {
     this.tenantGroupOptionsB.forEach(tenantVal => {
       tenantIteration:
-        for(let tenant of tenantVal){
-          for(let workflow of tenant.workflow){
-            if(workflow.workflowID === this.tenantForm.get('firstTenant').value){
+      for (let tenant of tenantVal) {
+        for (let workflow of tenant.workflow) {
+          if (workflow.workflowID === this.tenantForm.get('firstTenant').value) {
+            workflow.isDisabled = true;
+          }
+          if (localStorage.getItem(this.tenantForm.get('firstTenant').value)) {
+            if (workflow.workflowID === localStorage.getItem(this.tenantForm.get('firstTenant').value)) {
               workflow.isDisabled = true;
-            }
-            if(localStorage.getItem(this.tenantForm.get('firstTenant').value)){
-              if(workflow.workflowID===localStorage.getItem(this.tenantForm.get('firstTenant').value)){
-                workflow.isDisabled = true;
-                break tenantIteration
-              }
+              break tenantIteration
             }
           }
         }
+      }
     })
   }
 
-  getSecondTenantSelection(){
-    // alert(this.tenantForm.get('secondTenant').value)
+  getSecondTenantSelection() {
     this.tenantGroupOptionsA.forEach(tenantVal => {
       tenantIteration:
-        for(let tenant of tenantVal){
-          for(let workflow of tenant.workflow){
-            if(workflow.workflowID === this.tenantForm.get('secondTenant').value){
-              workflow.isDisabled = true;
-            }
-            // if(localStorage.getItem(this.tenantForm.get('firstTenant').value)){
-            //   if(workflow.workflowID===localStorage.getItem(this.tenantForm.get('firstTenant').value)){
-            //     workflow.isDisabled = true;
-            //     break tenantIteration
-            //   }
-            // }
+      for (let tenant of tenantVal) {
+        for (let workflow of tenant.workflow) {
+          if (workflow.workflowID === this.tenantForm.get('secondTenant').value) {
+            workflow.isDisabled = true;
           }
         }
+      }
     })
   }
-  
-  reset(){
+
+  reset() {
     this.tenantForm.reset();
     localStorage.clear();
   }
