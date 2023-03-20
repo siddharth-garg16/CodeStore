@@ -16,11 +16,11 @@
 
         <form action="" method="POST">
             <label>Price From (Min):</label>
-            <input type="range" id="fromPrice" value="50" min="2000" max="10000" oninput="document.getElementById('fPrice').innerHTML = this.value" />
+            <input type="range" id="fromPrice" value="50" min="2000" max="9999" oninput="document.getElementById('fPrice').innerHTML = this.value" />
             <label id="fPrice"></label> <br><br>
 
             <label>Price To (Max):</label>
-            <input type="range" id="toPrice" value="450" min="10000" max="30000" oninput="document.getElementById('tPrice').innerHTML = this.value" />
+            <input type="range" id="toPrice" value="450" min="10001" max="30000" oninput="document.getElementById('tPrice').innerHTML = this.value" />
             <label id="tPrice"></label> <br><br>
 
             <button type="submit" onclick="filterItems(); return false;">Search</button> 
