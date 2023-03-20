@@ -29,6 +29,7 @@ export class ConnectorComponent {
 
 
   tenantForm = this._formBuilder.group({
+    connectorName:'',
     firstTenant: '',
     secondTenant: '',
     firstTenantInp: '',

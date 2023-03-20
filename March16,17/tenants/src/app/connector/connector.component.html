@@ -1,4 +1,9 @@
 <form id="connector-wrapper" [formGroup]="tenantForm">
+  <mat-form-field>
+    <mat-label>Connector Name</mat-label>
+    <input type="text" matInput formControlName="connectorName">
+  </mat-form-field>
+
   <mat-form-field appearance="fill">
     <mat-label>Tenant*</mat-label>
     <mat-select formControlName="firstTenant" required>
