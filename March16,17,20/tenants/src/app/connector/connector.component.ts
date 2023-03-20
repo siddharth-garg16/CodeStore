@@ -94,6 +94,8 @@ export class ConnectorComponent implements OnInit {
       locale.push(currentEntry);
       localStorage.setItem('connections', JSON.stringify(locale))
       this.tenantForm.reset();
+      this.resetA();
+      this.resetB();
     }
   }
 
@@ -112,6 +114,7 @@ export class ConnectorComponent implements OnInit {
   }
 
   getFirstTenantSelection() {
+    this.resetB();
     this.tenantGroupOptionsB.forEach(tenantVal => {
       tenantIteration:
       for (let tenant of tenantVal) {
@@ -133,6 +136,7 @@ export class ConnectorComponent implements OnInit {
   }
 
   getSecondTenantSelection() {
+    this.resetA();
     this.tenantGroupOptionsA.forEach(tenantVal => {
       tenantIteration:
       for (let tenant of tenantVal) {
@@ -148,6 +152,26 @@ export class ConnectorComponent implements OnInit {
               }
             }
           }
+        }
+      }
+    })
+  }
+
+  resetA(){
+    this.tenantGroupOptionsA.forEach(tenantVal => {
+      for (let tenant of tenantVal) {
+        for (let workflow of tenant.workflow) {
+          workflow.isDisabled = false;
+        }
+      }
+    })
+  }
+
+  resetB(){
+    this.tenantGroupOptionsB.forEach(tenantVal => {
+      for (let tenant of tenantVal) {
+        for (let workflow of tenant.workflow) {
+          workflow.isDisabled = false;
         }
       }
     })
