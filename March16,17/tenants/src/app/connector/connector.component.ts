@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../Services/data.service';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Tenant } from '../Models/tenant.model';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
@@ -29,9 +29,9 @@ export class ConnectorComponent {
 
 
   tenantForm = this._formBuilder.group({
-    connectorName:'',
-    firstTenant: '',
-    secondTenant: '',
+    connectorName:['', Validators.required],
+    firstTenant: ['', Validators.required],
+    secondTenant: ['', Validators.required],
     firstTenantInp: '',
     secondTenantInp: '',
   })

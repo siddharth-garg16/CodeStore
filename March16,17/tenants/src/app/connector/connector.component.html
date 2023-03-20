@@ -1,12 +1,13 @@
 <form id="connector-wrapper" [formGroup]="tenantForm">
   <mat-form-field>
     <mat-label>Connector Name</mat-label>
-    <input type="text" matInput required formControlName="connectorName">
+    <input type="text" matInput formControlName="connectorName">
+    <mat-error>This is a required field.</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Tenant*</mat-label>
-    <mat-select formControlName="firstTenant" required>
+    <mat-select formControlName="firstTenant">
       <mat-form-field>
         <mat-label>Search</mat-label>
         <input type="text" matInput autocomplete="off" formControlName="firstTenantInp" (input)="OnFirstInputChange()">
@@ -16,11 +17,12 @@
           [value]="option.workflowID">{{option.workflowName}}</mat-option>
       </mat-optgroup>
     </mat-select>
+    <mat-error>This is a required field.</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Tenant*</mat-label>
-    <mat-select formControlName="secondTenant" required>
+    <mat-select formControlName="secondTenant">
       <mat-form-field>
         <mat-label>Search</mat-label>
         <input type="text" matInput placeholder="Search tenant name" autocomplete="off"
@@ -31,10 +33,13 @@
           [value]="option.workflowID">{{option.workflowName}}</mat-option>
       </mat-optgroup>
     </mat-select>
+    <mat-error>This is a required field.</mat-error>
   </mat-form-field>
 
-  <button mat-flat-button color="primary" (click)="onClickSearch()">Search</button>
+  <button mat-flat-button color="primary" (click)="onClickSearch()">Connect</button>
 
 </form>
 
-<button type="button" mat-flat-button (click)="show()" color="warn">Show processed data</button>
+<div id="outer-div">
+  <button type="button" mat-flat-button (click)="show()" color="warn">Show processed data</button>
+</div>
