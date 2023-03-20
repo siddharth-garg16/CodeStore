@@ -86,7 +86,6 @@ export class ConnectorComponent implements OnInit {
 
   onClickSearch(): void {
     if (this.tenantForm.get('connectorName').value !== "" && this.tenantForm.get('firstTenant').value !== "" && this.tenantForm.get('secondTenant').value !== "") {
-
       let locale = JSON.parse(localStorage.getItem('connections'))
       let currentEntry = {
         source: this.tenantForm.get('firstTenant').value,
@@ -94,7 +93,6 @@ export class ConnectorComponent implements OnInit {
       }
       locale.push(currentEntry);
       localStorage.setItem('connections', JSON.stringify(locale))
-
       this.tenantForm.reset();
     }
   }
@@ -121,7 +119,6 @@ export class ConnectorComponent implements OnInit {
           if (workflow.workflowID === this.tenantForm.get('firstTenant').value) {
             workflow.isDisabled = true;
           }
-
           if(localStorage.getItem('connections')){
             let locale = JSON.parse(localStorage.getItem('connections'))
             for(let connection of locale){
@@ -143,7 +140,6 @@ export class ConnectorComponent implements OnInit {
           if (workflow.workflowID === this.tenantForm.get('secondTenant').value) {
             workflow.isDisabled = true;
           }
-
           if(localStorage.getItem('connections')){
             let locale = JSON.parse(localStorage.getItem('connections'))
             for(let connection of locale){

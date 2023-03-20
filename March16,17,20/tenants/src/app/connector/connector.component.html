@@ -1,4 +1,4 @@
-<form id="connector-wrapper" [formGroup]="tenantForm">
+<form id="connector-wrapper" [formGroup]="tenantForm" (ngSubmit)="onClickSearch()">
   <mat-form-field>
     <mat-label>Connector Name</mat-label>
     <input type="text" matInput formControlName="connectorName">
@@ -37,7 +37,7 @@
     <mat-error>This is a required field.</mat-error>
   </mat-form-field>
 
-  <button type="submit" mat-flat-button color="primary" (click)="onClickSearch()">Connect</button>
+  <button type="submit" mat-flat-button color="primary">Connect</button>
 
 </form>
 
