@@ -84,9 +84,10 @@ export class ConnectorComponent {
   }
 
   onClickSearch() {
+    console.log(this.tenantForm.get('connectorName').value)
     console.log(this.tenantForm.get('firstTenant').value)
     console.log(this.tenantForm.get('secondTenant').value)
-    alert("Tenant 1  - " + this.tenantForm.get('firstTenant').value + " and Tenant 2 - " + this.tenantForm.get('secondTenant').value);
+    alert("Tenant 1  - " + this.tenantForm.get('firstTenant').value + " and Tenant 2 - " + this.tenantForm.get('secondTenant').value + " connected with the connector name - " + this.tenantForm.get('connectorName').value);
     this.tenantForm.reset()
   }
 
