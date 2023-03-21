@@ -69,7 +69,7 @@ export class ConnectorComponent implements OnInit {
       map(value => this._filterGroup('')),
     );
   }
-
+ 
   showData() {
     console.log(this.importedData)
     console.log(this.processedData)

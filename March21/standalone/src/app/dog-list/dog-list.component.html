@@ -1,0 +1,8 @@
+<section class="hero-section">
+    <h2 class="hero-text">
+      Discover Pets to walk near you
+    </h2>
+  </section>
+  <article class="pet-list">
+    <app-dog-list-card *ngFor="let dog of dogsService.dogs; let i = index" [index]="i" [dog]="dog"></app-dog-list-card>
+  </article>
