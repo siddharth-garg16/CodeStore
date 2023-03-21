@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -10,7 +10,7 @@ import { StudentAddEditComponent } from '../student-add-edit/student-add-edit.co
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.scss']
 })
-export class StudentListComponent {
+export class StudentListComponent implements OnDestroy{
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'dob', 'selectedSubjects', 'actions'];
   dataSource !: MatTableDataSource <any>;
 
@@ -18,7 +18,7 @@ export class StudentListComponent {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private _studentService:StudentService){}
-
+  studentService = this._studentService.subscribe()
   ngOnInit():void{
     this.getStudentList()
   }
@@ -49,5 +49,7 @@ export class StudentListComponent {
     })
   }
 
-
+  ngOnDestroy(){
+    this.studentService.unsubscribe()
+  }
 }
