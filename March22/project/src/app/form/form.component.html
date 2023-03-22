@@ -1,0 +1,14 @@
+<div id="wrapper">
+    <div id="head">
+        <h5>Age Calculator</h5>
+    </div>
+    <div>
+        <label for="dob" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="dob" #dobInput (blur)="calculateAge()">
+    </div>
+    <br>
+    <div>
+        <label for="age" class="form-label">Current Age</label>
+        <input type="number" class="form-control" id="age" value="0" disabled #ageInput>
+    </div>
+</div>
