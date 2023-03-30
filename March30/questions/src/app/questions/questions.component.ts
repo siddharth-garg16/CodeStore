@@ -10,12 +10,12 @@ export class QuestionsComponent {
     {
       route:'error',
       img:'../../assets/icons/mobile-app.svg',
-      question:'mobile app'
+      question:'Mobile App'
     },
     {
       route:'error',
       img:'../../assets/icons/web-app.svg',
-      question:'web app'
+      question:'Web App'
     }
   ]
 }

@@ -11,7 +11,8 @@ const routes: Routes = [
   },
   {
     path:'questions',
-    component:QuestionsComponent
+    component:QuestionsComponent,
+    children:[]
   },
   {
     path:'**',
