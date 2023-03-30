@@ -8,14 +8,14 @@ import { Component } from '@angular/core';
 export class QuestionsComponent {
   public data: {route:string, img:string, question:string}[] = [
     {
-      route:'error',
+      route:'customization',
       img:'../../assets/icons/mobile-app.svg',
-      question:'Mobile App'
+      question:'MAKE A MOBILE APP'
     },
     {
-      route:'error',
+      route:'customization',
       img:'../../assets/icons/web-app.svg',
-      question:'Web App'
+      question:'MAKE A WEB APP'
     }
   ]
 }

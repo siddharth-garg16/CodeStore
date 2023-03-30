@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Router} from '@angular/router'
+import { Router, ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-question-card',
@@ -11,9 +11,9 @@ export class QuestionCardComponent {
   @Input() imgSrc = '';
   @Input() questionText = '';
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute){}
 
   navigateSelection(routingSrc:string){
-    this.router.navigateByUrl(routingSrc)
+    this.router.navigate([routingSrc], {relativeTo:this.activatedRoute})
   }
 }

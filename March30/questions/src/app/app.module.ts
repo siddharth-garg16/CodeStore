@@ -7,6 +7,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { HeaderComponent } from './header/header.component';
 import { ErrorComponent } from './error/error.component';
 import { QuestionCardComponent } from './question-card/question-card.component';
+import { PriceCardComponent } from './price-card/price-card.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { QuestionCardComponent } from './question-card/question-card.component';
     QuestionsComponent,
     HeaderComponent,
     ErrorComponent,
-    QuestionCardComponent
+    QuestionCardComponent,
+    PriceCardComponent
   ],
   imports: [
     BrowserModule,
