@@ -14,6 +14,6 @@ export class QuestionCardComponent {
   constructor(private router: Router, private activatedRoute: ActivatedRoute){}
 
   navigateSelection(routingSrc:string){
-    this.router.navigate([routingSrc], {relativeTo:this.activatedRoute})
+    this.router.navigate([routingSrc])
   }
 }

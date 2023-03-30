@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { ErrorComponent } from './error/error.component';
 import { QuestionCardComponent } from './question-card/question-card.component';
 import { PriceCardComponent } from './price-card/price-card.component';
+import { CustomComponent } from './custom/custom.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PriceCardComponent } from './price-card/price-card.component';
     HeaderComponent,
     ErrorComponent,
     QuestionCardComponent,
-    PriceCardComponent
+    PriceCardComponent,
+    CustomComponent
   ],
   imports: [
     BrowserModule,
