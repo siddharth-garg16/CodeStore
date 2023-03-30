@@ -13,12 +13,14 @@ const routes: Routes = [
   },
   {
     path:'questions',
-    component:QuestionsComponent
-  },
-  {
-    //need to add :id here
-    path:'customization',
-    component:CustomComponent
+    component:QuestionsComponent,
+    children:[
+      {
+        //need to add :id here
+        path:'customization',
+        component:CustomComponent
+      }
+    ]
   },
   {
     path:'**',
