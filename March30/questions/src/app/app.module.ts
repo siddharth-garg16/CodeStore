@@ -9,6 +9,7 @@ import { ErrorComponent } from './error/error.component';
 import { QuestionCardComponent } from './question-card/question-card.component';
 import { PriceCardComponent } from './price-card/price-card.component';
 import { CustomComponent } from './custom/custom.component';
+import { PreferencesComponent } from './preferences/preferences.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CustomComponent } from './custom/custom.component';
     ErrorComponent,
     QuestionCardComponent,
     PriceCardComponent,
-    CustomComponent
+    CustomComponent,
+    PreferencesComponent
   ],
   imports: [
     BrowserModule,
