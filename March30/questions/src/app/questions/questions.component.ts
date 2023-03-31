@@ -6,13 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./questions.component.scss']
 })
 export class QuestionsComponent {
-  public data: {route:string, img:string, question:string}[] = [
+  public data: {id:number, route:string, img:string, question:string}[] = [
     {
+      id:1,
       route:'customization',
       img:'../../assets/icons/mobile-app.svg',
       question:'MAKE A MOBILE APP'
     },
     {
+      id:2,
       route:'customization',
       img:'../../assets/icons/web-app.svg',
       question:'MAKE A WEB APP'

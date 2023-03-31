@@ -10,6 +10,7 @@ import { QuestionCardComponent } from './question-card/question-card.component';
 import { PriceCardComponent } from './price-card/price-card.component';
 import { CustomComponent } from './custom/custom.component';
 import { PreferencesComponent } from './preferences/preferences.component';
+import {FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PreferencesComponent } from './preferences/preferences.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
