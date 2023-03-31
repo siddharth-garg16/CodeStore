@@ -10,7 +10,9 @@ import { QuestionCardComponent } from './questions/question-card/question-card.c
 import { PriceCardComponent } from './custom/price-card/price-card.component';
 import { CustomComponent } from './custom/custom.component';
 import {FormsModule} from '@angular/forms';
-import { FinalComponent } from './custom/final/final.component'
+import { FinalComponent } from './custom/final/final.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModules } from './Material/material.module'
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FinalComponent } from './custom/final/final.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModules
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../Services/data.service';
 
 @Component({
   selector: 'app-custom',
   templateUrl: './custom.component.html',
   styleUrls: ['./custom.component.scss']
 })
-export class CustomComponent {
+export class CustomComponent implements OnInit{
 
+  constructor(){}
+
+  ngOnInit(): void {
+    
+  }
 }
