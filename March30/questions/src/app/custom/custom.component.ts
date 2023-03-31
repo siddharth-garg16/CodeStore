@@ -12,28 +12,27 @@ export class CustomComponent implements OnInit{
   processedData: { id: number, title: string, parentID: any, options: any[], hasMultipleValues: boolean, image: string, questions: any[] }[] = [];
   currentQuestion:number = 1;
   totalQuestions:number = 10;
-  projectSelection:string|null = '';
+  projectSelection:number = 0;
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.importedData = this.dataService.questionData
+    this.importedData = this.dataService.questionData;
 
     for (let card of this.importedData) {
       if (!card.parentID) {
-        this.processedData.push({ ...card, questions:[] })
+        this.processedData.push({ ...card, questions:[] });
       }
     }
-
     for (let card of this.processedData) {
       for (let questions of this.importedData) {
         if (questions.parentID === card.id) {
-          card.questions.push(questions)
+          card.questions.push(questions);
         }
       }
     }
 
-    this.projectSelection = this.activatedRoute.snapshot.paramMap.get('id');
+    this.projectSelection = Number(this.activatedRoute.snapshot.paramMap.get('id'));
 
     // console.log(this.processedData, 'from custom component')
     // console.log(this.projectSelection, typeof this.projectSelection)
