@@ -1,8 +1,24 @@
 <div id="custom-wrapper">
-    <!-- prefernce-wrapper div will contain the questions -->
+
     <div id="preference-wrapper">
-        <button type="button" mat-flat-button color="primary">Previous</button>
-        <button type="button" mat-flat-button color="primary">Next</button>
+        <div id="page-counter">
+            <span id="current-question">{{currentQuestion}}</span>/<span id="total-questions">{{totalQuestions}}</span>
+        </div>
+
+        <div id="question">
+            <!-- questions go here -->
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Option 1</mat-radio-button>
+                <mat-radio-button value="2">Option 2</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div id="button-wrapper">
+            <button type="button" *ngIf="currentQuestion>1" mat-flat-button color="primary" (click)="goToPreviousQuestion()">Previous</button>
+            <button type="button" *ngIf="currentQuestion<totalQuestions" mat-flat-button color="primary" (click)="goToNextQuestion()">Next</button>
+            <button type="button" *ngIf="currentQuestion===totalQuestions" mat-flat-button color="accent">Confirm</button>
+        </div>
     </div>
+
     <app-price-card [cost]="9999"></app-price-card>
 </div>

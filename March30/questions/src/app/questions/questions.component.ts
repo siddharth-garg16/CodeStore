@@ -8,7 +8,7 @@ import { DataService } from '../Services/data.service'
 })
 export class QuestionsComponent implements OnInit {
   public importedData: any[] = [];
-  public processedData: { id: number, title: string, parentID: any, options: any[], hasMultipleValues: boolean, image: string, questions: any[] }[] = [
+  public processedData: { id: number, title: string, parentID: any, options: any[], hasMultipleValues: boolean, image: string }[] = [
 
   ];
 
@@ -19,18 +19,9 @@ export class QuestionsComponent implements OnInit {
 
     for (let card of this.importedData) {
       if (!card.parentID) {
-        this.processedData.push({ ...card, questions:[] })
+        this.processedData.push(card)
       }
     }
-
-    for (let card of this.processedData) {
-      for (let questions of this.importedData) {
-        if (questions.parentID === card.id) {
-          card.questions.push(questions)
-        }
-      }
-    }
-
     // console.log(this.processedData)
   }
 }
