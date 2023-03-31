@@ -9,7 +9,6 @@ import { ErrorComponent } from './error/error.component';
 import { QuestionCardComponent } from './questions/question-card/question-card.component';
 import { PriceCardComponent } from './custom/price-card/price-card.component';
 import { CustomComponent } from './custom/custom.component';
-import { PreferencesComponent } from './custom/preferences/preferences.component';
 import {FormsModule} from '@angular/forms';
 import { FinalComponent } from './custom/final/final.component'
 
@@ -22,7 +21,6 @@ import { FinalComponent } from './custom/final/final.component'
     QuestionCardComponent,
     PriceCardComponent,
     CustomComponent,
-    PreferencesComponent,
     FinalComponent
   ],
   imports: [
