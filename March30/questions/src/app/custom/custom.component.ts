@@ -12,13 +12,13 @@ export class CustomComponent implements OnInit{
   processedData: { id: number, title: string, parentID: any, options: any[], hasMultipleValues: boolean, image: string, questions: any[] }[] = [];
   currentQuestion:number = 1;
   totalQuestions:number = 10;
-  projectSelection:number = 0;
+  projectSelectionID:number = 0;
+  selectedProject: any;
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.importedData = this.dataService.questionData;
-
     for (let card of this.importedData) {
       if (!card.parentID) {
         this.processedData.push({ ...card, questions:[] });
@@ -31,11 +31,19 @@ export class CustomComponent implements OnInit{
         }
       }
     }
-
-    this.projectSelection = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-
     // console.log(this.processedData, 'from custom component')
-    // console.log(this.projectSelection, typeof this.projectSelection)
+
+
+    this.projectSelectionID = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    // console.log(this.projectSelectionID, typeof this.projectSelection)
+
+
+    for(let project of this.processedData){
+      if(project.id === this.projectSelectionID){
+        this.selectedProject = project;
+      }
+    }
+    // console.log(this.selectedProject, "selected project");
   }
 
   goToPreviousQuestion(){
