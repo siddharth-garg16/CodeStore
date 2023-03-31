@@ -26,6 +26,14 @@ export class DataService {
     },
     {
         "id":3,
+        "title":"MAKE DESIGNS",
+        "parentID":null,
+        "options":[],
+        "hasMultipleValues":false,
+        "image":"../icons/designing.svg"
+    },
+    {
+        "id":4,
         "title":"What type of app are you building?",
         "parentID":1,
         "options":[
@@ -48,7 +56,7 @@ export class DataService {
         "hasMultipleValues":false
     },
     {
-        "id":4,
+        "id":5,
         "title":"Which frontend technology do you prefer for the app?",
         "parentID":1,
         "options":[
@@ -71,7 +79,7 @@ export class DataService {
         "hasMultipleValues":false
     },
     {
-        "id":5,
+        "id":6,
         "title":"Which UI do you prefer for your app?",
         "parentID":1,
         "options":[
@@ -89,7 +97,7 @@ export class DataService {
         "hasMultipleValues":false
     },
     {
-        "id":6,
+        "id":7,
         "title":"Which frontend technology do you prefer for the app?",
         "parentID":2,
         "options":[
@@ -112,7 +120,7 @@ export class DataService {
         "hasMultipleValues":false
     },
     {
-        "id":7,
+        "id":8,
         "title":"Which UI do you prefer for your app?",
         "parentID":2,
         "options":[
@@ -125,6 +133,42 @@ export class DataService {
                 "id":2,
                 "title":"Customised UI",
                 "cost":700
+            }
+        ],
+        "hasMultipleValues":false
+    },
+    {
+        "id":9,
+        "title":"What color profile do you want?",
+        "parentID":3,
+        "options":[
+            {
+                "id":1,
+                "title":"Black & White with accents",
+                "cost":500
+            },
+            {
+                "id":2,
+                "title":"Color Filled",
+                "cost":700
+            }
+        ],
+        "hasMultipleValues":true
+    },
+    {
+        "id":10,
+        "title":"Do you want animated designs?",
+        "parentID":3,
+        "options":[
+            {
+                "id":1,
+                "title":"Yes",
+                "cost":700
+            },
+            {
+                "id":2,
+                "title":"No",
+                "cost":300
             }
         ],
         "hasMultipleValues":false

@@ -7,13 +7,13 @@ import { Router, ActivatedRoute} from '@angular/router'
   styleUrls: ['./question-card.component.scss']
 })
 export class QuestionCardComponent {
-  @Input() id = 0;
-  @Input() imgSrc = '';
-  @Input() questionText = '';
+  @Input() id:number = 0;
+  @Input() imgSrc:string = '';
+  @Input() questionText:string = '';
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute){}
 
-  navigateSelection(id:number){
+  navigateSelection(id:number):void{
     this.router.navigate([`/questions/customization/${id}`])
   }
 }
