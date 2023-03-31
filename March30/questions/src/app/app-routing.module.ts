@@ -14,17 +14,9 @@ const routes: Routes = [
   {
     path:'questions',
     component:QuestionsComponent
-    // children:[
-    //   {
-    //     //need to add :id here
-    //     path:'customization/:id',
-    //     component:CustomComponent
-    //   }
-    // ]
   },
   {
-    //need to add :id here
-    path:'customization/:id',
+    path:'questions/customization/:id',
     component:CustomComponent
   },
   {

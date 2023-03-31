@@ -4,7 +4,7 @@
     </div>
     <br>
     <div id="question-card-wrapper">
-        <app-question-card *ngFor="let card of data" [id]="card.id" [routingSrc]="card.route" [imgSrc]="card.img" [questionText]="card.question"></app-question-card>
+        <app-question-card *ngFor="let card of importedData" [id]="card.id" [imgSrc]="card.img" [questionText]="card.question"></app-question-card>
     </div>
 </div>
 <!-- <router-outlet></router-outlet> -->
