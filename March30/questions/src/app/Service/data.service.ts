@@ -14,7 +14,7 @@ export class DataService {
         "parentID":null,
         "options":[],
         "hasMultipleValues":false,
-        "image":"../icons/mobile-app.svg"
+        "image":"mobile-app.svg"
     },
     {
         "id":2,
@@ -22,7 +22,7 @@ export class DataService {
         "parentID":null,
         "options":[],
         "hasMultipleValues":false,
-        "image":"../icons/web-app.svg"
+        "image":"web-app.svg"
     },
     {
         "id":3,
@@ -30,7 +30,7 @@ export class DataService {
         "parentID":null,
         "options":[],
         "hasMultipleValues":false,
-        "image":"../icons/designing.svg"
+        "image":"designing.svg"
     },
     {
         "id":4,
