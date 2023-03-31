@@ -3,6 +3,6 @@
         <h4>How Much Could Your Project Cost?</h4>
     </div>
     <div id="question-card-wrapper">
-        <app-question-card *ngFor="let card of importedData" [id]="card.id" [imgSrc]="card.image" [questionText]="card.title"></app-question-card>
+        <app-question-card *ngFor="let card of processedData" [id]="card.id" [imgSrc]="card.image" [questionText]="card.title"></app-question-card>
     </div>
 </div>
