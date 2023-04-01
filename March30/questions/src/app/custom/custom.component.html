@@ -8,7 +8,7 @@
         <div id="question">
             <div *ngFor="let question of proposedQuestions">
                 <div *ngIf="question.id===currentQuestion">
-                    <h3>{{question.title}}</h3>
+                    <h1>{{question.title}}</h1>
                     <mat-checkbox color="warn" *ngFor="let option of question.options" value="option.cost">
                         {{option.title}}
                     </mat-checkbox>

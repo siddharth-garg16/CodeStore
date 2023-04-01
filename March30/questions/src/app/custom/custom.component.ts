@@ -63,5 +63,4 @@ export class CustomComponent implements OnInit{
   goToNextQuestion(){
     this.currentQuestion+=1;
   }
-
 }
