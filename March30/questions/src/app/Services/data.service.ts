@@ -144,7 +144,7 @@ export class DataService {
         "options":[
             {
                 "id":1,
-                "title":"Black & White with accents",
+                "title":"Black & White",
                 "cost":500
             },
             {
