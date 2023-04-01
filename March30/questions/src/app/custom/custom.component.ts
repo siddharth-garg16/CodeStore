@@ -11,9 +11,10 @@ export class CustomComponent implements OnInit{
   importedData: any[] = [];
   processedData: { id: number, title: string, parentID: any, options: any[], hasMultipleValues: boolean, image: string, questions: any[] }[] = [];
   currentQuestion:number = 1;
-  totalQuestions:number = 10;
+  totalQuestions:number = 1;
   projectSelectionID:number = 0;
   selectedProject: any;
+  proposedQuestions: any;
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) { }
 
@@ -25,9 +26,12 @@ export class CustomComponent implements OnInit{
       }
     }
     for (let card of this.processedData) {
+      let questionID = 1;
       for (let questions of this.importedData) {
         if (questions.parentID === card.id) {
+          questions.id = questionID;
           card.questions.push(questions);
+          questionID+=1;
         }
       }
     }
@@ -44,6 +48,11 @@ export class CustomComponent implements OnInit{
       }
     }
     // console.log(this.selectedProject, "selected project");
+
+    this.proposedQuestions = this.selectedProject.questions
+    // console.log(this.proposedQuestions, 'proposed questions');
+
+    this.totalQuestions = this.proposedQuestions.length;
   }
 
   goToPreviousQuestion(){
