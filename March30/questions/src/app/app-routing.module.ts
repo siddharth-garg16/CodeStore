@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomComponent } from './custom/custom.component';
 import { ErrorComponent } from './error/error.component';
-import { PriceCardComponent } from './custom/price-card/price-card.component';
 import { QuestionsComponent } from './questions/questions.component';
 
 const routes: Routes = [

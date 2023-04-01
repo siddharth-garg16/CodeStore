@@ -14,7 +14,8 @@ export class CustomComponent implements OnInit{
   totalQuestions:number = 1;
   projectSelectionID:number = 0;
   selectedProject: any;
-  proposedQuestions: any;
+  proposedQuestions: {id:number, hasMultipleValues:boolean, parentID:number, title:string, options:{id:number, title:string, cost:number}[]}[] = [];
+  totalCost:number = 0;
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) { }
 

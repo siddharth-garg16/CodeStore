@@ -6,38 +6,14 @@
         </div>
 
         <div id="question">
-            <!-- questions go here -->
-            <h2>Select the options below?</h2>
-            <mat-checkbox color="warn">
-                Option1
-            </mat-checkbox>
-            <mat-checkbox color="warn">
-                Option2
-            </mat-checkbox>
-            <mat-checkbox color="warn">
-                Option3
-            </mat-checkbox>
-
-            <!-- <mat-checkbox *ngFor="let card of processedData" color="warn">
-                {{card.questions.options}}
-            </mat-checkbox> -->
-
-            <!-- <mat-checkbox color="warn">
-                Warn theme checkbox
-            </mat-checkbox>
-
-            <mat-checkbox color="warn">
-                Warn theme checkbox
-            </mat-checkbox>
-
-            <mat-checkbox color="warn">
-                Warn theme checkbox
-            </mat-checkbox>
-
-            <mat-checkbox color="warn">
-                Warn theme checkbox
-            </mat-checkbox> -->
-
+            <div *ngFor="let question of proposedQuestions">
+                <div *ngIf="question.id===currentQuestion">
+                    <h3>{{question.title}}</h3>
+                    <mat-checkbox color="warn" *ngFor="let option of question.options" value="option.cost">
+                        {{option.title}}
+                    </mat-checkbox>
+                </div>
+            </div>
         </div>
 
         <div id="button-wrapper">
@@ -50,5 +26,5 @@
         </div>
     </div>
 
-    <app-price-card [cost]="9999"></app-price-card>
+    <app-price-card [cost]="totalCost"></app-price-card>
 </div>
