@@ -49,7 +49,7 @@ export class DataService {
             },
             {
                 "id":3,
-                "title":"Android + iOS",
+                "title":"Cross Platform",
                 "cost":2000
             }
         ],
