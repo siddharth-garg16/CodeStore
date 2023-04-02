@@ -10,9 +10,9 @@ import { QuestionCardComponent } from './questions/question-card/question-card.c
 import { PriceCardComponent } from './custom/price-card/price-card.component';
 import { CustomComponent } from './custom/custom.component';
 import {FormsModule} from '@angular/forms';
-import { FinalComponent } from './custom/final/final.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModules } from './Material/material.module'
+import { MaterialModules } from './Material/material.module';
+import { StoreModule } from '@ngrx/store'
 
 @NgModule({
   declarations: [
@@ -22,15 +22,15 @@ import { MaterialModules } from './Material/material.module'
     ErrorComponent,
     QuestionCardComponent,
     PriceCardComponent,
-    CustomComponent,
-    FinalComponent
+    CustomComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModules
+    MaterialModules,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]

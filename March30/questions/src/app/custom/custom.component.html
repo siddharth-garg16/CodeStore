@@ -1,6 +1,6 @@
 <div id="custom-wrapper">
 
-    <div id="preference-wrapper">
+    <div id="preference-wrapper" *ngIf="showPreferencePanel; else finalContent">
         <div id="page-counter">
             <span id="current-question">{{currentQuestion}}</span>/<span id="total-questions">{{totalQuestions}}</span>
         </div>
@@ -9,7 +9,8 @@
             <div *ngFor="let question of proposedQuestions">
                 <div *ngIf="question.id===currentQuestion">
                     <h1>{{question.title}}</h1>
-                    <mat-checkbox color="warn" *ngFor="let option of question.options" value="{{option.cost}}" (change)="increaseCost($event)">
+                    <mat-checkbox color="warn" *ngFor="let option of question.options" value="{{option.cost}}"
+                        (change)="increaseCost($event)">
                         {{option.title}}
                     </mat-checkbox>
                 </div>
@@ -21,10 +22,16 @@
                 (click)="goToPreviousQuestion()">Previous</button>
             <button type="button" *ngIf="currentQuestion<totalQuestions" mat-flat-button color="primary"
                 (click)="goToNextQuestion()">Next</button>
-            <button type="button" *ngIf="currentQuestion===totalQuestions" mat-flat-button
-                color="accent">Confirm</button>
+            <button type="button" *ngIf="currentQuestion===totalQuestions" mat-flat-button color="accent"
+                (click)="hidePreferencePanel()">Confirm</button>
         </div>
     </div>
+    <ng-template #finalContent>
+        <div id="final-container">
+            <button type="button" mat-raised-button color="warn" (click)="goBackToPreferencePanel()">Change Selections</button>
+            <button type="button" mat-raised-button color="accent" (click)="askToContact()">Proceed</button>
+        </div>
+    </ng-template>
 
     <app-price-card [cost]="totalCost"></app-price-card>
 </div>

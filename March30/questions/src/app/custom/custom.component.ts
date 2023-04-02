@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../Services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-custom',
@@ -17,8 +18,9 @@ export class CustomComponent implements OnInit{
   selectedProject: any;
   proposedQuestions: {id:number, hasMultipleValues:boolean, parentID:number, title:string, options:{id:number, title:string, cost:number}[]}[] = [];
   totalCost:number = 0;
+  showPreferencePanel:boolean = true;
 
-  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute) { }
+  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private _snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.importedData = this.dataService.questionData;
@@ -72,5 +74,18 @@ export class CustomComponent implements OnInit{
     } else{
       this.totalCost-=Number(val.source.value);
     }   
+  }
+
+  hidePreferencePanel(){
+    this.showPreferencePanel = false;
+  }
+
+  goBackToPreferencePanel(){
+    this.showPreferencePanel = true;
+    this.currentQuestion = 1;
+  }
+
+  askToContact(){
+    this._snackbar.open("Contact our business team.", "Contact")
   }
 }
