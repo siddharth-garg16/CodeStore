@@ -9,7 +9,7 @@
             <div *ngFor="let question of proposedQuestions">
                 <div *ngIf="question.id===currentQuestion">
                     <h1>{{question.title}}</h1>
-                    <mat-checkbox color="warn" *ngFor="let option of question.options" value="option.cost">
+                    <mat-checkbox color="warn" *ngFor="let option of question.options" value="{{option.cost}}" (change)="increaseCost($event)">
                         {{option.title}}
                     </mat-checkbox>
                 </div>

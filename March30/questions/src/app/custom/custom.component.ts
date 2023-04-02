@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../Services/data.service';
 import { ActivatedRoute } from '@angular/router';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-custom',
@@ -62,5 +63,14 @@ export class CustomComponent implements OnInit{
 
   goToNextQuestion(){
     this.currentQuestion+=1;
+  }
+
+  increaseCost(val:MatCheckboxChange){
+    // console.log(val);
+    if(val.checked){
+      this.totalCost+=Number(val.source.value);
+    } else{
+      this.totalCost-=Number(val.source.value);
+    }   
   }
 }
