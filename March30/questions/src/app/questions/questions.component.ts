@@ -8,7 +8,7 @@ import { DataService } from '../Services/data.service'
 })
 export class QuestionsComponent implements OnInit {
   public importedData: any[] = [];
-  public processedData: { id: number, title: string, parentID: any, options: any[], hasMultipleValues: boolean, image: string }[] = [
+  public processedData: { id: number, title: string, parentID: any, options: any[], image: string }[] = [
 
   ];
 

@@ -13,7 +13,6 @@ export class DataService {
         "title":"MAKE A MOBILE APP",
         "parentID":null,
         "options":[],
-        "hasMultipleValues":false,
         "image":"../../assets/mobile-app.svg"
     },
     {
@@ -21,7 +20,6 @@ export class DataService {
         "title":"MAKE A WEB APP",
         "parentID":null,
         "options":[],
-        "hasMultipleValues":false,
         "image":"../../assets/web-app.svg"
     },
     {
@@ -29,7 +27,6 @@ export class DataService {
         "title":"MAKE DESIGNS",
         "parentID":null,
         "options":[],
-        "hasMultipleValues":false,
         "image":"../../assets/designing.svg"
     },
     {
@@ -52,8 +49,7 @@ export class DataService {
                 "title":"Cross Platform",
                 "cost":2000
             }
-        ],
-        "hasMultipleValues":false
+        ]
     },
     {
         "id":5,
@@ -75,8 +71,7 @@ export class DataService {
                 "title":"Ionic",
                 "cost":1000
             }
-        ],
-        "hasMultipleValues":false
+        ]
     },
     {
         "id":6,
@@ -93,8 +88,7 @@ export class DataService {
                 "title":"Customised UI",
                 "cost":700
             }
-        ],
-        "hasMultipleValues":false
+        ]
     },
     {
         "id":7,
@@ -116,8 +110,7 @@ export class DataService {
                 "title":"VueJS",
                 "cost":1000
             }
-        ],
-        "hasMultipleValues":false
+        ]
     },
     {
         "id":8,
@@ -134,8 +127,7 @@ export class DataService {
                 "title":"Customised UI",
                 "cost":700
             }
-        ],
-        "hasMultipleValues":false
+        ]
     },
     {
         "id":9,
@@ -152,8 +144,7 @@ export class DataService {
                 "title":"Color Filled",
                 "cost":800
             }
-        ],
-        "hasMultipleValues":true
+        ]
     },
     {
         "id":10,
@@ -170,8 +161,7 @@ export class DataService {
                 "title":"No",
                 "cost":300
             }
-        ],
-        "hasMultipleValues":false
+        ]
     }
 ]
 }

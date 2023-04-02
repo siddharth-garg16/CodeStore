@@ -11,12 +11,12 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class CustomComponent implements OnInit{
   importedData: any[] = [];
-  processedData: { id: number, title: string, parentID: any, options: any[], hasMultipleValues: boolean, image: string, questions: any[] }[] = [];
+  processedData: { id: number, title: string, parentID: any, options: any[], image: string, questions: any[] }[] = [];
   currentQuestion:number = 1;
   totalQuestions:number = 1;
   projectSelectionID:number = 0;
   selectedProject: any;
-  proposedQuestions: {id:number, hasMultipleValues:boolean, parentID:number, title:string, options:{id:number, title:string, cost:number}[]}[] = [];
+  proposedQuestions: {id:number, parentID:number, title:string, options:{id:number, title:string, cost:number}[]}[] = [];
   totalCost:number = 0;
   showPreferencePanel:boolean = true;
 
@@ -73,7 +73,7 @@ export class CustomComponent implements OnInit{
       this.totalCost+=Number(val.source.value);
     } else{
       this.totalCost-=Number(val.source.value);
-    }   
+    }
   }
 
   hidePreferencePanel(){
