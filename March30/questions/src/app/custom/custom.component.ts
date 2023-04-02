@@ -83,6 +83,7 @@ export class CustomComponent implements OnInit{
   goBackToPreferencePanel(){
     this.showPreferencePanel = true;
     this.currentQuestion = 1;
+    this.totalCost = 0;
   }
 
   askToContact(){
