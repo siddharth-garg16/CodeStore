@@ -63,17 +63,17 @@ export class DataService {
             {
                 "id":1,
                 "title":"Flutter",
-                "cost":800
+                "cost":1000
             },
             {
                 "id":2,
                 "title":"React Native",
-                "cost":800
+                "cost":1000
             },
             {
                 "id":3,
                 "title":"Ionic",
-                "cost":800
+                "cost":1000
             }
         ],
         "hasMultipleValues":false
@@ -86,7 +86,7 @@ export class DataService {
             {
                 "id":1,
                 "title":"Default UI",
-                "cost":200
+                "cost":300
             },
             {
                 "id":2,
@@ -127,7 +127,7 @@ export class DataService {
             {
                 "id":1,
                 "title":"Default UI",
-                "cost":200
+                "cost":300
             },
             {
                 "id":2,
@@ -150,7 +150,7 @@ export class DataService {
             {
                 "id":2,
                 "title":"Color Filled",
-                "cost":700
+                "cost":800
             }
         ],
         "hasMultipleValues":true
@@ -163,7 +163,7 @@ export class DataService {
             {
                 "id":1,
                 "title":"Yes",
-                "cost":700
+                "cost":1000
             },
             {
                 "id":2,
