@@ -43,10 +43,8 @@ export class CustomComponent implements OnInit{
     }
     // console.log(this.processedData, 'from custom component')
 
-
     this.projectSelectionID = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     // console.log(this.projectSelectionID, typeof this.projectSelection)
-
 
     for(let project of this.processedData){
       if(project.id === this.projectSelectionID){
@@ -59,9 +57,6 @@ export class CustomComponent implements OnInit{
     // console.log(this.proposedQuestions, 'proposed questions');
 
     this.totalQuestions = this.proposedQuestions.length;
-
-    this.store.dispatch({type:"LOAD_CHOICES"})
-    // this.store.subscribe(state=>{this.madeSelections=state.selections})
   }
 
   goToPreviousQuestion(){

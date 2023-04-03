@@ -38,3 +38,10 @@
 
     <app-price-card [cost]="totalCost"></app-price-card>
 </div>
+
+<div>
+    <span *ngFor="let selection of madeSelections">
+        <span>{{selection.questionID}}</span>
+        <span>{{selection.optionID}}</span>
+    </span>
+</div>
