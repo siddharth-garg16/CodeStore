@@ -19,6 +19,7 @@ export class CustomComponent implements OnInit{
   proposedQuestions: {id:number, parentID:number, title:string, options:{id:number, title:string, cost:number}[]}[] = [];
   totalCost:number = 0;
   showPreferencePanel:boolean = true;
+  madeSelections:{questionID:number, optionID:number}[] = [];
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private _snackbar: MatSnackBar) { }
 
