@@ -1,4 +1,4 @@
-export interface Choice {
+export interface Selection {
     questionID:number,
     optionID:number
 }

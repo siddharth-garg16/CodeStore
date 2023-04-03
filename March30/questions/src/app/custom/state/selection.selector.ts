@@ -1,4 +1,4 @@
 import { createFeatureSelector } from "@ngrx/store";
-import { Choice } from "../custom/Models/choices.model";
+import { Choice } from "../custom/Models/selection.model";
 
 export const selectChoices = createFeatureSelector<Choice[]>("myChoices")
