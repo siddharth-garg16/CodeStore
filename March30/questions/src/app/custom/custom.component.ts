@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../Services/data.service';
 import { ActivatedRoute } from '@angular/router';
-import { MatCheckboxChange } from '@angular/material/checkbox';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-custom',
