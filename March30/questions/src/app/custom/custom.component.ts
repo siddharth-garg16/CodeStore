@@ -3,7 +3,6 @@ import { DataService } from '../Services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { Store } from '@ngrx/store'
 
 @Component({
   selector: 'app-custom',
@@ -22,7 +21,7 @@ export class CustomComponent implements OnInit{
   showPreferencePanel:boolean = true;
   madeSelections:{questionID:number, optionID:number}[] = [];
 
-  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private _snackbar: MatSnackBar, private store:Store<any>) { }
+  constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private _snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.importedData = this.dataService.questionData;
