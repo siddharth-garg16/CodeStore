@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
-//declare interface here----
 export interface Option{
   id:number,
   title:string,
@@ -61,20 +60,16 @@ export class CustomComponent implements OnInit{
         }
       }
     }
-    // console.log(this.processedData, 'from custom component')
 
     this.projectSelectionID = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    // console.log(this.projectSelectionID, typeof this.projectSelection)
 
     for(let project of this.processedData){
       if(project.id === this.projectSelectionID){
         this.selectedProject = project;
       }
     }
-    // console.log(this.selectedProject, "selected project");
 
     this.proposedQuestions = this.selectedProject.questions
-    // console.log(this.proposedQuestions, 'proposed questions');
 
     this.totalQuestions = this.proposedQuestions.length;
   }
@@ -113,7 +108,6 @@ export class CustomComponent implements OnInit{
       }
     }
     this.handleBillingCost();            
-    // console.log(this.proposedQuestions);
   }
 
   hidePreferencePanel(){
@@ -123,7 +117,6 @@ export class CustomComponent implements OnInit{
   goBackToPreferencePanel(){
     this.showPreferencePanel = true;
     this.currentQuestion = 1;
-    // this.totalCost = 0;
   }
 
   askToContact(){

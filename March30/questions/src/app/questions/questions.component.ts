@@ -22,6 +22,5 @@ export class QuestionsComponent implements OnInit {
         this.processedData.push(card)
       }
     }
-    // console.log(this.processedData)
   }
 }
