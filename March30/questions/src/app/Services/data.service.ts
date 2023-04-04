@@ -68,13 +68,13 @@ export class DataService {
             {
                 "id":2,
                 "title":"React Native",
-                "cost":1000,
+                "cost":1200,
                 "selected":false
             },
             {
                 "id":3,
                 "title":"Ionic",
-                "cost":1000,
+                "cost":900,
                 "selected":false
             }
         ]
@@ -106,19 +106,19 @@ export class DataService {
             {
                 "id":1,
                 "title":"ReactJS",
-                "cost":1000,
+                "cost":1200,
                 "selected":false
             },
             {
                 "id":2,
                 "title":"Angular",
-                "cost":1000,
+                "cost":1100,
                 "selected":false
             },
             {
                 "id":3,
                 "title":"VueJS",
-                "cost":1000,
+                "cost":1300,
                 "selected":false
             }
         ]
