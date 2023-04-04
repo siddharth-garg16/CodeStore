@@ -15,11 +15,16 @@ export interface Question {
   id: number,
   title: string,
   parentID: null,
-  options: any[],
+  options: Option[],
   image: string,
   questions: any[]
 }
-
+export interface ProposedQuestion{
+  id:number,
+  parentID:number,
+  title:string,
+  options:Option[]
+}
 @Component({
   selector: 'app-custom',
   templateUrl: './custom.component.html',
@@ -27,12 +32,12 @@ export interface Question {
 })
 export class CustomComponent implements OnInit{
   importedData: any[] = [];
-  processedData: { id: number, title: string, parentID: any, options: any[], image: string, questions: any[] }[] = [];
+  processedData: Question[] = [];
   currentQuestion:number = 1;
   totalQuestions:number = 1;
   projectSelectionID:number = 0;
   selectedProject: any;
-  proposedQuestions: {id:number, parentID:number, title:string, options:Option[]}[] = [];
+  proposedQuestions: ProposedQuestion[] = [];
   totalCost:number = 0;
   showPreferencePanel:boolean = true;
   madeSelections:{questionID:number, optionID:number}[] = [];
