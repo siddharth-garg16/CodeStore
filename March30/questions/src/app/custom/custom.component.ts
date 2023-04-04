@@ -83,7 +83,6 @@ export class CustomComponent implements OnInit{
   }
 
   manageSelection(val:MatCheckboxChange, currentQuestionID:number){
-    console.log(val);
     if(val.checked){
       for(let question of this.proposedQuestions){
         if(question.id===currentQuestionID){
