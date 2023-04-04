@@ -4,6 +4,22 @@ import { ActivatedRoute } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
+//declare interface here----
+export interface Option{
+  id:number,
+  title:string,
+  cost:number, 
+  selected:boolean
+}
+export interface Question {
+  id: number,
+  title: string,
+  parentID: null,
+  options: any[],
+  image: string,
+  questions: any[]
+}
+
 @Component({
   selector: 'app-custom',
   templateUrl: './custom.component.html',
@@ -16,7 +32,7 @@ export class CustomComponent implements OnInit{
   totalQuestions:number = 1;
   projectSelectionID:number = 0;
   selectedProject: any;
-  proposedQuestions: {id:number, parentID:number, title:string, options:{id:number, title:string, cost:number}[]}[] = [];
+  proposedQuestions: {id:number, parentID:number, title:string, options:Option[]}[] = [];
   totalCost:number = 0;
   showPreferencePanel:boolean = true;
   madeSelections:{questionID:number, optionID:number}[] = [];
@@ -66,13 +82,33 @@ export class CustomComponent implements OnInit{
     this.currentQuestion+=1;
   }
 
-  increaseCost(val:MatCheckboxChange){
-    // console.log(val);
+  manageSelection(val:MatCheckboxChange, currentQuestionID:number){
+    console.log(val);
     if(val.checked){
-      this.totalCost+=Number(val.source.value);
-    } else{
-      this.totalCost-=Number(val.source.value);
+      for(let question of this.proposedQuestions){
+        if(question.id===currentQuestionID){
+          for(let option of question.options){
+            if(option.id===Number(val.source.id)){
+              option.selected = true;
+            } else {
+              option.selected = false;
+            }
+          }
+        }
+      }
+    } else {
+      for(let question of this.proposedQuestions){
+        if(question.id===currentQuestionID){
+          for(let option of question.options){
+            if(option.id===Number(val.source.id)){
+              option.selected = false;
+            }
+          }
+        }
+      }
     }
+    this.handleBillingCost();            
+    // console.log(this.proposedQuestions);
   }
 
   hidePreferencePanel(){
@@ -82,10 +118,23 @@ export class CustomComponent implements OnInit{
   goBackToPreferencePanel(){
     this.showPreferencePanel = true;
     this.currentQuestion = 1;
-    this.totalCost = 0;
+    // this.totalCost = 0;
   }
 
   askToContact(){
     this._snackbar.open("Contact our business team.", "Contact")
+  }
+
+  handleBillingCost(){
+    let tempCost = 0;
+    this.totalCost = tempCost;
+    for(let question of this.proposedQuestions){
+      for(let option of question.options){
+        if(option.selected){
+          tempCost+=option.cost;
+        }
+      }
+    }
+    this.totalCost = tempCost;
   }
 }
