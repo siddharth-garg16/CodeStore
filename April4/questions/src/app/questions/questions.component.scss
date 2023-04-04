@@ -1,0 +1,15 @@
+#main-questions-wrapper{
+    padding-block: 50px;
+    text-align: center;
+    #question{
+        h1{
+            color: rgb(100, 100, 100);
+        }
+    }
+    #question-card-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}

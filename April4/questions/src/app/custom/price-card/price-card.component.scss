@@ -1,0 +1,21 @@
+#price-card{
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.09) 7.4px 7.4px 3.2px;
+    padding: 10px 20px;
+    margin: 20px 30px;
+    max-width: 300px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(245, 245, 255);
+    img{
+        width: 150px;
+    }
+    h1{
+        color: #018749;
+        font-weight: bold;
+        font-size: 32px;
+    }
+    p{
+        color: rgb(120, 120, 120);
+    }
+}

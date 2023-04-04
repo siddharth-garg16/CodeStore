@@ -1,0 +1,8 @@
+<div id="main-questions-wrapper">
+    <div id="question">
+        <h1>How Much Could Your Project Cost?</h1>
+    </div>
+    <div id="question-card-wrapper">
+        <app-question-card *ngFor="let card of processedData" [id]="card.id" [imgSrc]="card.image" [questionText]="card.title"></app-question-card>
+    </div>
+</div>

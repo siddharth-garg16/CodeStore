@@ -1,0 +1,49 @@
+#custom-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    #preference-wrapper{
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.09) 7.4px 7.4px 3.2px;
+        margin: 20px;
+        padding: 20px;
+        background-color: rgb(250, 250, 250);
+        #page-counter{
+            #current-question{
+                color: #3F51B5;
+                font-weight: bold;
+            }
+            #total-questions{
+                color: rgb(70, 70, 70);
+                font-weight: bold;
+            }
+        }
+        #question{
+            margin-block: 20px;
+            text-align: center;
+            mat-checkbox{
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        #button-wrapper{
+            margin-block: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button{
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+    }
+    #final-container{
+        button{
+            width: 200px;
+            margin: 20px;
+            display: block;
+        }
+    }
+}
