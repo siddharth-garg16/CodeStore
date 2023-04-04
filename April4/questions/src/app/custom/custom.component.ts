@@ -3,6 +3,7 @@ import { DataService } from '../Services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import { Store, StoreModule } from '@ngrx/store';
 
 export interface Option{
   id:number,
@@ -39,7 +40,6 @@ export class CustomComponent implements OnInit{
   proposedQuestions: ProposedQuestion[] = [];
   totalCost:number = 0;
   showPreferencePanel:boolean = true;
-  // madeSelections:{questionID:number, optionID:number}[] = [];
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private _snackbar: MatSnackBar) { }
 
@@ -135,3 +135,4 @@ export class CustomComponent implements OnInit{
     this.totalCost = tempCost;
   }
 }
+
