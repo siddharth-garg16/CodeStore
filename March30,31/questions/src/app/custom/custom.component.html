@@ -1,0 +1,42 @@
+<div id="custom-wrapper">
+
+    <div id="preference-wrapper" *ngIf="showPreferencePanel==='show' || showPreferencePanel==='edit'; else finalOptions">
+        <div id="page-counter">
+            <span id="current-question">{{currentQuestion}}</span>/<span id="total-questions">{{totalQuestions}}</span>
+        </div>
+
+        <div id="question">
+            <mat-radio-group *ngFor="let question of proposedQuestions">
+                <div *ngIf="question.id===currentQuestion">
+                    <h1>{{question.title}}</h1>
+                    <mat-radio-button *ngFor="let option of question.options" id="{{option.id}}" value="{{option.cost}}" (change)="manageSelection($event, question.id)" [checked]="option.selected" color="warn">
+                        {{option.title}}
+                    </mat-radio-button>
+                </div>
+            </mat-radio-group>
+        </div>
+
+        <div id="button-wrapper">
+            <button type="button" *ngIf="currentQuestion>1 && showPreferencePanel==='show'" mat-flat-button color="primary"
+                (click)="goToPreviousQuestion()">Previous</button>
+            <button type="button" *ngIf="currentQuestion<totalQuestions && showPreferencePanel==='show'" mat-flat-button color="primary"
+                (click)="goToNextQuestion()">Next</button>
+            <button type="button" *ngIf="currentQuestion===totalQuestions && showPreferencePanel==='show'" mat-flat-button color="accent"
+                (click)="hidePreferencePanel()">Confirm</button>
+            <button type="button" mat-flat-button color="warn" *ngIf="showPreferencePanel==='edit'" (click)="updateSelection()">Update</button>
+        </div>
+    </div>
+    <ng-template #finalOptions>
+        <div id="final-container">
+            <h1>Requirements</h1>
+            <div *ngFor="let question of proposedQuestions">
+                <div *ngFor="let option of question.options">
+                    <button *ngIf="option.selected" mat-stroked-button color="warn" (click)="goBackToPreferencePanel(question.id)"><mat-icon>mode_edit</mat-icon>{{option.title}}</button>
+                </div>
+            </div>
+            <button id="proceed-button" type="button" mat-raised-button color="accent" (click)="askToContact()">Proceed</button>
+        </div>
+    </ng-template>
+
+    <app-price-card [cost]="totalCost"></app-price-card>
+</div>

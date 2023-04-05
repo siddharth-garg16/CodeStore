@@ -23,7 +23,7 @@
         #question{
             margin-block: 20px;
             text-align: center;
-            mat-checkbox{
+            mat-radio-button{
                 margin-left: 10px;
                 margin-right: 10px;
             }
@@ -40,10 +40,14 @@
         }
     }
     #final-container{
+        text-align: center;
         button{
             width: 200px;
-            margin: 20px;
+            margin: 10px;
             display: block;
+        }
+        #proceed-button{
+            margin-top: 20px;
         }
     }
 }

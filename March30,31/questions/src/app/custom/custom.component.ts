@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../Services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import { MatCheckboxChange } from '@angular/material/checkbox';
-import { Store, StoreModule } from '@ngrx/store';
+import { MatRadioChange } from '@angular/material/radio';
 
 export interface Option{
   id:number,
@@ -39,7 +38,7 @@ export class CustomComponent implements OnInit{
   selectedProject: any;
   proposedQuestions: ProposedQuestion[] = [];
   totalCost:number = 0;
-  showPreferencePanel:boolean = true;
+  showPreferencePanel:string = "show";
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private _snackbar: MatSnackBar) { }
 
@@ -82,8 +81,8 @@ export class CustomComponent implements OnInit{
     this.currentQuestion+=1;
   }
 
-  manageSelection(val:MatCheckboxChange, currentQuestionID:number){
-    if(val.checked){
+  manageSelection(val:MatRadioChange, currentQuestionID:number){
+    if(val.source.checked){
       for(let question of this.proposedQuestions){
         if(question.id===currentQuestionID){
           for(let option of question.options){
@@ -106,16 +105,16 @@ export class CustomComponent implements OnInit{
         }
       }
     }
-    this.handleBillingCost();            
+    this.handleBillingCost();     
   }
 
   hidePreferencePanel(){
-    this.showPreferencePanel = false;
+    this.showPreferencePanel = "hide";
   }
 
-  goBackToPreferencePanel(){
-    this.showPreferencePanel = true;
-    this.currentQuestion = 1;
+  goBackToPreferencePanel(queID:number){
+    this.showPreferencePanel = "edit";
+    this.currentQuestion = queID;
   }
 
   askToContact(){
@@ -134,5 +133,8 @@ export class CustomComponent implements OnInit{
     }
     this.totalCost = tempCost;
   }
-}
 
+  updateSelection(){
+    this.showPreferencePanel = "hide";
+  }
+}
