@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../Services/data.service';
 import { ActivatedRoute } from '@angular/router';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatRadioChange } from '@angular/material/radio';
+import { Store, StoreModule } from '@ngrx/store';
 
 export interface Option{
   id:number,
