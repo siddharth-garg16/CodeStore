@@ -38,7 +38,7 @@ export class CustomComponent implements OnInit{
   selectedProject: any;
   proposedQuestions: ProposedQuestion[] = [];
   totalCost:number = 0;
-  showPreferencePanel:boolean = true;
+  showPreferencePanel:string = "show";
 
   constructor(private dataService: DataService, private activatedRoute: ActivatedRoute, private _snackbar: MatSnackBar) { }
 
@@ -105,16 +105,16 @@ export class CustomComponent implements OnInit{
         }
       }
     }
-    this.handleBillingCost();      
+    this.handleBillingCost();     
   }
 
   hidePreferencePanel(){
-    this.showPreferencePanel = false;
+    this.showPreferencePanel = "hide";
   }
 
-  goBackToPreferencePanel(){
-    this.showPreferencePanel = true;
-    this.currentQuestion = 1;
+  goBackToPreferencePanel(queID:number){
+    this.showPreferencePanel = "edit";
+    this.currentQuestion = queID;
   }
 
   askToContact(){
@@ -132,5 +132,9 @@ export class CustomComponent implements OnInit{
       }
     }
     this.totalCost = tempCost;
+  }
+
+  updateSelection(){
+    this.showPreferencePanel = "hide";
   }
 }
