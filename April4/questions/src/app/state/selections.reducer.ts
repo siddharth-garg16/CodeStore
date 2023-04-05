@@ -5,7 +5,6 @@ import { ADD_SELECTION, RESET_STATE } from './selections.actions';
 export const initialState : ReadonlyArray<Selection> = [];
 
 export const selectionsReducer = createReducer(
-    initialState
-    // on(RESET_STATE, (ST)=.{})
-    // on(ADD_SELECTION, )
+    initialState,
+    on(ADD_SELECTION, (_state, {madeSelections}) => madeSelections)
 )

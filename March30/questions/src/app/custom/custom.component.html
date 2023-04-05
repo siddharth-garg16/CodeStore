@@ -6,17 +6,14 @@
         </div>
 
         <div id="question">
-            <div *ngFor="let question of proposedQuestions">
+            <mat-radio-group *ngFor="let question of proposedQuestions">
                 <div *ngIf="question.id===currentQuestion">
                     <h1>{{question.title}}</h1>
-                    <span *ngFor="let option of question.options">
-                        <mat-checkbox color="warn" id="{{option.id}}" value="{{option.cost}}"
-                        (change)="manageSelection($event, question.id)" checked="{{option.selected}}">
+                    <mat-radio-button *ngFor="let option of question.options" id="{{option.id}}" value="{{option.cost}}" (change)="manageSelection($event, question.id)" [checked]="option.selected" color="warn">
                         {{option.title}}
-                        </mat-checkbox>
-                    </span>
+                    </mat-radio-button>
                 </div>
-            </div>
+            </mat-radio-group>
         </div>
 
         <div id="button-wrapper">
@@ -38,3 +35,4 @@
 
     <app-price-card [cost]="totalCost"></app-price-card>
 </div>
+

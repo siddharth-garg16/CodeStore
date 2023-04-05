@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../Services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import { MatCheckboxChange } from '@angular/material/checkbox';
+import { MatRadioChange } from '@angular/material/radio';
 
 export interface Option{
   id:number,
@@ -81,8 +81,8 @@ export class CustomComponent implements OnInit{
     this.currentQuestion+=1;
   }
 
-  manageSelection(val:MatCheckboxChange, currentQuestionID:number){
-    if(val.checked){
+  manageSelection(val:MatRadioChange, currentQuestionID:number){
+    if(val.source.checked){
       for(let question of this.proposedQuestions){
         if(question.id===currentQuestionID){
           for(let option of question.options){
@@ -105,7 +105,7 @@ export class CustomComponent implements OnInit{
         }
       }
     }
-    this.handleBillingCost();            
+    this.handleBillingCost();      
   }
 
   hidePreferencePanel(){
