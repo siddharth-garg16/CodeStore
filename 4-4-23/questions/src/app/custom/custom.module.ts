@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store, StoreModule } from '@ngrx/store';
+import { selectionReducer } from './state/selections.reducer';
 
 
 
@@ -8,7 +9,7 @@ import { Store, StoreModule } from '@ngrx/store';
   declarations: [],
   imports: [
     CommonModule,
-    // StoreModule.forFeature
+    StoreModule.forFeature("madeSelections")
   ]
 })
 export class CustomModule { }
