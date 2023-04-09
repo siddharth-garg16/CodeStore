@@ -37,20 +37,17 @@ export class DataService {
             {
                 "id":1,
                 "title":"Android",
-                "cost":1000,
-                "selected":false
+                "cost":1000
             },
             {
                 "id":2,
                 "title":"iOS",
-                "cost":1000,
-                "selected":false
+                "cost":1000
             },
             {
                 "id":3,
                 "title":"Cross Platform",
-                "cost":2000,
-                "selected":false
+                "cost":2000
             }
         ]
     },
@@ -62,20 +59,17 @@ export class DataService {
             {
                 "id":1,
                 "title":"Flutter",
-                "cost":1000,
-                "selected":false
+                "cost":1000
             },
             {
                 "id":2,
                 "title":"React Native",
-                "cost":1200,
-                "selected":false
+                "cost":1200
             },
             {
                 "id":3,
                 "title":"Ionic",
-                "cost":900,
-                "selected":false
+                "cost":900
             }
         ]
     },
@@ -87,14 +81,12 @@ export class DataService {
             {
                 "id":1,
                 "title":"Default UI",
-                "cost":300,
-                "selected":false
+                "cost":300
             },
             {
                 "id":2,
                 "title":"Customised UI",
-                "cost":700,
-                "selected":false
+                "cost":700
             }
         ]
     },
@@ -106,20 +98,17 @@ export class DataService {
             {
                 "id":1,
                 "title":"ReactJS",
-                "cost":1200,
-                "selected":false
+                "cost":1200
             },
             {
                 "id":2,
                 "title":"Angular",
-                "cost":1100,
-                "selected":false
+                "cost":1100
             },
             {
                 "id":3,
                 "title":"VueJS",
-                "cost":1300,
-                "selected":false
+                "cost":1300
             }
         ]
     },
@@ -131,14 +120,12 @@ export class DataService {
             {
                 "id":1,
                 "title":"Default UI",
-                "cost":300,
-                "selected":false
+                "cost":300
             },
             {
                 "id":2,
                 "title":"Customised UI",
-                "cost":700,
-                "selected":false
+                "cost":700
             }
         ]
     },
@@ -150,14 +137,12 @@ export class DataService {
             {
                 "id":1,
                 "title":"Black & White",
-                "cost":500,
-                "selected":false
+                "cost":500
             },
             {
                 "id":2,
                 "title":"Color Filled",
-                "cost":800,
-                "selected":false
+                "cost":800
             }
         ]
     },
@@ -169,14 +154,12 @@ export class DataService {
             {
                 "id":1,
                 "title":"Yes",
-                "cost":1000,
-                "selected":false
+                "cost":1000
             },
             {
                 "id":2,
                 "title":"No",
-                "cost":300,
-                "selected":false
+                "cost":300
             }
         ]
     }

@@ -54,11 +54,17 @@ export class CustomComponent implements OnInit{
       for (let questions of this.importedData) {
         if (questions.parentID === card.id) {
           questions.id = questionID;
+          let changedOption = [];
+          for(let option of questions.options){
+            changedOption.push({...option, selected:false});
+          }
+          questions.options = changedOption;
           card.questions.push(questions);
           questionID+=1;
         }
       }
     }
+    console.log(this.processedData);
 
     this.projectSelectionID = Number(this.activatedRoute.snapshot.paramMap.get('id'));
 
